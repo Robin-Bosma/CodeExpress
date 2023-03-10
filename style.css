@@ -1,0 +1,80 @@
+body {
+    margin: auto;
+    min-height: 100vh;
+    background-color: #333;
+}
+
+/* Navbar */
+
+nav {
+  background-color: #ffc61e;
+  color: #fff;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+}
+nav ul {
+    display: flex;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+nav img {
+  height: 130px;
+}
+nav a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 20px;
+  margin-right: 20px;
+}
+nav form {
+  display: flex;
+  align-items: center;
+}
+nav input[type="text"] {
+  height: 30px;
+  width: 200px;
+  padding: 5px;
+  border: none;
+  border-radius: 3px;
+}
+nav input[type="submit"] {
+  height: 30px;
+  padding: 0 10px;
+  background-color: #ddd;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+}
+nav ul ul {
+    display: none;
+    position: absolute;
+    background-color: #fff;
+    border-radius: 3px;
+    padding: 0;
+    margin: 0;
+    box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
+}
+nav ul li:hover > ul {
+    display: flex;
+    flex-direction: column;
+}
+nav ul li {
+    position: relative;
+    margin-right: 20px;
+}
+nav ul li ul li {
+    margin: 0;
+    padding: 0;
+}
+nav ul li ul li a {
+    font-size: 16px;
+    color: #333;
+    padding: 10px;
+    display: block;
+    text-decoration: none;
+}
