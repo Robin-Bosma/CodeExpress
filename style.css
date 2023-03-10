@@ -78,3 +78,30 @@ nav ul li ul li a {
     display: block;
     text-decoration: none;
 }
+/* footer */
+#train { 
+  display: flex;
+  width: 95%;
+  justify-content: center;
+  padding-left: 20px;
+
+}
+footer { 
+  background-color: black;
+  color: white;
+}
+#footer-code { 
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: row;
+}
+
+#footer-copyright { 
+  padding-top: 2rem;
+  font-size: 20px;
+  display: flex;
+  justify-content: center;
+}
+#footer-html { 
+  padding-left: 10px;
+}
