@@ -1,13 +1,16 @@
 <?php
 
-$host = "localhost";
-$dbname = "codeexpress";
-$password = "";
-$username = "root";
+$localhost = 'localhost';
+$db = 'codeexpress';
+$user = 'root';
+$pass = '';
+$charset = 'utf8mb4';
 
-$conn = mysqli_connect($host, $username, $password, $dbname);
+$dsn = "mysql:host=$localhost;dbname=$db;charset=$charset";
 
-if (!$conn) {
-    die("Connection failed: " . mysqli_connect_error());
+try {
+    $pdo = new PDO($dsn, $user, $pass);
+    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+} catch (\PDOException $e) {
+    echo 'error connecting to database: ' . $e->getMessage();
 }
- ?>
