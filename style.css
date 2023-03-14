@@ -78,6 +78,54 @@ nav ul li ul li a {
     display: block;
     text-decoration: none;
 }
+/* index */
+.index-container { 
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap; 
+}
+#pasting-code { 
+  display: flex;
+  flex-direction: column;
+  color: white;
+}
+#pasting-code input { 
+
+}
+/* configuration */
+#container-row { 
+  display: flex;
+  flex-direction: row;
+}
+#configuration { 
+  display: flex;
+  flex-direction: column;
+  color: white;
+  margin-right: 50px;
+}
+#config-row { 
+  display: flex;
+  flex-direction: row;
+}
+#config-title { 
+  display: flex;
+  flex-direction: column;
+}
+#config-input { 
+  display: flex;
+  
+  flex-direction: column;
+}
+
+/* description */
+#description { 
+  color: white;
+}
+#description-input { 
+  height: 100px;
+  width: 100%;
+}
+
 /* footer */
 #train { 
   display: flex;
