@@ -9,13 +9,13 @@
 </head>
 <body>
     <Footer>
-        <h1> Code Express</h1>
+        <h1 class="footer-text">Code</h1>
         <div id="footer-codes">
-        <a id="footer-html">HTML |</a><a id="footer-html">CSS |</a><a id="footer-html">PHP |</a><a id="footer-html">JAVASCRIPT |</a><a id="footer-html">SQL</a>
+        <a id="footer-html" href="#">Overview</a> | <a id="footer-html" href="#">HTML</a> | <a id="footer-html" href="#">CSS</a> | <a id="footer-html" href="#">PHP</a> | <a id="footer-html" href="#">JavaScript</a> | <a id="footer-html" href="#">SQL</a>
         </div>
-        <img id="train" src="../img/train.png" alt="train"> 
+        <img id="train" src="../img/trainBG.png" alt="train"> 
         <div>
-            <a id="footer-copyright"> &copy;2023 - 2024 All rights reserved | Code Express</a>
+            <a id="footer-copyright" href="../page/index.php">Copyright &copy;2023 - 2024 All rights reserved | Code Express</a>
         </div>
     </Footer>
 </body>
