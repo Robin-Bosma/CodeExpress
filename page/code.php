@@ -1,6 +1,7 @@
 <?php
 session_start();
 include '../include/connection.php';
+$problem_description = 'kaas';
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -14,7 +15,7 @@ include '../include/connection.php';
         $problem_description = htmlspecialchars($_POST['problem_description']);
     }
     ?>
-    <title><?php echo $problem_description ?> - Name Website</title>
+    <title><?php echo $problem_description ?> - CodeExpress</title>
 </head>
 
 <body>
@@ -23,6 +24,7 @@ include '../include/connection.php';
     <?php include "../include/navbar.php" ?>
 
     <!-- Main Content -->
+    <h1><?php echo $problem_description ?></h1>
 
     <!-- Footer -->
     <?php include "../include/footer.php" ?>
