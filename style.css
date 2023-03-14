@@ -1,80 +1,74 @@
 body {
-    margin: auto;
-    min-height: 100vh;
-    background-color: #333;
+  margin: auto;
+  min-height: 100vh;
+  background-color: #333;
 }
 
 /* Navbar */
 
-nav {
-  background-color: #ffc61e;
-  color: #fff;
-  height: 60px;
+.navbar {
+  background-color: #FFC61E;
   display: flex;
-  align-items: center;
   justify-content: space-between;
+  align-items: center;
+  height: 60px;
   padding: 0 20px;
 }
-nav ul {
-    display: flex;
-    align-items: center;
-    margin: 0;
-    padding: 0;
-    list-style: none;
+
+.logo img {
+  height: 50px;
+  margin-right: 10px;
+  margin-top: 10px;
 }
-nav img {
-  height: 130px;
+
+.navbar-all-code-links {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  
 }
-nav a {
-  color: #fff;
+
+.navbar-all-code-links li {
+  margin: 0;
+  padding: 0;
+}
+
+.navbar-all-code-links a {
+  font-size: 30px;
+  color: #010066;
+  font-family: Cambria;
+  font-weight: bold;
   text-decoration: none;
-  font-size: 20px;
-  margin-right: 20px;
+  padding: 5px 10px;
 }
-nav form {
+
+.navbar-all-code-links a:hover {
+  background-color: #010066;
+  color: #FFC61E;
+  transition: ease-in 0.5s;
+}
+
+
+.search-bar {
   display: flex;
   align-items: center;
+  position: relative;
 }
-nav input[type="text"] {
-  height: 30px;
-  width: 200px;
-  padding: 5px;
+
+.search-bar input {
   border: none;
-  border-radius: 3px;
+  font-family: Cambria;
+  font-weight: bold;
+  padding: 8px;
+  font-size: 20px;
+  width: 400px;
+  margin-right: 10px;
+  border-radius: 5px;
 }
-nav input[type="submit"] {
+
+.search-bar img {
+  position: absolute;
+  right: 15px;
   height: 30px;
-  padding: 0 10px;
-  background-color: #ddd;
-  border: none;
-  border-radius: 3px;
-  cursor: pointer;
-}
-nav ul ul {
-    display: none;
-    position: absolute;
-    background-color: #fff;
-    border-radius: 3px;
-    padding: 0;
-    margin: 0;
-    box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
-}
-nav ul li:hover > ul {
-    display: flex;
-    flex-direction: column;
-}
-nav ul li {
-    position: relative;
-    margin-right: 20px;
-}
-nav ul li ul li {
-    margin: 0;
-    padding: 0;
-}
-nav ul li ul li a {
-    font-size: 16px;
-    color: #333;
-    padding: 10px;
-    display: block;
-    text-decoration: none;
 }

@@ -5,6 +5,8 @@ session_start();
 <html>
 
 <head>
+<title>Code Express</title>
+    <link rel="icon" href="../img/CodeExpress-logo.png" type="image/x-icon" />
     <style>
         <?php include '../style.css'; ?>
     </style>
