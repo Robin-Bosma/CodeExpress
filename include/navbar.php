@@ -11,7 +11,7 @@
       <a href="../page/index.php"><img src="../img/CodeExpress-logo-text.png" alt="Logo"></a>
     </div>
     <ul class="navbar-all-code-links">
-    <li><a href="#">Code</a></li>
+    <li><a href="#">Code | </a></li>
     <li><a href="#">HTML</a></li>
     <li><a href="#">CSS</a></li>
     <li><a href="#">PHP</a></li>
