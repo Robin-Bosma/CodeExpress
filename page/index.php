@@ -42,7 +42,6 @@ include "../include/insert-post.php";
                         </div>
                     </div>
                 </div>
-
                 <!-- description -->
                 <div id="description">
                     <h1> description </h1>
