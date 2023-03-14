@@ -2,7 +2,7 @@ body {
   margin: auto;
   min-height: 100vh;
   background-color: #ffffff;
-  /* overflow-x: hidden; */
+   overflow-x: hidden;
 }
 
 /* Navbar */
@@ -143,6 +143,12 @@ body {
   }
   75% {
     left: calc(-120% - 50px); /* trein rijdt langzaam naar links */
+  }
+  85% {
+    left: 0; /* trein staat stil */
+  }
+  90% {
+    left: 0; /* trein staat stil */
   }
   95% {
     left: 0; /* trein staat stil */
