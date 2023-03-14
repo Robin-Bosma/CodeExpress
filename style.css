@@ -5,7 +5,6 @@ body {
 }
 
 /* Navbar */
-
 .navbar {
   background-color: #FFC61E;
   display: flex;
@@ -49,8 +48,6 @@ body {
   color: #FFC61E;
   transition: ease-in 0.5s;
 }
-
-
 .search-bar {
   display: flex;
   align-items: center;
@@ -78,8 +75,49 @@ body {
   border-radius: 3px;
   cursor: pointer;
 }
+/* index */
+.index-container { 
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap; 
+}
+#pasting-code { 
+  display: flex;
+  flex-direction: column;
+  color: white;
+}
+/* configuration */
+#container-row { 
+  display: flex;
+  flex-direction: row;
+}
+#configuration { 
+  display: flex;
+  flex-direction: column;
+  color: white;
+  margin-right: 50px;
+}
+#config-row { 
+  display: flex;
+  flex-direction: row;
+}
+#config-title { 
+  display: flex;
+  flex-direction: column;
+}
+#config-input { 
+  display: flex;
+  flex-direction: column;
+}
 
-
+/* description */
+#description { 
+  color: white;
+}
+#description-input { 
+  height: 100px;
+  width: 100%;
+}
 /* Footer */
 #train { 
   display: flex;
