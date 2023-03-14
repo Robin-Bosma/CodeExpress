@@ -48,11 +48,37 @@ include "../include/insert-post.php";
                     <input id="description-input" name="description" type="text" value="" required>
                 </div>
             </div>
-    </div>
-    <!-- buttons post -->
-    <input type="submit" name="submit" value="Create public post">
-    <input type="submit" name="submit-privite" value="Create privite post">
-    </form>
+            <!-- buttons post -->
+            <input type="submit" name="submit" value="Create public post" onclick="">
+            <input type="submit" name="submit-privite" value="Create privite post">
+        </form>
+        <!-- history -->
+        <table>
+    <thead>
+        <tr>
+            <th>Title</th>
+            <th>Category</th>
+        </tr>
+    </thead>
+    <tbody>
+        <?php
+        // Retrieve data from the configuration table
+        $sql = "SELECT * FROM configuration";
+        $result = $pdo->query($sql);
+
+        if ($result->rowCount() > 0) {
+            while($row = $result->fetch()) {
+                echo "<tr>";
+                echo "<td>" . $row["title"] . "</td>";
+                echo "<td>" . $row["category"] . "</td>";
+                echo "</tr>";
+            }
+        } else {
+            echo "<tr><td colspan='2'>No results found</td></tr>";
+        }
+        ?>
+    </tbody>
+</table>
     <!-- Footer -->
     <?php include "../include/footer.php" ?>
 </body>
