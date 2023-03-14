@@ -13,7 +13,9 @@
         <div id="footer-codes">
         <a id="footer-html" href="#">Overview</a> | <a id="footer-html" href="#">HTML</a> | <a id="footer-html" href="#">CSS</a> | <a id="footer-html" href="#">PHP</a> | <a id="footer-html" href="#">JavaScript</a> | <a id="footer-html" href="#">SQL</a>
         </div>
-        <img id="train" src="../img/trainBG.png" alt="train"> 
+        <div id="train-container">
+  <img id="train" src="../img/trainBG.png" alt="train"> 
+</div> 
         <div>
             <a id="footer-copyright" href="../page/index.php">Copyright &copy;2023 - 2024 All rights reserved | Code Express</a>
         </div>

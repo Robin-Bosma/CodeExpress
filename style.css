@@ -2,6 +2,7 @@ body {
   margin: auto;
   min-height: 100vh;
   background-color: #ffffff;
+  /* overflow-x: hidden; */
 }
 
 /* Navbar */
@@ -118,18 +119,43 @@ body {
   height: 100px;
   width: 100%;
 }
+
 /* Footer */
-#train { 
-  display: flex;
+#train {
+  display: block;
   width: 90%;
-  justify-content: center;
-  transition: ease 3s;
-  padding-left: 5%;
+  margin: 0 auto;
+  position: relative;
+  left: 0;
+  animation: move-train 30s infinite;
+  animation-delay: 10s; /* add a delay of 5 seconds before starting the animation */
 }
+
+@keyframes move-train {
+  0% {
+    left: 0; /* startpositie */
+  }
+  25% {
+    left: calc(150% - 0%); /* trein rijdt langzaam naar rechts */
+  }
+  50% {
+    left: calc(-120% - 0%); /* trein rijdt naar links met een constante snelheid */
+  }
+  75% {
+    left: calc(-120% - 50px); /* trein rijdt langzaam naar links */
+  }
+  95% {
+    left: 0; /* trein staat stil */
+  }
+  100% {
+    left: 0; /* trein staat stil */
+  }
+}
+
 #train:hover {
-  transform: translateX(55px);
-  transition: ease 3s;
+  animation-play-state: paused;
 }
+
 footer { 
   background-color: #252525;
   color: white;
