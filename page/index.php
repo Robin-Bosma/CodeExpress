@@ -1,10 +1,10 @@
 <?php
 session_start();
-include "../include/connection.php"
+include "../include/connection.php";
+include "../include/insert-post.php";
 ?>
 <!DOCTYPE html>
 <html>
-
 <head>
 <title>Code Express</title>
     <link rel="icon" href="../img/CodeExpress-logo.png" type="image/x-icon" />
@@ -23,6 +23,7 @@ include "../include/connection.php"
             <input type="text" value="">
         </div>
         <!-- configuration -->
+        <form method="post" action="../page/index.php">
         <div id="container-row">
             <div id="configuration">
                 <h1>Configuration</h1>
@@ -48,8 +49,9 @@ include "../include/connection.php"
         </div>
     </div>
     <!-- buttons post -->
-    <input type="submit" name="submit-public" value="Create public post">
+    <input type="submit" name="submit" value="Create public post">
     <input type="submit" name="submit-privite" value="Create privite post">
+</form>
     <!-- Footer -->
     <?php include "../include/footer.php"?>
 </body>
