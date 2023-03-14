@@ -71,4 +71,38 @@ body {
   position: absolute;
   right: 15px;
   height: 30px;
+  padding: 0 10px;
+  background-color: #ddd;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+
+/* Footer */
+#train { 
+  display: flex;
+  width: 95%;
+  justify-content: center;
+  padding-left: 20px;
+
+}
+footer { 
+  background-color: black;
+  color: white;
+}
+#footer-code { 
+  max-width: 25%;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+}
+#footer-copyright { 
+  padding-top: 2rem;
+  font-size: 20px;
+  display: flex;
+  justify-content: center;
+}
+#footer-html { 
+  padding-left: 10px;
 }
