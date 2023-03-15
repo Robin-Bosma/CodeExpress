@@ -14,9 +14,13 @@
     <li><a href="overview.php">Overview</a></li>
     <li><div class="separator">|</div></li>
     <li><a href="#">HTML</a></li>
+    <li><div class="separator">|</div></li>
     <li><a href="#">CSS</a></li>
+    <li><div class="separator">|</div></li>
     <li><a href="#">PHP</a></li>
+    <li><div class="separator">|</div></li>
     <li><a href="#">JavaScript</a></li>
+    <li><div class="separator">|</div></li>
     <li><a href="#">SQL</a></li>
 </ul>
 
