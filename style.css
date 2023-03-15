@@ -3,6 +3,8 @@ body {
   min-height: 100vh;
   background-color: #ffffff;
   overflow-x: hidden;
+  font-family: Cambria;
+  font-weight: bold;
 }
 
 /* Navbar */
@@ -88,55 +90,52 @@ body {
 }
 
 /* index */
-.index-container {
-  display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
+
+.config-title {
+  font-size: 20px;
 }
 
-#pasting-code {
-  display: flex;
-  flex-direction: column;
-  color: white;
+#title {
+  max-width: 200px;
+  max-height: 20px;
+  margin-top: 20px;
+  margin-left: 5px;
 }
 
-/* configuration */
-#container-row {
+.config-tags {
+  font-size: 20px;
+}
+
+#tags {
+  max-width: 200px;
+  max-height: 20px;
+  margin-top: 20px;
+  margin-left: 5px;
+}
+
+.config-category {
+  font-size: 20px;
+}
+
+.configurations {
   display: flex;
   flex-direction: row;
 }
 
-#configuration {
-  display: flex;
-  flex-direction: column;
-  color: white;
-  margin-right: 50px;
-}
-
-#config-row {
+.category {
   display: flex;
   flex-direction: row;
+  align-items: center;
+  margin-bottom: 10px;
 }
 
-#config-title {
+#checkboxes {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  align-items: center;
 }
 
-#config-input {
-  display: flex;
-  flex-direction: column;
-}
 
-/* description */
-#description {
-  color: white;
-}
-
-#description-input {
-  height: 100px;
-  width: 100%;
-}
 
 /* Footer */
 #train {
