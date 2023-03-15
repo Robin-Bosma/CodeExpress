@@ -68,26 +68,29 @@ body {
   border: none;
   font-family: Cambria;
   font-weight: bold;
-  padding: 8px 10px;
+  padding: 8px;
   font-size: 20px;
   width: 400px;
-  margin-right: 45px;
+  margin-right: 10px;
   border-radius: 5px;
   position: relative;
   z-index: 1;
-  box-sizing: border-box;
 }
 
 .search-bar img {
   position: absolute;
-  right: 0;
+  right: 15px;
   height: 30px;
+  padding: 0 10px;
   background-color: white;
   border: none;
   border-radius: 3px;
   cursor: pointer;
   z-index: 2;
+  /* stel de z-index van de img in op 2 */
 }
+
+
 
 /* index */
 
@@ -258,7 +261,7 @@ footer {
   cursor: pointer;
 }
 
-.c-row {
+.code-container {
   display: flex;
   flex-direction: row;
 }
@@ -267,10 +270,27 @@ footer {
   display: flex;
   justify-content: left;
   flex-direction: column;
+  width: 30%;
+  margin: 5px;
 }
 
 .right-container {
   display: flex;
   justify-content: right;
   flex-direction: column;
+  width: 15%;
+  margin: 5px;
+}
+
+.right-container-content {
+  background-color: grey;
+}
+
+.title-box {
+  background-color: grey;
+}
+
+.flex-direction-row {
+  display: flex;
+  flex-direction: row;
 }
