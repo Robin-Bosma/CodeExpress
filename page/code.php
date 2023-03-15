@@ -1,7 +1,19 @@
 <?php
 session_start();
 include '../include/connection.php';
+
+if (isset($_GET['id'])) {
+    $id = intval($_GET['id']);
+    $query = "SELECT title FROM configuration WHERE id = $id";
+    $result = mysqli_query($connection, $query);
+    $row = mysqli_fetch_assoc($result);
+    $title = $row['title'];
+} else {
+    $title = "CodeExpress";
+}
+
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
