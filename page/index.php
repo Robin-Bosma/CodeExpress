@@ -20,7 +20,7 @@ include "../include/insert-post.php";
     
     <form method="post" action="../page/index.php">
     <h1 class="config-code">Code:</h1>
-    <textarea cols="80" rows="10" id="code" type="text" required name="textbox">
+    <textarea cols="80" rows="10" id="code" type="text" name="textbox" required>
 </textarea>
  <h1 class="config">Configurations</h1>
  <div class="configurations"><p class="config-title">Title:</p> <input type="text" id="title" name="title" required></div>
