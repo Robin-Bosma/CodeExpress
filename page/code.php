@@ -48,7 +48,7 @@ if (isset($_GET['id'])) {
     function getCode()
     {
         global $code;
-        return $code->code;
+        return htmlspecialchars($code->code);
     }
 
     function getDescription()

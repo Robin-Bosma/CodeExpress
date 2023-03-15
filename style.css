@@ -94,6 +94,21 @@ body {
 
 /* index */
 
+#code {
+  max-width: 800px;
+  width: 800px;
+  max-height: 200px;
+  height: 200px;
+  margin-left: 5px;
+}
+
+.config {
+  margin-left: 10px;
+  border-bottom: 3px solid black;
+  width: 800px;
+  display: inline-block; 
+}
+
 .config-title {
   font-size: 20px;
 }
@@ -137,8 +152,6 @@ body {
   flex-direction: row;
   align-items: center;
 }
-
-
 
 /* Footer */
 #train {
