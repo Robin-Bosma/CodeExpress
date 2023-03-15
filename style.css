@@ -229,3 +229,9 @@ footer {
   margin-top: 10px;
   cursor: pointer;
 }
+
+.c-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
