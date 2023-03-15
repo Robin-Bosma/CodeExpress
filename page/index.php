@@ -18,10 +18,10 @@ include "../include/insert-post.php";
     <!-- Navbar -->
     <?php include "../include/navbar.php" ?>
     
-    <form></form>
+    <form>
     <h1>Code</h1>
     <input type="text" id="code" name="code" required>
- <h1>Configurations</h1>
+ <h1 class="config">Configurations</h1>
  <div class="configurations"><p class="config-title">Title:</p> <input type="text" id="title" name="title" required></div>
  <div class="configurations"><p class="config-tags">Tags:</p> <input type="text" id="tags" name="tags"></div>
 
