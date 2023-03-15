@@ -11,11 +11,16 @@
       <a href="../page/index.php"><img src="../img/CodeExpress-logo-text.png" alt="Logo"></a>
     </div>
     <ul class="navbar-all-code-links">
-    <li><a href="overview.php">Code | </a></li>
+    <li><a href="overview.php">Overview</a></li>
+    <li><div class="separator">|</div></li>
     <li><a href="#">HTML</a></li>
+    <li><div class="separator">|</div></li>
     <li><a href="#">CSS</a></li>
+    <li><div class="separator">|</div></li>
     <li><a href="#">PHP</a></li>
+    <li><div class="separator">|</div></li>
     <li><a href="#">JavaScript</a></li>
+    <li><div class="separator">|</div></li>
     <li><a href="#">SQL</a></li>
 </ul>
 
