@@ -262,7 +262,7 @@ footer {
   cursor: pointer;
 }
 
-.c-row {
+.code-container {
   display: flex;
   flex-direction: row;
 }

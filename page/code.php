@@ -23,26 +23,28 @@ include '../include/connection.php';
     <?php include "../include/navbar.php" ?>
 
     <!-- Main Content -->
-    <div class="left-container">
-        <h1><?php echo $title ?></h1>
-        <div class="c-row">
-            <h1>PHP</h1>
-            <h1><?php echo 'date created' ?></h1>
-            <h1><?php echo 'date edited' ?></h1>
-            <button id="copy-btn" onclick="copyToClipboard()">Copy Code</button>
+    <div class="code-container">
+        <div class="left-container">
+            <h1><?php echo $title ?></h1>
+            <div>
+                <h1>PHP</h1>
+                <h1><?php echo 'date created' ?></h1>
+                <h1><?php echo 'date edited' ?></h1>
+                <button id="copy-btn" onclick="copyToClipboard()">Copy Code</button>
+            </div>
+            <h1>Code:</h1>
+            <div id="code"></div>
+
+            <h1>Comments</h1>
+            <input type="text" placeholder="Write your comment here">
+            <input type="submit" value="Add Comment">
         </div>
-        <h1>Code:</h1>
-        <div id="code"></div>
-
-        <h1>Comments</h1>
-        <input type="text" placeholder="Write your comment here">
-        <input type="submit" value="Add Comment">
+        <div class="right-container">
+            <h1>Post History</h1>
+            <p>PHP code for a Topo exam</p>
+        </div>
     </div>
-    <div class="right-container">
-        <h1>Post History</h1>
-        <p>PHP code for a Topo exam</p>
-    </div>
-
+    
     <!-- Footer -->
     <?php include "../include/footer.php" ?>
 
