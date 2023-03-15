@@ -284,11 +284,11 @@ footer {
 }
 
 .right-container-content {
-  background-color: grey;
+  background-color: lightgrey;
 }
 
 .title-box {
-  background-color: grey;
+  background-color: lightgrey;
   height: 60px;
 }
 
@@ -303,7 +303,8 @@ footer {
 
 .code-input {
   width: 200px;
-  background-color: grey;
+  height: 30px;
+  background-color: lightgrey;
 }
 
 .code-input::placeholder {
@@ -312,5 +313,12 @@ footer {
 
 .code-button {
   width: 100px;
-  background-color: grey;
+  height: 30px;
+  background-color: lightgrey;
+}
+
+.line {
+  border-bottom: 3px solid black;
+  width: 230px;
+  display: inline-block; 
 }
