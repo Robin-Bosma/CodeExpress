@@ -24,13 +24,18 @@ include '../include/connection.php';
 
     <!-- Main Content -->
     <h1><?php echo $title ?></h1>
+    <div class="c-row">
+        <h1>PHP</h1>
+        <h1><?php echo 'date created' ?></h1>
+        <h1><?php echo 'date edited' ?></h1>
+        <button id="copy-btn" onclick="copyToClipboard()">Copy Code</button>
+    </div>
+    <h1>Code:</h1>
+    <div id="code"></div>
 
-    <h1>PHP</h1>
-    <h1><?php echo $date_created ?></h1>
-    <h1><?php echo $date_edited ?></h1>
-    <button id="copy-btn" onclick="copyToClipboard()">Copy Code</button>
-
-    <div id="code"> <button>Click me</button> <!-- your code here --> </div>
+    <h1>Comments</h1>
+    <input type="text" placeholder="Write your comment here">
+    <input type="submit" value="Add Comment">
 
     <!-- Footer -->
     <?php include "../include/footer.php" ?>
@@ -40,7 +45,7 @@ include '../include/connection.php';
 <script>
     function copyToClipboard() {
         var codeDiv = document.getElementById("code");
-        var codeText = codeDiv.textContent;
+        var codeText = codeDiv.innerHTML;
         navigator.clipboard.writeText(codeText).then(function() {
             alert("Code copied to clipboard!");
         }, function() {
