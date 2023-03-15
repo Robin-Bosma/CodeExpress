@@ -48,7 +48,7 @@ if (isset($_GET['id'])) {
     function getCode()
     {
         global $code;
-        return $code->code;
+        return htmlspecialchars($code->code);
     }
 
     function getDescription()
@@ -82,7 +82,7 @@ if (isset($_GET['id'])) {
             </div>
             <h1>Code:</h1>
             <div id="code">
-                <p><?php echo getCode(); ?></p>
+                <?php echo getCode(); ?>
             </div>
 
             <h1>Comments</h1>
