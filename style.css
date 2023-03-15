@@ -94,12 +94,24 @@ body {
 
 /* index */
 
+.config-code {
+  margin-left: 10px;
+}
+
 #code {
   max-width: 800px;
+  min-width: 800px;
   width: 800px;
-  max-height: 200px;
+  margin-left: 10px;
+  background-color: lightgray;
+  text-align: left;
+  text-align: start;
+  text-align: inherit;
   height: 200px;
-  margin-left: 5px;
+}
+
+#code input:focus {
+  outline: none;
 }
 
 .config {
@@ -111,6 +123,7 @@ body {
 
 .config-title {
   font-size: 20px;
+  margin-left: 10px;
 }
 
 #title {
@@ -122,6 +135,7 @@ body {
 
 .config-tags {
   font-size: 20px;
+  margin-left: 10px;
 }
 
 #tags {
@@ -133,6 +147,7 @@ body {
 
 .config-category {
   font-size: 20px;
+  margin-left: 10px;
 }
 
 .configurations {

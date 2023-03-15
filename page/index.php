@@ -19,8 +19,9 @@ include "../include/insert-post.php";
     <?php include "../include/navbar.php" ?>
     
     <form>
-    <h1>Code</h1>
-    <input type="text" id="code" name="code" required>
+    <h1 class="config-code">Code:</h1>
+    <textarea cols="80" rows="10" id="code" type="text" required name="textbox">
+</textarea>
  <h1 class="config">Configurations</h1>
  <div class="configurations"><p class="config-title">Title:</p> <input type="text" id="title" name="title" required></div>
  <div class="configurations"><p class="config-tags">Tags:</p> <input type="text" id="tags" name="tags"></div>
@@ -40,7 +41,7 @@ include "../include/insert-post.php";
     <label for="SQL">SQL</label><br>
   </div>
 </div>
-<div><input type="submit" id="submit" value="Create Public post"> <input type="submit" id="submit" value="Create Private post"></div>
+<div><input type="submit" id="submit" href="code.php" value="Create Public post"> <input type="submit" id="submit" value="Create Private post"></div>
 </form>
     <tbody>
         <?php
