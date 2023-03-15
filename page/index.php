@@ -17,49 +17,31 @@ include "../include/insert-post.php";
 <body>
     <!-- Navbar -->
     <?php include "../include/navbar.php" ?>
-    <!-- Main Content -->
-    <div class="index-container">
+    
+    <form></form>
+    <h1>Code</h1>
+    <input type="text" id="code" name="code" required>
+ <h1>Configurations</h1>
+ <div class="configurations"><p class="config-title">Title:</p> <input type="text" id="title" name="title" required></div>
+ <div class="configurations"><p class="config-tags">Tags:</p> <input type="text" id="tags" name="tags"></div>
 
-        <!-- configuration -->
-        <form method="post" action="../page/index.php">
-            <div id="container-row">
-                <div id="configuration">
-                    <h1>Configuration</h1>
-                    <div id="config-row">
-                        <div id="confing-title">
-                            <div id="pasting-code">
-                                <h1> Code:</h1>
-                                <input type="text" name="code" value="" required>
-                            </div>
-                            <h2 id="title-mr">Title:</h2>
-                            <h2 id="category-mr">Category:</h2>
-                            <h2 id="date-mr">Date:</h2>
-                        </div>
-                        <div id="config-input">
-                            <input name="title" type="text" name="title" required>
-                            <input name="category" type="text" name="category" required>
-                            <input name="date" type="date" name="date" required>
-                        </div>
-                    </div>
-                </div>
-                <!-- description -->
-                <div id="description">
-                    <h1> description </h1>
-                    <input id="description-input" name="description" type="text" value="" required>
-                </div>
-            </div>
-            <!-- buttons post -->
-            <input type="submit" name="submit" value="Create public post" onclick="">
-            <input type="submit" name="submit-privite" value="Create privite post">
-        </form>
-        <!-- history -->
-        <table>
-    <thead>
-        <tr>
-            <th>Title</th>
-            <th>Category</th>
-        </tr>
-    </thead>
+ <div class="category" required>
+  <p class="config-category">Category:</p>
+  <div id="checkboxes">
+    <input type="checkbox" id="checkbox-codes" name="HTML" value="HTML">
+    <label for="HTML">HTML</label><br>
+    <input type="checkbox" id="checkbox-codes" name="CSS" value="CSS">
+    <label for="CSS">CSS</label><br>
+    <input type="checkbox" id="checkbox-codes" name="PHP" value="PHP">
+    <label for="PHP">PHP</label><br>
+    <input type="checkbox" id="checkbox-codes" name="JavaScript" value="JavaScript">
+    <label for="JavaScript">JavaScript</label><br>
+    <input type="checkbox" id="checkbox-codes" name="SQL" value="SQL">
+    <label for="SQL">SQL</label><br>
+  </div>
+</div>
+<div><input type="submit" id="submit" value="Create Public post"> <input type="submit" id="submit" value="Create Private post"></div>
+</form>
     <tbody>
         <?php
         // Retrieve data from the configuration table
