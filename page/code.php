@@ -48,7 +48,7 @@ if (isset($_GET['id'])) {
     function getCode()
     {
         global $code;
-        return $code->code;
+        return htmlspecialchars($code->code);
     }
 
     function getDescription()
@@ -82,17 +82,21 @@ if (isset($_GET['id'])) {
             </div>
             <h1>Code:</h1>
             <div id="code">
-                <p><?php echo getCode(); ?></p>
+                <?php echo getCode(); ?>
             </div>
 
-            <h1>Comments</h1>
-            <input class="code-input" type="text" placeholder="Write your comment here">
-            <input class="code-button" type="submit" value="Add Comment">
+            <div>
+                <h1>Comments</h1>
+                <div class="flex-direction-column">
+                    <input class="code-input" type="text" placeholder="Write your comment here">
+                    <input class="code-button" type="submit" value="Add Comment">
+                </div>
+            </div>
         </div>
         <div class="right-container">
             <h1>Post History</h1>
             <div class="right-container-content">
-                <p>"Title problem"</p>
+                <p class="line">"Title problem"</p>
                 <div class="flex-direction-row">
                     <p class="margin">"Category"</p>
                     <p class="margin">"Date created"</p>
