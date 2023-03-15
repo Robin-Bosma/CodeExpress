@@ -2,7 +2,7 @@ body {
   margin: auto;
   min-height: 100vh;
   background-color: #ffffff;
-   overflow-x: hidden;
+  overflow-x: hidden;
 }
 
 /* Navbar */
@@ -26,7 +26,7 @@ body {
   list-style: none;
   margin: 0;
   padding: 0;
-  
+
 }
 
 .navbar-all-code-links li {
@@ -49,10 +49,11 @@ body {
   color: #FFC61E;
   transition: ease-in 0.5s;
 }
+
 .separator {
   font-size: 25px;
   font-family: Cambria;
-    font-weight: bold;
+  font-weight: bold;
 }
 
 .search-bar {
@@ -65,69 +66,74 @@ body {
   border: none;
   font-family: Cambria;
   font-weight: bold;
-  padding: 8px;
+  padding: 8px 10px;
   font-size: 20px;
   width: 400px;
-  margin-right: 10px;
+  margin-right: 45px;
   border-radius: 5px;
   position: relative;
   z-index: 1;
+  box-sizing: border-box;
 }
 
 .search-bar img {
   position: absolute;
-  right: 15px;
+  right: 0;
   height: 30px;
-  padding: 0 10px;
   background-color: white;
   border: none;
   border-radius: 3px;
   cursor: pointer;
-  z-index: 2; /* stel de z-index van de img in op 2 */
+  z-index: 2;
 }
-
-
 
 /* index */
-.index-container { 
+.index-container {
   display: flex;
   flex-direction: column;
-  flex-wrap: wrap; 
+  flex-wrap: wrap;
 }
-#pasting-code { 
+
+#pasting-code {
   display: flex;
   flex-direction: column;
   color: white;
 }
+
 /* configuration */
-#container-row { 
+#container-row {
   display: flex;
   flex-direction: row;
 }
-#configuration { 
+
+#configuration {
   display: flex;
   flex-direction: column;
   color: white;
   margin-right: 50px;
 }
-#config-row { 
+
+#config-row {
   display: flex;
   flex-direction: row;
 }
-#config-title { 
+
+#config-title {
   display: flex;
   flex-direction: column;
 }
-#config-input { 
+
+#config-input {
   display: flex;
   flex-direction: column;
 }
 
 /* description */
-#description { 
+#description {
   color: white;
 }
-#description-input { 
+
+#description-input {
   height: 100px;
   width: 100%;
 }
@@ -140,33 +146,49 @@ body {
   position: relative;
   left: 0;
   animation: move-train 30s infinite;
-  animation-delay: 10s; /* add a delay of 5 seconds before starting the animation */
+  animation-delay: 10s;
+  /* add a delay of 5 seconds before starting the animation */
 }
 
 @keyframes move-train {
   0% {
-    left: 0; /* startpositie */
+    left: 0;
+    /* startpositie */
   }
+
   25% {
-    left: calc(150% - 0%); /* trein rijdt langzaam naar rechts */
+    left: calc(150% - 0%);
+    /* trein rijdt langzaam naar rechts */
   }
+
   50% {
-    left: calc(-120% - 0%); /* trein rijdt naar links met een constante snelheid */
+    left: calc(-120% - 0%);
+    /* trein rijdt naar links met een constante snelheid */
   }
+
   75% {
-    left: calc(-120% - 50px); /* trein rijdt langzaam naar links */
+    left: calc(-120% - 50px);
+    /* trein rijdt langzaam naar links */
   }
+
   85% {
-    left: 0; /* trein staat stil */
+    left: 0;
+    /* trein staat stil */
   }
+
   90% {
-    left: 0; /* trein staat stil */
+    left: 0;
+    /* trein staat stil */
   }
+
   95% {
-    left: 0; /* trein staat stil */
+    left: 0;
+    /* trein staat stil */
   }
+
   100% {
-    left: 0; /* trein staat stil */
+    left: 0;
+    /* trein staat stil */
   }
 }
 
@@ -174,17 +196,19 @@ body {
   animation-play-state: paused;
 }
 
-footer { 
+footer {
   background-color: #252525;
   color: white;
 }
+
 .footer-text {
   margin-top: 1%;
   font-family: Cambria;
   font-weight: bold;
   margin-left: 0.6%;
 }
-#footer-copyright { 
+
+#footer-copyright {
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
   font-size: 20px;
@@ -196,7 +220,8 @@ footer {
   text-decoration: none;
   color: white;
 }
-#footer-html { 
+
+#footer-html {
   font-family: Cambria;
   font-weight: bold;
   padding-right: 0.2rem;
@@ -205,6 +230,7 @@ footer {
   text-decoration: none;
   color: white;
 }
+
 #footer-codes {
   margin-left: 0.5%;
 }
@@ -220,7 +246,8 @@ footer {
 /* code.php */
 
 #copy-btn {
-  background-color: #4CAF50; /* Green */
+  background-color: #4CAF50;
+  /* Green */
   border: none;
   color: white;
   padding: 10px 20px;
@@ -235,5 +262,16 @@ footer {
 .c-row {
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
+}
+
+.left-container {
+  display: flex;
+  justify-content: left;
+  flex-direction: column;
+}
+
+.right-container {
+  display: flex;
+  justify-content: right;
+  flex-direction: column;
 }
