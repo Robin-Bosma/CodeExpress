@@ -37,7 +37,9 @@ if (isset($_GET['id'])) {
     <!-- Main Content -->
     <div class="code-container">
         <div class="left-container">
-            <h1><?php echo $title ?></h1>
+            <div class="title-box">
+                <h1><?php echo $title ?></h1>
+            </div>
             <div>
                 <h1>PHP</h1>
                 <h1><?php echo 'date created' ?></h1>
@@ -53,10 +55,16 @@ if (isset($_GET['id'])) {
         </div>
         <div class="right-container">
             <h1>Post History</h1>
-            <p>PHP code for a Topo exam</p>
+            <div class="right-container-content">
+                <p>PHP code for a Topo exam</p>
+                <div class="flex-direction-row">
+                    <p>PHP</p>
+                    <p>Date created</p>
+                </div>
+            </div>
         </div>
     </div>
-    
+
     <!-- Footer -->
     <?php include "../include/footer.php" ?>
 

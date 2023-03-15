@@ -268,10 +268,27 @@ footer {
   display: flex;
   justify-content: left;
   flex-direction: column;
+  width: 30%;
+  margin: 5px;
 }
 
 .right-container {
   display: flex;
   justify-content: right;
   flex-direction: column;
+  width: 15%;
+  margin: 5px;
+}
+
+.right-container-content {
+  background-color: grey;
+}
+
+.title-box {
+  background-color: grey;
+}
+
+.flex-direction-row {
+  display: flex;
+  flex-direction: row;
 }
