@@ -40,26 +40,24 @@ if (isset($_GET['id'])) {
             <div class="title-box">
                 <h1><?php echo $title ?></h1>
             </div>
-            <div>
-                <h1>PHP</h1>
-                <h1><?php echo 'date created' ?></h1>
-                <h1><?php echo 'date edited' ?></h1>
+            <div class="flex-direction-row">
+                <h2 class="margin">"Category"</h2>
+                <h2 class="margin"><?php echo '..date created' ?></h2>
                 <button id="copy-btn" onclick="copyToClipboard()">Copy Code</button>
             </div>
             <h1>Code:</h1>
             <div id="code"></div>
-
             <h1>Comments</h1>
-            <input type="text" placeholder="Write your comment here">
-            <input type="submit" value="Add Comment">
+            <input class="code-input" type="text" placeholder="Write your comment here">
+            <input class="code-button" type="submit" value="Add Comment">
         </div>
         <div class="right-container">
             <h1>Post History</h1>
             <div class="right-container-content">
-                <p>PHP code for a Topo exam</p>
+                <p>"Title problem"</p>
                 <div class="flex-direction-row">
-                    <p>PHP</p>
-                    <p>Date created</p>
+                    <p class="margin">"Category"</p>
+                    <p class="margin">"Date created"</p>
                 </div>
             </div>
         </div>

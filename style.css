@@ -260,6 +260,7 @@ footer {
   font-size: 16px;
   margin-top: 10px;
   cursor: pointer;
+  margin-left: 50px;
 }
 
 .code-container {
@@ -271,7 +272,7 @@ footer {
   display: flex;
   justify-content: left;
   flex-direction: column;
-  width: 30%;
+  width: 80%;
   margin: 5px;
 }
 
@@ -289,9 +290,28 @@ footer {
 
 .title-box {
   background-color: grey;
+  height: 60px;
 }
 
 .flex-direction-row {
   display: flex;
   flex-direction: row;
+}
+
+.margin {
+  margin: 5px;
+}
+
+.code-input {
+  width: 200px;
+  background-color: grey;
+}
+
+.code-input::placeholder {
+  color: black;
+}
+
+.code-button {
+  width: 100px;
+  background-color: grey;
 }
