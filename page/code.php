@@ -4,9 +4,9 @@ include '../include/connection.php';
 
 if (isset($_GET['id'])) {
     $id = intval($_GET['id']);
-    $query = "SELECT title FROM configuration WHERE id = $id";
-    $result = mysqli_query($connection, $query);
-    $row = mysqli_fetch_assoc($result);
+    $stmt = $pdo->prepare("SELECT title FROM configuration WHERE id = ?");
+    $stmt->execute([$id]);
+    $row = $stmt->fetch(PDO::FETCH_ASSOC);
     $title = $row['title'];
 } else {
     $title = "CodeExpress";
@@ -35,25 +35,19 @@ if (isset($_GET['id'])) {
     <?php include "../include/navbar.php" ?>
 
     <!-- Main Content -->
-    <div class="left-container">
-        <h1><?php echo $title ?></h1>
-        <div class="c-row">
-            <h1>PHP</h1>
-            <h1><?php echo 'date created' ?></h1>
-            <h1><?php echo 'date edited' ?></h1>
-            <button id="copy-btn" onclick="copyToClipboard()">Copy Code</button>
-        </div>
-        <h1>Code:</h1>
-        <div id="code"></div>
+    <h1><?php echo $title ?></h1>
+    <div class="c-row">
+        <h1>PHP</h1>
+        <h1><?php echo 'date created' ?></h1>
+        <h1><?php echo 'date edited' ?></h1>
+        <button id="copy-btn" onclick="copyToClipboard()">Copy Code</button>
+    </div>
+    <h1>Code:</h1>
+    <div id="code"></div>
 
-        <h1>Comments</h1>
-        <input type="text" placeholder="Write your comment here">
-        <input type="submit" value="Add Comment">
-    </div>
-    <div class="right-container">
-        <h1>Post History</h1>
-        <p>PHP code for a Topo exam</p>
-    </div>
+    <h1>Comments</h1>
+    <input type="text" placeholder="Write your comment here">
+    <input type="submit" value="Add Comment">
 
     <!-- Footer -->
     <?php include "../include/footer.php" ?>
@@ -61,7 +55,6 @@ if (isset($_GET['id'])) {
 </body>
 
 <script>
-    // The function for copying code
     function copyToClipboard() {
         var codeDiv = document.getElementById("code");
         var codeText = codeDiv.innerHTML;
