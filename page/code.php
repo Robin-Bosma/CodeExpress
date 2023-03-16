@@ -70,57 +70,41 @@ if (isset($_GET['id'])) {
     <?php include "../include/navbar.php" ?>
 
     <!-- Main Content -->
-    <div class="code-container">
-        <div class="left-container">
-            <h1 class="title-box"><?php echo getTitle(); ?></h1>
-            <div class="header-box">
-                <h2 class="margin"><?php echo getCategory(); ?></h2>
-                <h2 class="margin"><?php echo getDatum(); ?></h2>
-                <button class="flex-end" id="copy-btn" onclick="copyToClipboard()">Copy Code</button>
-            </div>
-            <h1>Code:</h1>
-            <div id="code">
-                <?php echo getCode(); ?>
-            </div>
-
-            <div>
-                <h1 class="config">Comments</h1>
-                <div class="flex-direction-column">
-                    <input class="code-input" type="text" placeholder="Write your comment here">
-                    <input class="code-button" type="submit" value="Add Comment">
-                </div>
-            </div>
-        </div>
-        <div class="right-container">
-            <h1>Post History</h1>
-            <div class="right-container-content">
-                <div class="line">
-                    <div class="flex-direction-row-height">
-                        <p class="margin-righter">Title</p>
-                        <p>Category</p>
-                    </div>
-                </div>
-                <table>
-                    <?php
-                    // Retrieve data from the configuration table
-                    $sql = "SELECT * FROM configuration";
-                    $result = $pdo->query($sql);
-
-                    if ($result->rowCount() > 0) {
-                        while ($row = $result->fetch()) {
-                            echo "<tr>";
-                            echo "<td><a class='margin-right' href='../page/code.php?id=" . $row['id'] . "'>" . $row["title"] . "</a></td>";
-                            echo "<td>" . $row["category"] . "</td>";
-                            echo "</tr>";
-                        }
-                    } else {
-                        echo "<tr><td colspan='2'>No results found</td></tr>";
-                    }
-                    ?>
-                </table>
-            </div>
-        </div>
+    <h1><?php echo $title ?></h1>
+    <div class="c-row">
+        <h1>PHP</h1>
+        <h1><?php echo 'date created' ?></h1>
+        <h1><?php echo 'date edited' ?></h1>
+        <button id="copy-btn" onclick="copyToClipboard()">Copy Code</button>
     </div>
+    <h1>Code:</h1>
+    <div id="code"></div>
+    <!-- comments -->
+    <h1>Comments</h1>
+    <form method="post" action="../page/code.php">
+        <input type="text" name="comment" placeholder="Write your comment here" required>
+        <input type="submit" value="Add Comment">
+    </form>
+
+    <?php
+    if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+        $stmt = $pdo->prepare('SELECT COUNT(*) FROM comments WHERE comment = ?');
+        $stmt->execute([$_POST['comment']]);
+        $count = $stmt->fetchColumn();
+        if ($count == 0) {
+            $stmt = $pdo->prepare('INSERT INTO comments (comment, date) VALUES (?, ?)');
+            $stmt->execute([$_POST['comment'], date('Y-m-d H:i:s')]);
+        } else {
+            echo '<p style="color: red;">This comment has already been submitted.</p>';
+        }
+    }
+
+    $stmt = $pdo->query('SELECT * FROM comments');
+
+    while ($row = $stmt->fetch()) {
+        echo '<p><strong>' . $row['comment'] . '</strong> (' . $row['date'] . ')</p>';
+    }
+    ?>
 
     <!-- Footer -->
     <?php include "../include/footer.php" ?>

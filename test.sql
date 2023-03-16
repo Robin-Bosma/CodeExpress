@@ -7,3 +7,9 @@ CREATE TABLE configuration (
   description TEXT
 );
 
+
+CREATE TABLE comments (
+    id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    comment TEXT NOT NULL,
+    date DATE
+);
