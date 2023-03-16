@@ -335,3 +335,13 @@ footer {
   width: 230px;
   display: inline-block; 
 }
+
+.flex-end {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.header-box {
+  display: flex;
+  flex-direction: row;
+}

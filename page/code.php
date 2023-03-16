@@ -75,10 +75,10 @@ if (isset($_GET['id'])) {
             <div class="title-box">
                 <h1><?php echo getTitle(); ?></h1>
             </div>
-            <div class="flex-direction-row">
+            <div class="header-box">
                 <h2 class="margin"><?php echo getCategory(); ?></h2>
                 <h2 class="margin"><?php echo getDatum(); ?></h2>
-                <button id="copy-btn" onclick="copyToClipboard()">Copy Code</button>
+                <button class="flex-end" id="copy-btn" onclick="copyToClipboard()">Copy Code</button>
             </div>
             <h1>Code:</h1>
             <div id="code">
@@ -98,8 +98,32 @@ if (isset($_GET['id'])) {
             <div class="right-container-content">
                 <p class="line">"Title problem"</p>
                 <div class="flex-direction-row">
-                    <p class="margin">"Category"</p>
-                    <p class="margin">"Date created"</p>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Title</th>
+                                <th>Category</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <?php
+                            // Retrieve data from the configuration table
+                            $sql = "SELECT * FROM configuration";
+                            $result = $pdo->query($sql);
+
+                            if ($result->rowCount() > 0) {
+                                while ($row = $result->fetch()) {
+                                    echo "<tr>";
+                                    echo "<td><a href='../page/code.php?id=" . $row['id'] . "'>" . $row["title"] . "</a></td>";
+                                    echo "<td>" . $row["category"] . "</td>";
+                                    echo "</tr>";
+                                }
+                            } else {
+                                echo "<tr><td colspan='2'>No results found</td></tr>";
+                            }
+                            ?>
+                        </tbody>
+                    </table>
                 </div>
             </div>
         </div>
