@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 16, 2023 at 09:55 AM
+-- Generation Time: Mar 16, 2023 at 11:53 AM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 8.1.6
 
@@ -41,29 +41,16 @@ CREATE TABLE `comments` (
 
 CREATE TABLE `configuration` (
   `id` int(11) NOT NULL,
-  `code` varchar(255) DEFAULT NULL,
-  `title` varchar(255) DEFAULT NULL,
-  `category` varchar(255) DEFAULT NULL,
+  `code` varchar(255) NOT NULL,
+  `title` varchar(255) NOT NULL,
+  `html` varchar(50) DEFAULT NULL,
+  `css` varchar(50) DEFAULT NULL,
+  `php` varchar(50) DEFAULT NULL,
+  `javascript` varchar(50) DEFAULT NULL,
+  `SQLcode` varchar(50) DEFAULT NULL,
   `date` date DEFAULT NULL,
-  `description` text DEFAULT NULL,
-  `creator` varchar(255) DEFAULT NULL
+  `description` text DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumping data for table `configuration`
---
-
-INSERT INTO `configuration` (`id`, `code`, `title`, `category`, `date`, `description`, `creator`) VALUES
-(1, NULL, '123', '123', '1111-03-12', '123', NULL),
-(2, 'test', 'test', 'test', '2023-03-03', 'test', NULL),
-(3, 'test', 'test', 'test', '2023-03-03', 'test', NULL),
-(4, 'qwe', 'qwe', 'qwe', '2023-03-04', 'qweweqwe', NULL),
-(5, 'qwe', 'qwe', 'qwe', '2023-03-04', 'qweweqwe', NULL),
-(6, 'Scheidsrechter', 'Jannes', 'php', '2023-03-17', 'Getackeld', NULL),
-(7, '<button>test</button>', 'Test', 'test1', '2023-03-04', 'qweweqwe', NULL),
-(8, NULL, 'Tree', NULL, NULL, NULL, NULL),
-(9, '<?php\r\nsession_start();\r\ninclude \"../include/connection.php\";\r\ninclude \"../include/insert-post.php\";\r\n?>\r\n<!DOCTYPE html>\r\n<html>\r\n\r\n<head>\r\n    <title>Code Express</title>\r\n    <link rel=\"icon\" href=\"../img/logo.png\" type=\"image/x-icon\" />\r\n    <style>\r\n', 'Php test', 'HTML,CSS,PHP,SQL', NULL, 'Dit is een test ', 'Roger'),
-(10, '  $date = $_POST[\"date\"];\r\n', 'Test5', 'HTML,CSS,PHP', '2023-03-16', 'Test5', 'Roger');
 
 --
 -- Indexes for dumped tables
@@ -95,7 +82,7 @@ ALTER TABLE `comments`
 -- AUTO_INCREMENT for table `configuration`
 --
 ALTER TABLE `configuration`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
