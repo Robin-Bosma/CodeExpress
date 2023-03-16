@@ -2,6 +2,16 @@
 
 include "connection.php";
 
+// Define an array to store the true/false values for each category
+$category_values = array(
+    'HTML' => false,
+    'CSS' => false,
+    'PHP' => false,
+    'JavaScript' => false,
+    'SQL' => false,
+);
+
+// Check if the form has been submitted
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
   if (isset($_POST["public_post"])) {
     // Get the form data
@@ -11,6 +21,16 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $category = implode(',', $_POST["category"]);
     $description = $_POST["description"];
 
+    // Insert the configuration data into the database
+    $code = $_POST["code"];
+    $title = $_POST["title"];
+    $html = $category_values["HTML"] ? 'true' : 'false';
+    $css = $category_values["CSS"] ? 'true' : 'false';
+    $php = $category_values["PHP"] ? 'true' : 'false';
+    $javascript = $category_values["JavaScript"] ? 'true' : 'false';
+    $sqlcode = $category_values["SQL"] ? 'true' : 'false';
+    $date = date("Y-m-d");
+    $description = $_POST["description"];
 
     $date = date("Y-m-d H:i:s");
 
@@ -79,3 +99,4 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     exit;
   }
 }
+?>

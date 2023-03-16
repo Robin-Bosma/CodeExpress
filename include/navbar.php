@@ -13,7 +13,7 @@
     <ul class="navbar-all-code-links">
     <li><a href="overview.php">Overview</a></li>
     <li><div class="separator">|</div></li>
-    <li><a href="#">HTML</a></li>
+    <li><a href="../page/html.php">HTML</a></li>
     <li><div class="separator">|</div></li>
     <li><a href="#">CSS</a></li>
     <li><div class="separator">|</div></li>
