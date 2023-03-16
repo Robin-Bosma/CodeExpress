@@ -6,12 +6,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   // Get the form data
   $code = $_POST["code"];
   $title = $_POST["title"];
-  $category = $_POST["category"];
-  $date = $_POST["date"];
+  $creator = $_POST["creator"];
+  $category = implode(',', $_POST["category"]);
   $description = $_POST["description"];
 
+
+  $date = date("Y-m-d H:i:s");
+
   // plaats de data in de table
-  $sql = "INSERT INTO configuration (code, title, category, date, description) VALUES (:code ,:title, :category, :date, :description)";
+  $sql = "INSERT INTO configuration (code, title, creator, category, date, description) VALUES (:code ,:title, :creator, :category, :date, :description)";
 
   // Prepare the statement
   $stmt = $pdo->prepare($sql);
@@ -19,6 +22,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   // Bind the parameters
   $stmt->bindParam(":code", $code);
   $stmt->bindParam(":title", $title);
+  $stmt->bindParam(":creator", $creator);
   $stmt->bindParam(":category", $category);
   $stmt->bindParam(":date", $date);
   $stmt->bindParam(":description", $description);
