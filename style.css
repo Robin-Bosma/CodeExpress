@@ -127,16 +127,12 @@ body {
   width: 800px;
   margin-left: 10px;
   background-color: lightgray;
+  border-style: solid;
   text-align: left;
   text-align: start;
   text-align: inherit;
   height: 200px;
 }
-
-#code input:focus {
-  outline: none;
-}
-
 .config {
   margin-left: 10px;
   border-bottom: 3px solid black;
@@ -155,13 +151,10 @@ body {
   margin-top: 25px;
   margin-left: 78px;
   background-color: lightgray;
+  border-style: solid;
   text-align: left;
   text-align: start;
   text-align: inherit;
-}
-
-#title input:focus {
-  outline: none;
 }
 
 .config-created {
@@ -175,13 +168,10 @@ body {
   margin-top: 25px;
   margin-left: 10px;
   background-color: lightgray;
+  border-style: solid;
   text-align: left;
   text-align: start;
   text-align: inherit;
-}
-
-#created input:focus {
-  outline: none;
 }
 
 .config-category {
@@ -196,8 +186,7 @@ body {
 
 .category {
   display: flex;
-  flex-direction: row;
-  align-items: center;
+  flex-direction: column;
   margin-bottom: 10px;
 }
 
@@ -206,6 +195,95 @@ body {
   flex-direction: row;
   align-items: center;
   font-size: 20px;
+  margin-left: 10px;
+}
+
+/* code.php */
+
+#copy-btn {
+  background-color: #4CAF50;
+  /* Green */
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin-top: 10px;
+  cursor: pointer;
+  margin-left: 50px;
+}
+
+.code-container {
+  display: flex;
+  flex-direction: row;
+}
+
+.left-container {
+  display: flex;
+  justify-content: left;
+  flex-direction: column;
+  width: 80%;
+  margin: 5px;
+}
+
+.right-container {
+  display: flex;
+  justify-content: right;
+  flex-direction: column;
+  width: 15%;
+  margin: 5px;
+}
+
+.right-container-content {
+  background-color: lightgrey;
+}
+
+.title-box {
+  background-color: lightgrey;
+  height: 40px;
+}
+
+.flex-direction-row {
+  display: flex;
+  flex-direction: row;
+}
+
+.margin {
+  margin: 5px;
+}
+
+.code-input {
+  width: 200px;
+  height: 30px;
+  background-color: lightgrey;
+}
+
+.code-input::placeholder {
+  color: black;
+}
+
+.code-button {
+  width: 100px;
+  height: 30px;
+  background-color: lightgrey;
+}
+
+.line {
+  border-bottom: 3px solid black;
+  width: 225px;
+  display: inline-block;
+}
+
+.flex-end {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.header-box {
+  display: flex;
+  flex-direction: row;
 }
 
 /* Footer */
@@ -311,92 +389,4 @@ footer {
   transition: ease-in 0.5s;
   padding-right: 1rem;
   padding-left: 1rem;
-}
-
-/* code.php */
-
-#copy-btn {
-  background-color: #4CAF50;
-  /* Green */
-  border: none;
-  color: white;
-  padding: 10px 20px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  margin-top: 10px;
-  cursor: pointer;
-  margin-left: 50px;
-}
-
-.code-container {
-  display: flex;
-  flex-direction: row;
-}
-
-.left-container {
-  display: flex;
-  justify-content: left;
-  flex-direction: column;
-  width: 80%;
-  margin: 5px;
-}
-
-.right-container {
-  display: flex;
-  justify-content: right;
-  flex-direction: column;
-  width: 15%;
-  margin: 5px;
-}
-
-.right-container-content {
-  background-color: lightgrey;
-}
-
-.title-box {
-  background-color: lightgrey;
-  height: 40px;
-}
-
-.flex-direction-row {
-  display: flex;
-  flex-direction: row;
-}
-
-.margin {
-  margin: 5px;
-}
-
-.code-input {
-  width: 200px;
-  height: 30px;
-  background-color: lightgrey;
-}
-
-.code-input::placeholder {
-  color: black;
-}
-
-.code-button {
-  width: 100px;
-  height: 30px;
-  background-color: lightgrey;
-}
-
-.line {
-  border-bottom: 3px solid black;
-  width: 225px;
-  display: inline-block;
-}
-
-.flex-end {
-  display: flex;
-  justify-content: flex-end;
-}
-
-.header-box {
-  display: flex;
-  flex-direction: row;
 }
