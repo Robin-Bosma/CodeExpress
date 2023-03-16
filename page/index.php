@@ -54,7 +54,7 @@ include "../include/insert-post.php";
         </div>
         <div class="item3">
             <h1 class="config-desc">Description:</h1>
-            <textarea cols="80" rows="10" id="code" type="text" name="description" required>
+            <textarea cols="80" rows="10" id="desc" type="text" name="description" required>
 </textarea>
         </div>
         <div class="item4">
@@ -70,7 +70,7 @@ include "../include/insert-post.php";
             </div>
         </div>
         <div class="item5">
-        <div><input type="submit" id="submit" href="code.php" value="Create Public post"> <input type="submit" id="submit" value="Create Private post"></div>
+        <div><input type="submit" id="submit-public" href="code.php" value="Public post"> <input type="submit" id="submit-private" value="Private post"></div>
         </div>
     </form>
         <tbody>
