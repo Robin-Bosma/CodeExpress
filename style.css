@@ -319,11 +319,6 @@ background-color: #010066;
   background-color: lightgrey;
 }
 
-.title-box {
-  background-color: lightgrey;
-  height: 40px;
-}
-
 .flex-direction-row {
   display: flex;
   flex-direction: row;

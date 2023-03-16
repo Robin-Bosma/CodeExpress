@@ -72,7 +72,7 @@ if (isset($_GET['id'])) {
     <!-- Main Content -->
     <div class="code-container">
         <div class="left-container">
-            <h1 class="title-box"><?php echo getTitle(); ?></h1>
+            <h1 class="config"><?php echo getTitle(); ?></h1>
             <div class="header-box">
                 <h2 class="margin"><?php echo getCategory(); ?></h2>
                 <h2 class="margin"><?php echo getDatum(); ?></h2>
