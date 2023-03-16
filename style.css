@@ -360,3 +360,17 @@ footer {
   display: flex;
   flex-direction: row;
 }
+
+.margin-righter {
+  margin-right: 78px;
+}
+
+.margin-right {
+  margin-right: 63px;
+}
+
+.flex-direction-row-height {
+  display: flex;
+  flex-direction: row;
+  height: 50px;
+}
