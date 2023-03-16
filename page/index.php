@@ -17,32 +17,39 @@ include "../include/insert-post.php";
 <body>
     <!-- Navbar -->
     <?php include "../include/navbar.php" ?>
-    
-    <form method="post" action="../page/index.php">
-    <h1 class="config-code">Code:</h1>
-    <textarea cols="80" rows="10" id="code" type="text" name="textbox" required>
-</textarea>
- <h1 class="config">Configurations</h1>
- <div class="configurations"><p class="config-title">Title:</p> <input type="text" id="title" name="title" required></div>
- <div class="configurations"><p class="config-tags">Tags:</p> <input type="text" id="tags" name="tags"></div>
 
- <div class="category" required>
-  <p class="config-category">Category:</p>
-  <div id="checkboxes">
-    <input type="checkbox" id="checkbox-codes" name="HTML" value="HTML">
-    <label for="HTML">HTML</label><br>
-    <input type="checkbox" id="checkbox-codes" name="CSS" value="CSS">
-    <label for="CSS">CSS</label><br>
-    <input type="checkbox" id="checkbox-codes" name="PHP" value="PHP">
-    <label for="PHP">PHP</label><br>
-    <input type="checkbox" id="checkbox-codes" name="JavaScript" value="JavaScript">
-    <label for="JavaScript">JavaScript</label><br>
-    <input type="checkbox" id="checkbox-codes" name="SQL" value="SQL">
-    <label for="SQL">SQL</label><br>
-  </div>
-</div>
-<div><input type="submit" id="submit" href="code.php" value="Create Public post"> <input type="submit" id="submit" value="Create Private post"></div>
-</form>
+    <form method="post" action="../page/index.php">
+        <h1 class="config-code">Code:</h1>
+        <textarea cols="80" rows="10" id="code" type="text" name="code" required>
+</textarea>
+        <h1 class="config-code">Description:</h1>
+        <textarea cols="80" rows="10" id="code" type="text" name="description" required>
+</textarea>
+        <h1 class="config">Configurations</h1>
+        <div class="configurations">
+            <p class="config-title">Title:</p> <input type="text" id="title" name="title" required>
+        </div>
+        <div class="configurations">
+            <p class="config-tags">Created by:</p> <input type="text" id="tags" name="creator">
+        </div>
+
+        <div class="category" required>
+            <p class="config-category">Category:</p>
+            <div id="checkboxes">
+                <input type="checkbox" id="checkbox-codes" name="category[]" value="HTML">
+                <label for="HTML">HTML</label><br>
+                <input type="checkbox" id="checkbox-codes" name="category[]" value="CSS">
+                <label for="CSS">CSS</label><br>
+                <input type="checkbox" id="checkbox-codes" name="category[]" value="PHP">
+                <label for="PHP">PHP</label><br>
+                <input type="checkbox" id="checkbox-codes" name="category[]" value="JavaScript">
+                <label for="JavaScript">JavaScript</label><br>
+                <input type="checkbox" id="checkbox-codes" name="category[]" value="SQL">
+                <label for="SQL">SQL</label><br>
+            </div>
+        </div>
+        <div><input type="submit" id="submit" href="code.php" value="Create Public post"> <input type="submit" id="submit" value="Create Private post"></div>
+    </form>
     <tbody>
         <?php
         // Retrieve data from the configuration table
@@ -50,7 +57,7 @@ include "../include/insert-post.php";
         $result = $pdo->query($sql);
 
         if ($result->rowCount() > 0) {
-            while($row = $result->fetch()) {
+            while ($row = $result->fetch()) {
                 echo "<tr>";
                 echo "<td>" . $row["title"] . "</td>";
                 echo "<td>" . $row["category"] . "</td>";
@@ -61,7 +68,7 @@ include "../include/insert-post.php";
         }
         ?>
     </tbody>
-</table>
+    </table>
     <!-- Footer -->
     <?php include "../include/footer.php" ?>
 </body>
