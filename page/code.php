@@ -76,7 +76,7 @@ if (isset($_GET['id'])) {
             <div class="header-box">
                 <h2 class="margin"><?php echo getCategory(); ?></h2>
                 <h2 class="margin"><?php echo getDatum(); ?></h2>
-                <button class="flex-end" id="copy-btn" onclick="copyToClipboard()">Copy Code</button>
+                <button id="copy-btn" onclick="copyToClipboard()">Copy Code</button>
             </div>
             <h1>Code:</h1>
             <div id="code">
