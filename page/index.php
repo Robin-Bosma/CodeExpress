@@ -18,9 +18,10 @@ include "../include/insert-post.php";
     <!-- Navbar -->
     <?php include "../include/navbar.php" ?>
     
-    <form>
-    <h1>Code</h1>
-    <input type="text" id="code" name="code" required>
+    <form method="post" action="../page/index.php">
+    <h1 class="config-code">Code:</h1>
+    <textarea cols="80" rows="10" id="code" type="text" name="textbox" required>
+</textarea>
  <h1 class="config">Configurations</h1>
  <div class="configurations"><p class="config-title">Title:</p> <input type="text" id="title" name="title" required></div>
  <div class="configurations"><p class="config-tags">Tags:</p> <input type="text" id="tags" name="tags"></div>
@@ -40,7 +41,7 @@ include "../include/insert-post.php";
     <label for="SQL">SQL</label><br>
   </div>
 </div>
-<div><input type="submit" id="submit" value="Create Public post"> <input type="submit" id="submit" value="Create Private post"></div>
+<div><input type="submit" id="submit" href="code.php" value="Create Public post"> <input type="submit" id="submit" value="Create Private post"></div>
 </form>
     <tbody>
         <?php
