@@ -72,9 +72,7 @@ if (isset($_GET['id'])) {
     <!-- Main Content -->
     <div class="code-container">
         <div class="left-container">
-            <div class="title-box">
-                <h1><?php echo getTitle(); ?></h1>
-            </div>
+            <h1 class="title-box"><?php echo getTitle(); ?></h1>
             <div class="header-box">
                 <h2 class="margin"><?php echo getCategory(); ?></h2>
                 <h2 class="margin"><?php echo getDatum(); ?></h2>
@@ -86,7 +84,7 @@ if (isset($_GET['id'])) {
             </div>
 
             <div>
-                <h1>Comments</h1>
+                <h1 class="config">Comments</h1>
                 <div class="flex-direction-column">
                     <input class="code-input" type="text" placeholder="Write your comment here">
                     <input class="code-button" type="submit" value="Add Comment">
@@ -96,35 +94,30 @@ if (isset($_GET['id'])) {
         <div class="right-container">
             <h1>Post History</h1>
             <div class="right-container-content">
-                <p class="line">"Title problem"</p>
-                <div class="flex-direction-row">
-                    <table>
-                        <thead>
-                            <tr>
-                                <th>Title</th>
-                                <th>Category</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <?php
-                            // Retrieve data from the configuration table
-                            $sql = "SELECT * FROM configuration";
-                            $result = $pdo->query($sql);
-
-                            if ($result->rowCount() > 0) {
-                                while ($row = $result->fetch()) {
-                                    echo "<tr>";
-                                    echo "<td><a href='../page/code.php?id=" . $row['id'] . "'>" . $row["title"] . "</a></td>";
-                                    echo "<td>" . $row["category"] . "</td>";
-                                    echo "</tr>";
-                                }
-                            } else {
-                                echo "<tr><td colspan='2'>No results found</td></tr>";
-                            }
-                            ?>
-                        </tbody>
-                    </table>
+                <div class="line">
+                    <div class="flex-direction-row-height">
+                        <p class="margin-righter">Title</p>
+                        <p>Category</p>
+                    </div>
                 </div>
+                <table>
+                    <?php
+                    // Retrieve data from the configuration table
+                    $sql = "SELECT * FROM configuration";
+                    $result = $pdo->query($sql);
+
+                    if ($result->rowCount() > 0) {
+                        while ($row = $result->fetch()) {
+                            echo "<tr>";
+                            echo "<td><a class='margin-right' href='../page/code.php?id=" . $row['id'] . "'>" . $row["title"] . "</a></td>";
+                            echo "<td>" . $row["category"] . "</td>";
+                            echo "</tr>";
+                        }
+                    } else {
+                        echo "<tr><td colspan='2'>No results found</td></tr>";
+                    }
+                    ?>
+                </table>
             </div>
         </div>
     </div>
