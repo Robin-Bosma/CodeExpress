@@ -3,7 +3,7 @@
 include "../include/connection.php";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-  // Get the form data
+  // krijg de data
   $code = $_POST["code"];
   $title = $_POST["title"];
   $category = $_POST["category"];

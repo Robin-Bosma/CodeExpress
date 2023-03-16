@@ -44,10 +44,32 @@ if (isset($_GET['id'])) {
     </div>
     <h1>Code:</h1>
     <div id="code"></div>
-
+    <!-- comments -->
     <h1>Comments</h1>
-    <input type="text" placeholder="Write your comment here">
-    <input type="submit" value="Add Comment">
+    <form method="post" action="../page/code.php">
+        <input type="text" name="comment" placeholder="Write your comment here" required>
+        <input type="submit" value="Add Comment">
+    </form>
+
+    <?php
+    if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+        $stmt = $pdo->prepare('SELECT COUNT(*) FROM comments WHERE comment = ?');
+        $stmt->execute([$_POST['comment']]);
+        $count = $stmt->fetchColumn();
+        if ($count == 0) {
+            $stmt = $pdo->prepare('INSERT INTO comments (comment, date) VALUES (?, ?)');
+            $stmt->execute([$_POST['comment'], date('Y-m-d H:i:s')]);
+        } else {
+            echo '<p style="color: red;">This comment has already been submitted.</p>';
+        }
+    }
+
+    $stmt = $pdo->query('SELECT * FROM comments');
+
+    while ($row = $stmt->fetch()) {
+        echo '<p><strong>' . $row['comment'] . '</strong> (' . $row['date'] . ')</p>';
+    }
+    ?>
 
     <!-- Footer -->
     <?php include "../include/footer.php" ?>

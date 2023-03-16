@@ -3,6 +3,7 @@ session_start();
 include "../include/connection.php";
 include "../include/insert-post.php";
 ?>
+
 <!DOCTYPE html>
 <html>
 
@@ -53,6 +54,7 @@ include "../include/insert-post.php";
             <input type="submit" name="submit-privite" value="Create privite post">
         </form>
         <!-- history -->
+        <div id="index-table"> 
         <table>
     <thead>
         <tr>
@@ -67,7 +69,7 @@ include "../include/insert-post.php";
         $result = $pdo->query($sql);
 
         if ($result->rowCount() > 0) {
-            while($row = $result->fetch()) {
+                while($row = $result->fetch()) {
                 echo "<tr>";
                 echo "<td>" . $row["title"] . "</td>";
                 echo "<td>" . $row["category"] . "</td>";
@@ -79,6 +81,8 @@ include "../include/insert-post.php";
         ?>
     </tbody>
 </table>
+        </div>
+    </div>
     <!-- Footer -->
     <?php include "../include/footer.php" ?>
 </body>
