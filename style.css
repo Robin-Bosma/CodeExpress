@@ -118,7 +118,7 @@ body {
   margin-left: 10px;
   border-bottom: 3px solid black;
   width: 800px;
-  display: inline-block; 
+  display: inline-block;
 }
 
 .config-title {
@@ -348,7 +348,7 @@ footer {
 .line {
   border-bottom: 3px solid black;
   width: 225px;
-  display: inline-block; 
+  display: inline-block;
 }
 
 .flex-end {
@@ -359,18 +359,4 @@ footer {
 .header-box {
   display: flex;
   flex-direction: row;
-}
-
-.margin-righter {
-  margin-right: 78px;
-}
-
-.margin-right {
-  margin-right: 63px;
-}
-
-.flex-direction-row-height {
-  display:flex;
-  flex-direction: row;
-  height: 50px;
 }
