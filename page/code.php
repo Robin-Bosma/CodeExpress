@@ -22,6 +22,41 @@ if (isset($_GET['id'])) {
         <?php include '../style.css'; ?>
     </style>
     <?php
+    $stmt = $pdo->prepare("SELECT * FROM configuration WHERE id = ?");
+    $stmt->execute([$id]);
+
+    $code = $stmt->fetch(PDO::FETCH_OBJ);
+
+    function getTitle()
+    {
+        global $code;
+        return $code->title;
+    }
+
+    function getCategory()
+    {
+        global $code;
+        return $code->category;
+    }
+
+    function getDatum()
+    {
+        global $code;
+        return $code->date;
+    }
+
+    function getCode()
+    {
+        global $code;
+        return htmlspecialchars($code->code);
+    }
+
+    function getDescription()
+    {
+        global $code;
+        return $code->description;
+    }
+
     if (isset($_POST['title'])) {
         $title = htmlspecialchars($_POST['title']);
     }
@@ -77,6 +112,7 @@ if (isset($_GET['id'])) {
 </body>
 
 <script>
+    // The function for copying code
     function copyToClipboard() {
         var codeDiv = document.getElementById("code");
         var codeText = codeDiv.innerHTML;

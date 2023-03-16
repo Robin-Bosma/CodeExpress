@@ -2,7 +2,9 @@ body {
   margin: auto;
   min-height: 100vh;
   background-color: #ffffff;
-   overflow-x: hidden;
+  overflow-x: hidden;
+  font-family: Cambria;
+  font-weight: bold;
 }
 
 /* Navbar */
@@ -26,7 +28,7 @@ body {
   list-style: none;
   margin: 0;
   padding: 0;
-  
+
 }
 
 .navbar-all-code-links li {
@@ -49,10 +51,11 @@ body {
   color: #FFC61E;
   transition: ease-in 0.5s;
 }
+
 .separator {
   font-size: 25px;
   font-family: Cambria;
-    font-weight: bold;
+  font-weight: bold;
 }
 
 .search-bar {
@@ -83,53 +86,86 @@ body {
   border: none;
   border-radius: 3px;
   cursor: pointer;
-  z-index: 2; /* stel de z-index van de img in op 2 */
+  z-index: 2;
+  /* stel de z-index van de img in op 2 */
 }
 
 
 
 /* index */
-.index-container { 
-  display: flex;
-  flex-direction: column;
-  flex-wrap: wrap; 
-}
-#pasting-code { 
-  display: flex;
-  flex-direction: column;
-  color: white;
-}
-/* configuration */
-#container-row { 
-  display: flex;
-  flex-direction: row;
-}
-#configuration { 
-  display: flex;
-  flex-direction: column;
-  color: white;
-  margin-right: 50px;
-}
-#config-row { 
-  display: flex;
-  flex-direction: row;
-}
-#config-title { 
-  display: flex;
-  flex-direction: column;
-}
-#config-input { 
-  display: flex;
-  flex-direction: column;
+
+.config-code {
+  margin-left: 10px;
 }
 
-/* description */
-#description { 
-  color: white;
+#code {
+  max-width: 800px;
+  min-width: 800px;
+  width: 800px;
+  margin-left: 10px;
+  background-color: lightgray;
+  text-align: left;
+  text-align: start;
+  text-align: inherit;
+  height: 200px;
 }
-#description-input { 
-  height: 100px;
-  width: 100%;
+
+#code input:focus {
+  outline: none;
+}
+
+.config {
+  margin-left: 10px;
+  border-bottom: 3px solid black;
+  width: 800px;
+  display: inline-block;
+}
+
+.config-title {
+  font-size: 20px;
+  margin-left: 10px;
+}
+
+#title {
+  max-width: 200px;
+  max-height: 20px;
+  margin-top: 20px;
+  margin-left: 5px;
+}
+
+.config-tags {
+  font-size: 20px;
+  margin-left: 10px;
+}
+
+#tags {
+  max-width: 200px;
+  max-height: 20px;
+  margin-top: 20px;
+  margin-left: 5px;
+}
+
+.config-category {
+  font-size: 20px;
+  margin-left: 10px;
+}
+
+.configurations {
+  display: flex;
+  flex-direction: row;
+}
+
+.category {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+#checkboxes {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
 }
 
 /* Footer */
@@ -140,33 +176,49 @@ body {
   position: relative;
   left: 0;
   animation: move-train 30s infinite;
-  animation-delay: 10s; /* add a delay of 5 seconds before starting the animation */
+  animation-delay: 10s;
+  /* add a delay of 5 seconds before starting the animation */
 }
 
 @keyframes move-train {
   0% {
-    left: 0; /* startpositie */
+    left: 0;
+    /* startpositie */
   }
+
   25% {
-    left: calc(150% - 0%); /* trein rijdt langzaam naar rechts */
+    left: calc(150% - 0%);
+    /* trein rijdt langzaam naar rechts */
   }
+
   50% {
-    left: calc(-120% - 0%); /* trein rijdt naar links met een constante snelheid */
+    left: calc(-120% - 0%);
+    /* trein rijdt naar links met een constante snelheid */
   }
+
   75% {
-    left: calc(-120% - 50px); /* trein rijdt langzaam naar links */
+    left: calc(-120% - 50px);
+    /* trein rijdt langzaam naar links */
   }
+
   85% {
-    left: 0; /* trein staat stil */
+    left: 0;
+    /* trein staat stil */
   }
+
   90% {
-    left: 0; /* trein staat stil */
+    left: 0;
+    /* trein staat stil */
   }
+
   95% {
-    left: 0; /* trein staat stil */
+    left: 0;
+    /* trein staat stil */
   }
+
   100% {
-    left: 0; /* trein staat stil */
+    left: 0;
+    /* trein staat stil */
   }
 }
 
@@ -174,17 +226,19 @@ body {
   animation-play-state: paused;
 }
 
-footer { 
+footer {
   background-color: #252525;
   color: white;
 }
+
 .footer-text {
   margin-top: 1%;
   font-family: Cambria;
   font-weight: bold;
   margin-left: 0.6%;
 }
-#footer-copyright { 
+
+#footer-copyright {
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
   font-size: 20px;
@@ -196,7 +250,8 @@ footer {
   text-decoration: none;
   color: white;
 }
-#footer-html { 
+
+#footer-html {
   font-family: Cambria;
   font-weight: bold;
   padding-right: 0.2rem;
@@ -205,6 +260,7 @@ footer {
   text-decoration: none;
   color: white;
 }
+
 #footer-codes {
   margin-left: 0.5%;
 }
@@ -220,7 +276,8 @@ footer {
 /* code.php */
 
 #copy-btn {
-  background-color: #4CAF50; /* Green */
+  background-color: #4CAF50;
+  /* Green */
   border: none;
   color: white;
   padding: 10px 20px;
@@ -230,10 +287,76 @@ footer {
   font-size: 16px;
   margin-top: 10px;
   cursor: pointer;
+  margin-left: 50px;
 }
 
 .code-container {
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
+}
+
+.left-container {
+  display: flex;
+  justify-content: left;
+  flex-direction: column;
+  width: 80%;
+  margin: 5px;
+}
+
+.right-container {
+  display: flex;
+  justify-content: right;
+  flex-direction: column;
+  width: 15%;
+  margin: 5px;
+}
+
+.right-container-content {
+  background-color: lightgrey;
+}
+
+.title-box {
+  background-color: lightgrey;
+  height: 40px;
+}
+
+.flex-direction-row {
+  display: flex;
+  flex-direction: row;
+}
+
+.margin {
+  margin: 5px;
+}
+
+.code-input {
+  width: 200px;
+  height: 30px;
+  background-color: lightgrey;
+}
+
+.code-input::placeholder {
+  color: black;
+}
+
+.code-button {
+  width: 100px;
+  height: 30px;
+  background-color: lightgrey;
+}
+
+.line {
+  border-bottom: 3px solid black;
+  width: 225px;
+  display: inline-block;
+}
+
+.flex-end {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.header-box {
+  display: flex;
+  flex-direction: row;
 }

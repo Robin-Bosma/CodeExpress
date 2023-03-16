@@ -18,50 +18,39 @@ include "../include/insert-post.php";
 <body>
     <!-- Navbar -->
     <?php include "../include/navbar.php" ?>
-    <!-- Main Content -->
-    <div class="index-container">
 
-        <!-- configuration -->
-        <form method="post" action="../page/index.php">
-            <div id="container-row">
-                <div id="configuration">
-                    <h1>Configuration</h1>
-                    <div id="config-row">
-                        <div id="confing-title">
-                            <div id="pasting-code">
-                                <h1> Code:</h1>
-                                <input type="text" name="code" value="" required>
-                            </div>
-                            <h2 id="title-mr">Title:</h2>
-                            <h2 id="category-mr">Category:</h2>
-                            <h2 id="date-mr">Date:</h2>
-                        </div>
-                        <div id="config-input">
-                            <input name="title" type="text" name="title" required>
-                            <input name="category" type="text" name="category" required>
-                            <input name="date" type="date" name="date" required>
-                        </div>
-                    </div>
-                </div>
-                <!-- description -->
-                <div id="description">
-                    <h1> description </h1>
-                    <input id="description-input" name="description" type="text" value="" required>
-                </div>
+    <form method="post" action="../page/index.php">
+        <h1 class="config-code">Code:</h1>
+        <textarea cols="80" rows="10" id="code" type="text" name="code" required>
+</textarea>
+        <h1 class="config-code">Description:</h1>
+        <textarea cols="80" rows="10" id="code" type="text" name="description" required>
+</textarea>
+        <h1 class="config">Configurations</h1>
+        <div class="configurations">
+            <p class="config-title">Title:</p> <input type="text" id="title" name="title" required>
+        </div>
+        <div class="configurations">
+            <p class="config-tags">Created by:</p> <input type="text" id="tags" name="creator">
+        </div>
+
+        <div class="category" required>
+            <p class="config-category">Category:</p>
+            <div id="checkboxes">
+                <input type="checkbox" id="checkbox-codes" name="category[]" value="HTML">
+                <label for="HTML">HTML</label><br>
+                <input type="checkbox" id="checkbox-codes" name="category[]" value="CSS">
+                <label for="CSS">CSS</label><br>
+                <input type="checkbox" id="checkbox-codes" name="category[]" value="PHP">
+                <label for="PHP">PHP</label><br>
+                <input type="checkbox" id="checkbox-codes" name="category[]" value="JavaScript">
+                <label for="JavaScript">JavaScript</label><br>
+                <input type="checkbox" id="checkbox-codes" name="category[]" value="SQL">
+                <label for="SQL">SQL</label><br>
             </div>
-            <!-- buttons post -->
-            <input type="submit" name="submit" value="Create public post" onclick="">
-            <input type="submit" name="submit-privite" value="Create privite post">
-        </form>
-        <!-- history -->
-        <div id="index-table"> 
-        <table>
-    <thead>
-        <tr>
-            <th>Title</th>
-            <th>Category</th>
-        </tr>
-    </thead>
+        </div>
+        <div><input type="submit" id="submit" href="code.php" value="Create Public post"> <input type="submit" id="submit" value="Create Private post"></div>
+    </form>
     <tbody>
         <?php
         // Retrieve data from the configuration table
@@ -69,7 +58,7 @@ include "../include/insert-post.php";
         $result = $pdo->query($sql);
 
         if ($result->rowCount() > 0) {
-                while($row = $result->fetch()) {
+            while ($row = $result->fetch()) {
                 echo "<tr>";
                 echo "<td>" . $row["title"] . "</td>";
                 echo "<td>" . $row["category"] . "</td>";
@@ -80,9 +69,7 @@ include "../include/insert-post.php";
         }
         ?>
     </tbody>
-</table>
-        </div>
-    </div>
+    </table>
     <!-- Footer -->
     <?php include "../include/footer.php" ?>
 </body>
