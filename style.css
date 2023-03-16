@@ -105,10 +105,10 @@ body {
 .grid-container {
   display: grid;
   grid-template-areas:
-    'header header header header header history'
-    'main right right right right history'
-    'button button button button . history'
-    'database . . . . history'
+    'header header header history history .'
+    'main right right history history .'
+    'button button . history history .'
+    'database . . history history .'
     'footer footer footer footer footer footer';
 }
 
@@ -277,7 +277,6 @@ background-color: #010066;
 
 #copy-btn {
   background-color: #4CAF50;
-  /* Green */
   border: none;
   color: white;
   padding: 10px 20px;
@@ -309,6 +308,7 @@ background-color: #010066;
   flex-direction: column;
   width: 15%;
   margin: 5px;
+  margin-right: 1230px;
 }
 
 .right-container-content {
@@ -359,6 +359,20 @@ background-color: #010066;
 .header-box {
   display: flex;
   flex-direction: row;
+}
+
+.margin-righter {
+  margin-right: 78px;
+}
+
+.margin-right {
+  margin-right: 63px;
+}
+
+.flex-direction-row-height {
+  display: flex;
+  flex-direction: row;
+  height: 50px;
 }
 
 /* Footer */

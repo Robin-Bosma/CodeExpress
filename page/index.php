@@ -58,17 +58,36 @@ include "../include/insert-post.php";
 </textarea>
         </div>
         <div class="item4">
-            <div class="right-container">
-                <h1>Post History</h1>
-                <div class="right-container-content">
-                    <p class="line">"Title problem"</p>
-                    <div class="flex-direction-row">
-                        <p class="margin">"Category"</p>
-                        <p class="margin">"Date created"</p>
+        <div class="right-container">
+            <h1>Post History</h1>
+            <div class="right-container-content">
+                <div class="line">
+                    <div class="flex-direction-row-height">
+                        <p class="margin-righter">Title</p>
+                        <p>Category</p>
                     </div>
                 </div>
-            </div>
+                <table>
+                    <?php
+                    // Retrieve data from the configuration table
+                    $sql = "SELECT * FROM configuration";
+                    $result = $pdo->query($sql);
+
+                    if ($result->rowCount() > 0) {
+                        while ($row = $result->fetch()) {
+                            echo "<tr>";
+                            echo "<td><a class='margin-right' href='../page/code.php?id=" . $row['id'] . "'>" . $row["title"] . "</a></td>";
+                            echo "<td>" . $row["category"] . "</td>";
+                            echo "</tr>";
+                        }
+                    } else {
+                        echo "<tr><td colspan='2'>No results found</td></tr>";
+                    }
+                    ?>
+                </table>
         </div>
+        </div>
+                </div>
         <div class="item5">
         <div><input type="submit" id="submit-public" href="code.php" value="Public post"> <input type="submit" id="submit-private" value="Private post"></div>
         </div>
