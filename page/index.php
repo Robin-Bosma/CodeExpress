@@ -54,7 +54,7 @@ include "../include/connection.php";
     <tbody>
         <?php
         // Retrieve data from the configuration table
-        $sql = "SELECT * FRO    M configuration";
+        $sql = "SELECT * FROM configuration";
         $result = $pdo->query($sql);
 
         if ($result->rowCount() > 0) {
