@@ -141,7 +141,7 @@ body {
   margin-left: 10px;
   border-bottom: 3px solid black;
   width: 800px;
-  display: inline-block; 
+  display: inline-block;
 }
 
 .config-title {
@@ -357,7 +357,7 @@ footer {
 
 .title-box {
   background-color: lightgrey;
-  height: 60px;
+  height: 40px;
 }
 
 .flex-direction-row {
@@ -387,8 +387,8 @@ footer {
 
 .line {
   border-bottom: 3px solid black;
-  width: 230px;
-  display: inline-block; 
+  width: 225px;
+  display: inline-block;
 }
 
 .flex-end {

@@ -3,6 +3,7 @@ session_start();
 include "../include/connection.php";
 include "../include/insert-post.php";
 ?>
+
 <!DOCTYPE html>
 <html>
 
