@@ -305,9 +305,9 @@ body {
   text-decoration: none;
   display: inline-block;
   font-size: 16px;
-  margin-top: 10px;
+  margin-top: 1px;
   cursor: pointer;
-  margin-left: 50px;
+  margin-left: 800px;
 }
 
 .code-container {
@@ -334,11 +334,6 @@ body {
 
 .right-container-content {
   background-color: lightgrey;
-}
-
-.title-box {
-  background-color: lightgrey;
-  height: 40px;
 }
 
 .flex-direction-row {
