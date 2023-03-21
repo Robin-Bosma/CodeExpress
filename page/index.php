@@ -40,23 +40,20 @@ include "../include/insert-post.php";
             <div class="category" required>
                 <p class="config-category">Category:</p>
                 <div id="checkboxes">
-                    <div class="checkbox-top">
+                    <div class="checkboxes-top">
                         <input type="checkbox" id="checkbox-codes" name="category[]" value="HTML">
                         <label for="HTML">HTML</label><br>
                         <input type="checkbox" id="checkbox-codes" name="category[]" value="CSS">
                         <label for="CSS">CSS</label><br>
-                    </div>
-                    <div class="checkbox-center">
                         <input type="checkbox" id="checkbox-codes" name="category[]" value="PHP">
                         <label for="PHP">PHP</label><br>
+                    </div>
+                    <div class="checkboxes-bottom">
                         <input type="checkbox" id="checkbox-codes" name="category[]" value="JavaScript">
                         <label for="JavaScript">JavaScript</label><br>
-                    </div>
-                    <div class="checkbox-bottom">
                         <input type="checkbox" id="checkbox-codes" name="category[]" value="SQL">
                         <label for="SQL">SQL</label><br>
                     </div>
-
                 </div>
             </div>
         </div>
