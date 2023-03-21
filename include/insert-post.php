@@ -4,16 +4,16 @@ include "connection.php";
 
 // Define an array to store the true/false values for each category
 $category_values = array(
-    'HTML' => false,
-    'CSS' => false,
-    'PHP' => false,
-    'JavaScript' => false,
-    'SQL' => false,
+  'HTML' => isset($_POST["category"]["HTML"]),
+  'CSS' => isset($_POST["category"]["CSS"]),
+  'PHP' => isset($_POST["category"]["PHP"]),
+  'JavaScript' => isset($_POST["category"]["JavaScript"]),
+  'SQL' => isset($_POST["category"]["SQL"]),
 );
 
 // Check if the form has been submitted
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-  if (isset($_POST["public_post"])) {
+  if (isset($_POST["submit-public"])) {
     // Get the form data
     $code = $_POST["code"];
     $title = $_POST["title"];
@@ -24,29 +24,34 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Insert the configuration data into the database
     $code = $_POST["code"];
     $title = $_POST["title"];
-    $html = $category_values["HTML"] ? 'true' : 'false';
-    $css = $category_values["CSS"] ? 'true' : 'false';
-    $php = $category_values["PHP"] ? 'true' : 'false';
-    $javascript = $category_values["JavaScript"] ? 'true' : 'false';
-    $sqlcode = $category_values["SQL"] ? 'true' : 'false';
+    $html = $category_values["HTML"] ? '' : 'HTML';
+    $css = $category_values["CSS"] ? '' : 'CSS';
+    $php = $category_values["PHP"] ? '' : 'PHP';
+    $javascript = $category_values["JavaScript"] ? '' : 'JavaScript';
+    $sqlcode = $category_values["SQL"] ? '' : 'SQL';
     $date = date("Y-m-d");
     $description = $_POST["description"];
+    $creator = $_POST["creator"];
 
     $date = date("Y-m-d H:i:s");
 
     // plaats de data in de table
-    $sql = "INSERT INTO configuration (code, title, creator, category, date, description) VALUES (:code ,:title, :creator, :category, :date, :description)";
-
+    $sql = "INSERT INTO configuration (code, title, html, css, php, javascript, sqlcode, date, description, creator) 
+    VALUES (:code, :title, :html, :css, :php, :javascript, :sqlcode, :date, :description, :creator)";
     // Prepare the statement
     $stmt = $pdo->prepare($sql);
 
     // Bind the parameters
     $stmt->bindParam(":code", $code);
     $stmt->bindParam(":title", $title);
-    $stmt->bindParam(":creator", $creator);
-    $stmt->bindParam(":category", $category);
+    $stmt->bindParam(":html", $html);
+    $stmt->bindParam(":css", $css);
+    $stmt->bindParam(":php", $php);
+    $stmt->bindParam(":javascript", $javascript);
+    $stmt->bindParam(":sqlcode", $sqlcode);
     $stmt->bindParam(":date", $date);
     $stmt->bindParam(":description", $description);
+    $stmt->bindParam(":creator", $creator);
 
 
     // Execute the statement
@@ -56,7 +61,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
       $error = $stmt->errorInfo()[2];
       echo "Error: " . $error;
     }
-  } else if (isset($_POST["private_post"])) {
+  } else if (isset($_POST["submit-private"])) {
     // Create a private post
     // Generate a random URL
     $url = bin2hex(random_bytes(8));
@@ -66,26 +71,33 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $code = $_POST["code"];
     $title = $_POST["title"];
     $creator = $_POST["creator"];
-    $category = implode(',', $_POST["category"]);
+    $html = $category_values["HTML"] ? '' : 'HTML';
+    $css = $category_values["CSS"] ? '' : 'CSS';
+    $php = $category_values["PHP"] ? '' : 'PHP';
+    $javascript = $category_values["JavaScript"] ? '' : 'JavaScript';
+    $sqlcode = $category_values["SQL"] ? '' : 'SQL';
+    $date = date("Y-m-d H:i:s");
     $description = $_POST["description"];
 
-
-    $date = date("Y-m-d H:i:s");
-
     // plaats de data in de table
-    $sql = "INSERT INTO private_posts (url, code, description, title, creator, date, category) VALUES (:url, :code, :description, :title, :creator, :date, :category)";
+    $sql = "INSERT INTO private_posts (url, code, description, title, html, css, php, javascript, SQLcode, creator, date) VALUES (:url, :code, :description, :title, :html, :css, :php, :javascript, :SQLcode :creator, :date,)";
 
     // Prepare the statement
     $stmt2 = $pdo->prepare($sql);
 
     // Bind the parameters
+
     $stmt2->bindParam(":url", $url);
     $stmt2->bindParam(":code", $code);
     $stmt2->bindParam(":title", $title);
-    $stmt2->bindParam(":creator", $creator);
-    $stmt2->bindParam(":category", $category);
+    $stmt2->bindParam(":html", $html);
+    $stmt2->bindParam(":css", $css);
+    $stmt2->bindParam(":php", $php);
+    $stmt2->bindParam(":javascript", $javascript);
+    $stmt2->bindParam(":sqlcode", $sqlcode);
     $stmt2->bindParam(":date", $date);
     $stmt2->bindParam(":description", $description);
+    $stmt2->bindParam(":creator", $creator);
 
     // Execute the statement
     if ($stmt2->execute()) {
@@ -99,4 +111,3 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     exit;
   }
 }
-?>
