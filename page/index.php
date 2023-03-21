@@ -98,7 +98,7 @@ include "../include/insert-post.php";
             </div>
         </div>
         <div class="item5">
-            <input type="submit" id="submit-public" href="code.php" value="Public post"> <input type="submit" id="submit-private" value="Private post">
+            <input type="submit" id="submit-public" href="code.php" value="Create Public post"> <input type="submit" id="submit-private" value="Create Private post">
         </div>
         </form>
         <tbody>

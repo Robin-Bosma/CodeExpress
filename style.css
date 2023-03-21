@@ -98,6 +98,7 @@ body {
   grid-area: header;
 }
 .config {
+  margin-left: 20px;
   grid-area: line;
   border-bottom: 3px solid black;
   display: inline-block;
@@ -116,6 +117,7 @@ body {
 }
 .item4 {
   grid-area: history;
+  margin-left: 50px;
 }
 .item5 {
   grid-area: button;
@@ -125,6 +127,9 @@ body {
 }
 .item7 {
   grid-area: footer;
+  width: 58%;
+  max-width: 58%;
+  justify-content: center;
 }
 
 .grid-container {
@@ -140,13 +145,13 @@ body {
     "footer footer footer footer footer footer";
 }
 
-.item7 {
-  width: 60%;
-  max-width: 60%;
-  justify-content: center;
+.config-code {
+  margin-left: 20px;
 }
 
 #code {
+  resize: vertical;
+  margin-left: 20px;
   max-width: 100%;
   min-width: 100%;
   width: 100%;
@@ -160,10 +165,12 @@ body {
 }
 
 .config-title {
+  margin-left: 20px;
   font-size: 25px;
 }
 
 #title {
+  margin-left: 20px;
   max-width: 200px;
   max-height: 30px;
   margin-top: 25px;
@@ -176,10 +183,12 @@ body {
 }
 
 .config-created {
+  margin-left: 20px;
   font-size: 25px;
 }
 
 #created {
+  margin-left: 20px;
   max-width: 200px;
   max-height: 30px;
   margin-top: 25px;
@@ -192,6 +201,7 @@ body {
 }
 
 .config-category {
+  margin-left: 20px;
   font-size: 25px;
 }
 
@@ -206,6 +216,7 @@ body {
 }
 
 #checkboxes {
+  margin-left: 20px;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -213,6 +224,8 @@ body {
 }
 
 #desc {
+  resize: none;
+  margin-left: 20px;
   max-width: 100%;
   min-width: 100%;
   width: 100%;
@@ -228,6 +241,7 @@ body {
 }
 
 #submit-public {
+  margin-left: 20px;
   font-family: Cambria;
   font-weight: bold;
   font-size: 20px;
@@ -254,6 +268,7 @@ body {
 }
 
 #submit-private {
+  margin-left: 20px;
   font-family: Cambria;
   font-weight: bold;
   font-size: 20px;
