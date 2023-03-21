@@ -2,6 +2,12 @@
 session_start();
 include "../include/connection.php";
 
+$stmt = $pdo->prepare("SELECT * FROM private_posts WHERE url = ?");
+$stmt->execute([$_GET["url"]]);
+$post = $stmt->fetch(PDO::FETCH_ASSOC);
+
+$url = $_GET["url"];
+
 function getCategory1($post)
 {
     return $post["html"];
@@ -83,6 +89,7 @@ if (!$post) {
     <h1>Code</h1>
     <pre><?= htmlspecialchars($post["code"]) ?></pre>
 
+    <?php echo "http://localhost/project-2/page/private-post.php?url=$url" ?>
     <!-- Footer -->
     <?php include "../include/footer.php" ?>
 </body>
