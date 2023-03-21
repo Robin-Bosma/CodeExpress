@@ -91,6 +91,9 @@ body {
 
 /* index */
 
+.item {
+  grid-area: nav;
+}
 .item1 {
   grid-area: header;
 }
@@ -116,10 +119,11 @@ body {
 .grid-container {
   display: grid;
   grid-template-areas:
-    "header header header history history ."
-    "main right right history history ."
-    "button button . history history ."
-    "database . . history history ."
+    "nav nav nav nav nav nav"
+    "header header header header history history"
+    "main main main right history history"
+    "button button button . history history"
+    "database . . . history history"
     "footer footer footer footer footer footer";
 }
 
@@ -452,6 +456,7 @@ body {
 footer {
   background-color: #252525;
   color: white;
+  width: 106%;
 }
 
 .footer-text {

@@ -17,7 +17,9 @@ include "../include/insert-post.php";
 
 <body>
     <!-- Navbar -->
+    <div class="item">
     <?php include "../include/navbar.php" ?>
+</div>
     <div class="grid-container">
         <div class="item1">
             <form method="post" action="../page/index.php">
@@ -95,7 +97,7 @@ include "../include/insert-post.php";
             </div>
         </div>
         <div class="item5">
-            <div><input type="submit" id="submit-public" href="code.php" value="Public post"> <input type="submit" id="submit-private" value="Private post"></div>
+            <input type="submit" id="submit-public" href="code.php" value="Public post"> <input type="submit" id="submit-private" value="Private post">
         </div>
         </form>
         <tbody>
