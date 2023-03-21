@@ -99,24 +99,6 @@ include "../include/insert-post.php";
         </div>
         </form>
         <tbody>
-            <div class="item6">
-                <?php
-                // Retrieve data from the configuration table
-                $sql = "SELECT * FROM configuration";
-                $result = $pdo->query($sql);
-
-                if ($result->rowCount() > 0) {
-                    while ($row = $result->fetch()) {
-                        echo "<tr>";
-                        echo "<td>" . $row["title"] . "</td>";
-                        echo "<td>" . $row["category"] . "</td>";
-                        echo "</tr>";
-                    }
-                } else {
-                    echo "<tr><td colspan='2'>No results found</td></tr>";
-                }
-                ?>
-            </div>
         </tbody>
         </table>
         <!-- Footer -->
