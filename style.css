@@ -91,6 +91,11 @@ body {
 
 /* index */
 
+.required {
+  color: red;
+  cursor: help;
+}
+
 .item {
   grid-area: nav;
 }

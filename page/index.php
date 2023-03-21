@@ -39,8 +39,8 @@ include "../include/insert-post.php";
 
             <div class="category" required>
                 <p class="config-category">Category:</p>
-                <div id="checkboxes">
-                    <div class="checkboxes-top">
+                <div id="checkboxes" required>
+                    <div class="checkboxes-top" required>
                         <input type="checkbox" id="checkbox-codes" name="category[]" value="HTML">
                         <label for="HTML">HTML</label><br>
                         <input type="checkbox" id="checkbox-codes" name="category[]" value="CSS">
@@ -60,7 +60,7 @@ include "../include/insert-post.php";
         <div class="item3-text">
             <h1 class="config-desc">Description:</h1></div>
             <div class="item3">
-            <textarea cols="80" rows="10" id="desc" type="text" name="description" required>
+            <textarea cols="80" rows="10" id="desc" type="text" name="description">
 </textarea>
         </div>
         <div class="item4">
