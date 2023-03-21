@@ -97,11 +97,22 @@ body {
 .item1 {
   grid-area: header;
 }
+.config {
+  grid-area: line;
+  border-bottom: 3px solid black;
+  display: inline-block;
+  max-width: 1200px;
+  min-width: 1200px;
+  width: 1200px;
+}
 .item2 {
   grid-area: main;
 }
 .item3 {
   grid-area: right;
+}
+.item3-text {
+  grid-area: right-text;
 }
 .item4 {
   grid-area: history;
@@ -120,32 +131,25 @@ body {
   display: grid;
   grid-template-areas:
     "nav nav nav nav nav nav"
-    "header header header header history history"
-    "main main main right history history"
-    "button button button . history history"
-    "database . . . history history"
+    "header header header header header history"
+    "line line line line line history"
+    ". . . . right-text history"
+    "main main main main right history"
+    "button button button button button history"
+    "database . . . . history"
     "footer footer footer footer footer footer";
 }
 
-.item2 {
-  margin-top: 56px;
-}
-
 .item7 {
-  width: 55.3%;
-  max-width: 55.3;
+  width: 60%;
+  max-width: 60%;
   justify-content: center;
 }
 
-.config-code {
-  margin-left: 10px;
-}
-
 #code {
-  max-width: 1122px;
-  min-width: 1122px;
-  width: 1122px;
-  margin-left: 10px;
+  max-width: 100%;
+  min-width: 100%;
+  width: 100%;
   background-color: lightgray;
   border-style: solid;
   border-width: 3px;
@@ -154,23 +158,15 @@ body {
   text-align: inherit;
   height: 200px;
 }
-.config {
-  margin-left: 10px;
-  border-bottom: 3px solid black;
-  width: 1131px;
-  display: inline-block;
-}
 
 .config-title {
   font-size: 25px;
-  margin-left: 10px;
 }
 
 #title {
   max-width: 200px;
   max-height: 30px;
   margin-top: 25px;
-  margin-left: 108px;
   background-color: lightgray;
   border-style: solid;
   border-width: 3px;
@@ -181,14 +177,12 @@ body {
 
 .config-created {
   font-size: 25px;
-  margin-left: 10px;
 }
 
 #created {
   max-width: 200px;
   max-height: 30px;
   margin-top: 25px;
-  margin-left: 40px;
   background-color: lightgray;
   border-style: solid;
   border-width: 3px;
@@ -199,7 +193,6 @@ body {
 
 .config-category {
   font-size: 25px;
-  margin-left: 10px;
 }
 
 .configurations {
@@ -210,7 +203,6 @@ body {
 .category {
   display: flex;
   flex-direction: row;
-  margin-bottom: 10px;
 }
 
 #checkboxes {
@@ -218,14 +210,12 @@ body {
   flex-direction: row;
   align-items: center;
   font-size: 20px;
-  margin-left: 10px;
 }
 
 #desc {
-  max-width: 632px;
-  min-width: 632px;
-  width: 632px;
-  margin-right: 120px;
+  max-width: 100%;
+  min-width: 100%;
+  width: 100%;
   background-color: lightgray;
   border-style: solid;
   border-width: 3px;
@@ -235,11 +225,6 @@ body {
   height: 178px;
   max-height: 178px;
   min-height: 178px;
-}
-
-.item5 {
-  margin-top: 20px;
-  margin-left: 10px;
 }
 
 #submit-public {
@@ -292,10 +277,6 @@ body {
 
 #submit-private:active {
   background-color: #010066;
-}
-
-.checkbox-bottom {
-  margin-bottom: 24px;
 }
 
 /* code.php */
@@ -456,7 +437,6 @@ body {
 footer {
   background-color: #252525;
   color: white;
-  width: 106%;
 }
 
 .footer-text {

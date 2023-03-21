@@ -60,8 +60,9 @@ include "../include/insert-post.php";
                 </div>
             </div>
         </div>
-        <div class="item3">
-            <h1 class="config-desc">Description:</h1>
+        <div class="item3-text">
+            <h1 class="config-desc">Description:</h1></div>
+            <div class="item3">
             <textarea cols="80" rows="10" id="desc" type="text" name="description" required>
 </textarea>
         </div>
