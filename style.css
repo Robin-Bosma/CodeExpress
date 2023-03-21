@@ -129,8 +129,8 @@ body {
 }
 .item7 {
   grid-area: footer;
-  width: 55.65%;
-  max-width: 55.65%;
+  width: 56.5%;
+  max-width: 56.5%;
   justify-content: center;
 }
 
