@@ -114,6 +114,7 @@ body {
 }
 .item3-text {
   grid-area: right-text;
+  margin-left: 20px;
 }
 .item4 {
   grid-area: history;
@@ -127,8 +128,8 @@ body {
 }
 .item7 {
   grid-area: footer;
-  width: 58%;
-  max-width: 58%;
+  width: 55.65%;
+  max-width: 55.65%;
   justify-content: center;
 }
 
@@ -334,6 +335,7 @@ body {
 
 .right-container-content {
   background-color: lightgrey;
+  border: 3px solid grey;
 }
 
 .flex-direction-row {
@@ -363,7 +365,7 @@ body {
 
 .line {
   border-bottom: 3px solid black;
-  width: 225px;
+  width: 100%;
   display: inline-block;
 }
 
