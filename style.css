@@ -472,10 +472,10 @@ footer {
 }
 
 .footer-text {
-  margin-top: 1%;
   font-family: Cambria;
   font-weight: bold;
   margin-left: 0.6%;
+  padding-top: 10px;
 }
 
 #footer-copyright {
