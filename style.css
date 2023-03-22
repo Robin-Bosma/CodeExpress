@@ -169,7 +169,8 @@ body {
 
 #code {
   resize: vertical;
-  overflow-x: hidden;
+  overflow-y: scroll;
+  overflow-x: scroll;
   margin-left: 20px;
   max-width: 100%;
   min-width: 100%;
@@ -328,7 +329,7 @@ body {
   background-color: #010066;
 }
 /* overview */
-/* grid overview */
+
 #overview-container {
   display: grid;
   grid-template-areas:
@@ -340,16 +341,20 @@ body {
   gap: 10px; 
 }
 
+
 #overview-container nav {
   grid-area: nav;
 }
 
+
 #overview-container #overview-content {
   grid-area: overview-content;
 }
+
 #overview-container footer {
   grid-area: footer;
 }
+
 /* content overview */
 #overview-item { 
   background-color: darkgray;
