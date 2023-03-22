@@ -478,8 +478,8 @@ body {
 }
 
 .table-container {
-  height: 588px; /* Set the desired height */
-  overflow-y: auto; /* Add a scrollbar if needed */
+  height: 588px;
+  overflow-y: auto;
   overflow-x: hidden;
 }
 

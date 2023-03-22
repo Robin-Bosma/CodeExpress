@@ -18,6 +18,17 @@ if (isset($_GET['id'])) {
 <html lang="en">
 
 <head>
+<link rel="stylesheet" href="https://codemirror.net/theme/dracula.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.62.0/codemirror.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.62.0/theme/darcula.min.css" />
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.62.0/codemirror.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.62.0/mode/xml/xml.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.62.0/mode/javascript/javascript.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.62.0/mode/css/css.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.62.0/mode/htmlmixed/htmlmixed.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.62.0/mode/php/php.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.62.0/mode/sql/sql.min.js"></script>
     <style>
         <?php include '../style.css'; ?>
     </style>
@@ -78,11 +89,47 @@ if (isset($_GET['id'])) {
                 <h2 class="margin"><?php echo getDatum(); ?></h2>
                 <button id="copy-btn" onclick="copyToClipboard()">Copy Code</button>
             </div>
-            <h1>Code:</h1>
-            <div id="code">
-                <?php echo getCode(); ?>
-            </div>
+            <form method="post" action="../page/index.php">
+            <h1 class="config-code">Code:</h1>
+            <textarea cols="80" rows="10" id="code" type="text" name="code" mode="text/html">
+    <?php echo getCode(); ?>
+</textarea>
+            <script>
+                    var editor = CodeMirror.fromTextArea(document.getElementById("code"), {
+                        lineNumbers: true,
+                        mode: "htmlmixed",
+                        theme: "darcula",
+                        readOnly: true
+                    });
 
+                    var modes = {
+                        "HTML": "htmlmixed",
+                        "CSS": "css",
+                        "JavaScript": "javascript",
+                        "PHP": "php",
+                        "Python": "python",
+                        "Ruby": "ruby",
+                        "Java": "clike",
+                        "C++": "clike",
+                        "C": "clike",
+                        "SQL": "sql"
+                    };
+
+                    var modeSelect = document.getElementById("mode-select");
+
+                    for (var mode in modes) {
+                        var option = document.createElement("option");
+                        option.setAttribute("value", modes[mode]);
+                        option.innerHTML = mode;
+                        modeSelect.appendChild(option);
+                    }
+
+                    modeSelect.addEventListener("change", function() {
+                        var mode = modeSelect.options[modeSelect.selectedIndex].value;
+                        editor.setOption("mode", mode);
+                    });
+                </script>
+            </form>
             <div>
                 <h1 class="config">Comments</h1>
                 <form method="post">
