@@ -13,16 +13,16 @@ include "../include/insert-post.php";
 
     <!-- Include CodeMirror Stylesheet -->
     <link rel="stylesheet" href="https://codemirror.net/theme/dracula.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.62.0/codemirror.min.css" />
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.62.0/theme/darcula.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.62.0/codemirror.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.62.0/theme/darcula.min.css" />
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.62.0/codemirror.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.62.0/mode/xml/xml.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.62.0/mode/javascript/javascript.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.62.0/mode/css/css.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.62.0/mode/htmlmixed/htmlmixed.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.62.0/mode/php/php.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.62.0/mode/sql/sql.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.62.0/codemirror.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.62.0/mode/xml/xml.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.62.0/mode/javascript/javascript.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.62.0/mode/css/css.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.62.0/mode/htmlmixed/htmlmixed.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.62.0/mode/php/php.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.62.0/mode/sql/sql.min.js"></script>
 
 
 
@@ -48,33 +48,32 @@ include "../include/insert-post.php";
                 <!-- Initialize CodeMirror on the Textarea Element with Multiple Modes -->
                 <script>
                     var editor = CodeMirror.fromTextArea(document.getElementById("code"), {
-    lineNumbers: true,
-    mode: "htmlmixed",
-    theme: "darcula"
-});
+                        lineNumbers: true,
+                        mode: "htmlmixed",
+                        theme: "darcula"
+                    });
 
-var modes = {
-    "HTML": "htmlmixed",
-    "CSS": "css",
-    "JavaScript": "javascript",
-    "PHP": "php",
-    "SQL": "sql"
-};
+                    var modes = {
+                        "HTML": "htmlmixed",
+                        "CSS": "css",
+                        "JavaScript": "javascript",
+                        "PHP": "php",
+                        "SQL": "sql"
+                    };
 
-var modeSelect = document.getElementById("mode-select");
+                    var modeSelect = document.getElementById("mode-select");
 
-for (var mode in modes) {
-    var option = document.createElement("option");
-    option.setAttribute("value", modes[mode]);
-    option.innerHTML = mode;
-    modeSelect.appendChild(option);
-}
+                    for (var mode in modes) {
+                        var option = document.createElement("option");
+                        option.setAttribute("value", modes[mode]);
+                        option.innerHTML = mode;
+                        modeSelect.appendChild(option);
+                    }
 
-modeSelect.addEventListener("change", function() {
-    var mode = modeSelect.options[modeSelect.selectedIndex].value;
-    editor.setOption("mode", mode);
-});
-
+                    modeSelect.addEventListener("change", function() {
+                        var mode = modeSelect.options[modeSelect.selectedIndex].value;
+                        editor.setOption("mode", mode);
+                    });
                 </script>
                 <h1 class="config">Configurations</h1>
         </div>
@@ -109,8 +108,9 @@ modeSelect.addEventListener("change", function() {
             </div>
         </div>
         <div class="item3-text">
-            <h1 class="config-desc">Description:</h1></div>
-            <div class="item3">
+            <h1 class="config-desc">Description:</h1>
+        </div>
+        <div class="item3">
             <textarea cols="80" rows="10" id="desc" type="text" name="description">
 </textarea>
         </div>
