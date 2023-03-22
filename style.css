@@ -318,7 +318,32 @@ body {
 #submit-private:active {
   background-color: #010066;
 }
+/* overview */
 
+#overview-container {
+  display: grid;
+  grid-template-areas:
+    "nav nav nav nav nav nav"
+    ". overview-content overview-content overview-content overview-content ."
+    "footer footer footer footer footer footer";
+  grid-template-rows: auto 1fr auto; 
+  grid-template-columns: repeat(6, 1fr); 
+  gap: 10px; 
+}
+
+
+#overview-container nav {
+  grid-area: nav;
+}
+
+
+#overview-container #overview-content {
+  grid-area: overview-content;
+}
+
+#overview-container footer {
+  grid-area: footer;
+}
 /* code.php */
 
 #copy-btn {
