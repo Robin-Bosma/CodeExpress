@@ -91,16 +91,15 @@ if (isset($_GET['id'])) {
             </div>
             <form method="post" action="../page/index.php">
             <h1 class="config-code">Code:</h1>
-            <textarea cols="80" rows="10" id="code" type="text" name="code" mode="text/html" disabled="true">
+            <textarea cols="80" rows="10" id="code" type="text" name="code" mode="text/html">
     <?php echo getCode(); ?>
 </textarea>
-
-
             <script>
                     var editor = CodeMirror.fromTextArea(document.getElementById("code"), {
                         lineNumbers: true,
                         mode: "htmlmixed",
-                        theme: "darcula"
+                        theme: "darcula",
+                        readOnly: true
                     });
 
                     var modes = {
