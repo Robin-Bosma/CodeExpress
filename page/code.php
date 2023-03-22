@@ -139,6 +139,7 @@ if (isset($_GET['id'])) {
                         <p>Category</p>
                     </div>
                 </div>
+                <div class="table-container">
                 <table>
                     <?php
                     // Retrieve data from the configuration table
@@ -157,6 +158,7 @@ if (isset($_GET['id'])) {
                     }
                     ?>
                 </table>
+                </div>
             </div>
         </div>
     </div>

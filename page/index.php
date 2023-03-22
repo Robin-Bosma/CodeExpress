@@ -13,18 +13,16 @@ include "../include/insert-post.php";
 
     <!-- Include CodeMirror Stylesheet -->
     <link rel="stylesheet" href="https://codemirror.net/theme/dracula.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.62.0/codemirror.min.css" />
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.62.0/theme/darcula.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.62.0/codemirror.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.62.0/theme/darcula.min.css" />
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.62.0/codemirror.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.62.0/mode/xml/xml.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.62.0/mode/javascript/javascript.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.62.0/mode/css/css.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.62.0/mode/htmlmixed/htmlmixed.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.62.0/mode/php/php.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.62.0/mode/sql/sql.min.js"></script>
-
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.62.0/codemirror.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.62.0/mode/xml/xml.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.62.0/mode/javascript/javascript.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.62.0/mode/css/css.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.62.0/mode/htmlmixed/htmlmixed.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.62.0/mode/php/php.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.62.0/mode/sql/sql.min.js"></script>
 
     <!-- Include Your Custom Stylesheet -->
     <style>
@@ -48,35 +46,40 @@ include "../include/insert-post.php";
                 <!-- Initialize CodeMirror on the Textarea Element with Multiple Modes -->
                 <script>
                     var editor = CodeMirror.fromTextArea(document.getElementById("code"), {
-    lineNumbers: true,
-    mode: "htmlmixed",
-    theme: "darcula"
-});
+                        lineNumbers: true,
+                        mode: "htmlmixed",
+                        theme: "darcula"
+                    });
 
-var modes = {
-    "HTML": "htmlmixed",
-    "CSS": "css",
-    "JavaScript": "javascript",
-    "PHP": "php",
-    "SQL": "sql"
-};
+                    var modes = {
+                        "HTML": "htmlmixed",
+                        "CSS": "css",
+                        "JavaScript": "javascript",
+                        "PHP": "php",
+                        "Python": "python",
+                        "Ruby": "ruby",
+                        "Java": "clike",
+                        "C++": "clike",
+                        "C": "clike",
+                        "SQL": "sql"
+                    };
 
-var modeSelect = document.getElementById("mode-select");
+                    var modeSelect = document.getElementById("mode-select");
 
-for (var mode in modes) {
-    var option = document.createElement("option");
-    option.setAttribute("value", modes[mode]);
-    option.innerHTML = mode;
-    modeSelect.appendChild(option);
-}
+                    for (var mode in modes) {
+                        var option = document.createElement("option");
+                        option.setAttribute("value", modes[mode]);
+                        option.innerHTML = mode;
+                        modeSelect.appendChild(option);
+                    }
 
-modeSelect.addEventListener("change", function() {
-    var mode = modeSelect.options[modeSelect.selectedIndex].value;
-    editor.setOption("mode", mode);
-});
-
+                    modeSelect.addEventListener("change", function() {
+                        var mode = modeSelect.options[modeSelect.selectedIndex].value;
+                        editor.setOption("mode", mode);
+                    });
                 </script>
-                <h1 class="config">Configurations</h1>
+            </form>
+            <h1 class="config">Configurations</h1>
         </div>
         <div class="item2">
             <div class="configurations">
@@ -109,8 +112,9 @@ modeSelect.addEventListener("change", function() {
             </div>
         </div>
         <div class="item3-text">
-            <h1 class="config-desc">Description:</h1></div>
-            <div class="item3">
+            <h1 class="config-desc">Description:</h1>
+        </div>
+        <div class="item3">
             <textarea cols="80" rows="10" id="desc" type="text" name="description">
 </textarea>
         </div>
@@ -124,29 +128,31 @@ modeSelect.addEventListener("change", function() {
                             <p>Category</p>
                         </div>
                     </div>
-                    <table>
-                        <?php
-                        // Retrieve data from the configuration table
-                        $sql = "SELECT * FROM configuration";
-                        $result = $pdo->query($sql);
+                    <div class="table-container">
+                        <table>
+                            <?php
+                            // Retrieve data from the configuration table
+                            $sql = "SELECT * FROM configuration";
+                            $result = $pdo->query($sql);
 
-                        if ($result->rowCount() > 0) {
-                            while ($row = $result->fetch()) {
-                                echo "<tr>";
-                                echo "<td><a class='margin-right' href='../page/code.php?id=" . $row['id'] . "'>" . $row["title"] . "</a></td>";
-                                echo "<td>" . $row["category"] . "</td>";
-                                echo "</tr>";
+                            if ($result->rowCount() > 0) {
+                                while ($row = $result->fetch()) {
+                                    echo "<tr>";
+                                    echo "<td><a class='margin-right' href='../page/code.php?id=" . $row['id'] . "'>" . $row["title"] . "</a></td>";
+                                    echo "<td>" . $row["category"] . "</td>";
+                                    echo "</tr>";
+                                }
+                            } else {
+                                echo "<tr><td colspan='2'>No results found</td></tr>";
                             }
-                        } else {
-                            echo "<tr><td colspan='2'>No results found</td></tr>";
-                        }
-                        ?>
-                    </table>
+                            ?>
+                        </table>
+                    </div>
                 </div>
             </div>
         </div>
         <div class="item5">
-            <input type="submit" id="submit-public" href="code.php" value="Create Public post"> <input type="submit" id="submit-private" value="Create Private post">
+            <input type="submit" id="submit-public" name="submit-public" href="code.php" value="Create Public post"> <input type="submit" id="submit-private" name="submit-private" value="Create Private post">
         </div>
         </form>
         <tbody>

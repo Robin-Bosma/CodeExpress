@@ -17,7 +17,6 @@
         <div class="separator">|</div>
       </li>
       <li><a href="../page/overview.php">Overview</a></li>
-
     </ul>
 
     <form action="../include/search.php" method="get">
