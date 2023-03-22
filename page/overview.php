@@ -7,11 +7,11 @@ include "../include/connection.php"
 <html lang="en">
 
 <head>
-    <link rel="icon" href="../img/CodeExpress-logo.png" type="image/x-icon" />
+<title>Code Express</title>
+    <link rel="icon" href="../img/logo.png" type="image/x-icon" />
     <style>
         <?php include '../style.css'; ?>
     </style>
-    <title>Overview - Code Express</title>
 </head>
 
 <body>
@@ -34,7 +34,7 @@ function echoCode($code_array)
 ?>
     <!-- Navbar -->
     <div id="overview-container">
-  <nav class="navbar">
+  <nav class="item">
     <?php include "../include/navbar.php" ?>
   </nav>
 
