@@ -28,6 +28,8 @@ function echoCode($code_array)
         echo "<div><strong>Title:</strong> " . $key->title . "</div>";
         echo "<div><strong>Description:</strong> " . $key->description . "</div>";
         echo "<div><a href='code.php?id=$key->id'>Details</a></div>";
+        echo "<div><strong>creator:</strong> " . $key->creator . "</div>";
+        echo "<div><strong>date:</strong> " . $key->date . "</div>";
     }
 }
 
@@ -39,13 +41,16 @@ function echoCode($code_array)
   </nav>
 
   <div id="overview-content" class="content">
-    <h1>Dit is overview</h1>
 
     <?php foreach ($code_array as $key) { ?>
-      <h1><a href="code.php?id=<?php echo $key->id ?>"><?php echo $key->title ?></a></h1>
+      <h1 class="overview-line"><a class="overview-link" href="code.php?id=<?php echo $key->id ?>"><?php echo $key->title ?></a></h1>
+      <div id="overview-item">
       <p><?php echo $key->description ?></p>
+      <p id="overview-end"> Created by: <?php echo $key->creator ?></p>
+      <p class="overview-end">Date created: <?php echo $key->date ?></p>
+        </div>
     <?php } ?>
-  </div>
+
 
   <footer class="footer">
     <?php include "../include/footer.php" ?>

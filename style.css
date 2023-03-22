@@ -328,7 +328,7 @@ body {
   background-color: #010066;
 }
 /* overview */
-
+/* grid overview */
 #overview-container {
   display: grid;
   grid-template-areas:
@@ -340,19 +340,45 @@ body {
   gap: 10px; 
 }
 
-
 #overview-container nav {
   grid-area: nav;
 }
 
-
 #overview-container #overview-content {
   grid-area: overview-content;
 }
-
 #overview-container footer {
   grid-area: footer;
 }
+/* content overview */
+#overview-item { 
+  background-color: darkgray;
+  border-top: black solid 5px;
+
+}
+.overview-link { 
+  text-decoration: none;
+  color: #010066;
+  transition: ease-out 0.5s;
+}
+.overview-link:hover { 
+  color: #ffc61e;
+  background-color: #010066;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.overview-end { 
+  display: flex;
+  justify-content: end;
+}
+#overview-end { 
+  display: flex;
+  justify-content: end;
+  margin-right: 68px;
+}
+
+
 /* code.php */
 
 #copy-btn {
