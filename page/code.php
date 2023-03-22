@@ -109,7 +109,6 @@ if (isset($_GET['id'])) {
                         // Insert the comment into the SQL table
                         $sql = "INSERT INTO comments (comment_text, username, date_created) VALUES ('$comment_text', '$username', NOW())";
                         if (mysqli_query($conn, $sql)) {
-                            echo "Comment posted successfully";
                         } else {
                             echo "Error: " . $sql . "<br>" . mysqli_error($conn);
                         }
@@ -140,24 +139,24 @@ if (isset($_GET['id'])) {
                     </div>
                 </div>
                 <div class="table-container">
-                <table>
-                    <?php
-                    // Retrieve data from the configuration table
-                    $sql = "SELECT * FROM configuration";
-                    $result = $pdo->query($sql);
+                    <table>
+                        <?php
+                        // Retrieve data from the configuration table
+                        $sql = "SELECT * FROM configuration";
+                        $result = $pdo->query($sql);
 
-                    if ($result->rowCount() > 0) {
-                        while ($row = $result->fetch()) {
-                            echo "<tr>";
-                            echo "<td><a class='margin-right' href='../page/code.php?id=" . $row['id'] . "'>" . $row["title"] . "</a></td>";
-                            echo "<td>" . $row["category"] . "</td>";
-                            echo "</tr>";
+                        if ($result->rowCount() > 0) {
+                            while ($row = $result->fetch()) {
+                                echo "<tr>";
+                                echo "<td><a class='margin-right' href='../page/code.php?id=" . $row['id'] . "'>" . $row["title"] . "</a></td>";
+                                echo "<td>" . $row["category"] . "</td>";
+                                echo "</tr>";
+                            }
+                        } else {
+                            echo "<tr><td colspan='2'>No results found</td></tr>";
                         }
-                    } else {
-                        echo "<tr><td colspan='2'>No results found</td></tr>";
-                    }
-                    ?>
-                </table>
+                        ?>
+                    </table>
                 </div>
             </div>
         </div>
