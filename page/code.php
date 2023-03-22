@@ -85,11 +85,48 @@ if (isset($_GET['id'])) {
 
             <div>
                 <h1 class="config">Comments</h1>
-                <form method="post" action="../page/code.php">
+                <form method="post">
                     <div class="flex-direction-column">
-                        <input class="code-input" type="text" placeholder="Write your comment here">
-                        <input class="code-button" type="submit" value="Add Comment">
+                        <input class="code-input" type="text" id="comment_text" name="comment_text" placeholder="Write your comment here">
+                        <input class="code-button" type="submit" name="submit" value="Add Comment">
                     </div>
+                    <?php
+                    // Connect to the SQL database
+                    $conn = mysqli_connect("localhost", "root", "", "codeexpress");
+
+                    // Check connection
+                    if (!$conn) {
+                        die("Connection failed: " . mysqli_connect_error());
+                    }
+
+                    // Check if the form has been submitted
+                    if (isset($_POST['submit'])) {
+                        // Get the comment text
+                        $comment_text = $_POST['comment_text'];
+                        // Generate a random username or leave it blank
+                        $username = rand(1, 9999);
+
+                        // Insert the comment into the SQL table
+                        $sql = "INSERT INTO comments (comment_text, username, date_created) VALUES ('$comment_text', '$username', NOW())";
+                        if (mysqli_query($conn, $sql)) {
+                            echo "Comment posted successfully";
+                        } else {
+                            echo "Error: " . $sql . "<br>" . mysqli_error($conn);
+                        }
+                    }
+
+                    // Retrieve the comments from the SQL table
+                    $sql = "SELECT * FROM comments";
+                    $result = mysqli_query($conn, $sql);
+
+                    // Loop through the comments and display each one
+                    while ($row = mysqli_fetch_assoc($result)) {
+                        echo "<p>Anonymous user " . $row['username'] . " said: " . $row['comment_text'] . " | on " . date("F j, Y, g:i a", strtotime($row['date_created'])) . "</p>";
+                    }
+
+                    // Close the SQL connection
+                    mysqli_close($conn);
+                    ?>
                 </form>
             </div>
         </div>
