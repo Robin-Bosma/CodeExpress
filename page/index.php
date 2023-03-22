@@ -44,7 +44,7 @@ include "../include/insert-post.php";
                 <h1 class="config-code">Code:</h1>
 
                 <!-- Add the Textarea Element for Code -->
-                <textarea cols="80" rows="10" id="code" type="text" name="code" required mode="text/html"></textarea>
+                <textarea cols="80" rows="10" id="code" type="text" name="code" mode="text/html"></textarea>
                 <!-- Initialize CodeMirror on the Textarea Element with Multiple Modes -->
                 <script>
                     var editor = CodeMirror.fromTextArea(document.getElementById("code"), {

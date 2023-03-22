@@ -23,10 +23,12 @@
     <li><a href="#">SQL</a></li>
 </ul>
 
+<form action="../include/search.php" method="get">
     <div class="search-bar">
-      <input id="search-input" type="text" placeholder="What are you looking for?">
+      <input id="search-input" type="text" name="q" placeholder="What are you looking for?">
       <img src="../img/spyglass.png" alt="spyglass">
     </div>
+  </form>
   </nav>
 </body>
 </html>

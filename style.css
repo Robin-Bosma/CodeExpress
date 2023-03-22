@@ -89,11 +89,12 @@ body {
 }
 
 /* index */
+
+
 .CodeMirror {
   max-width: 100%;
   resize: vertical;
 }
-
 
 .item {
   grid-area: nav;
@@ -164,8 +165,8 @@ body {
   max-width: 100%;
   min-width: 100%;
   width: 100%;
-    box-sizing: border-box;
-  background-color: darkblue;
+  box-sizing: border-box;
+  background-color: darkgray;
   border-style: solid;
   border-width: 3px;
   text-align: left;
