@@ -6,7 +6,6 @@ body {
   font-family: Cambria;
   font-weight: bold;
 }
-
 /* Navbar */
 .navbar {
   background-color: #ffc61e;
@@ -90,12 +89,28 @@ body {
 }
 
 /* index */
+.CodeMirror {
+  max-width: 100%;
+  resize: vertical;
+}
+
 
 .item {
   grid-area: nav;
 }
 .item1 {
   grid-area: header;
+  max-width: 100%;
+  resize: vertical;
+}
+.config {
+  margin-left: 20px;
+  grid-area: line;
+  border-bottom: 3px solid black;
+  display: inline-block;
+  max-width: 1200px;
+  min-width: 1200px;
+  width: 1200px;
 }
 .item2 {
   grid-area: main;
@@ -103,50 +118,54 @@ body {
 .item3 {
   grid-area: right;
 }
+.item3-text {
+  grid-area: right-text;
+  margin-left: 20px;
+}
 .item4 {
   grid-area: history;
+  margin-left: 50px;
 }
 .item5 {
   grid-area: button;
+  margin-top: 20px;
 }
 .item6 {
   grid-area: database;
 }
 .item7 {
   grid-area: footer;
+  width: 56.5%;
+  max-width: 56.5%;
+  justify-content: center;
 }
 
 .grid-container {
   display: grid;
   grid-template-areas:
     "nav nav nav nav nav nav"
-    "header header header header history history"
-    "main main main right history history"
-    "button button button . history history"
-    "database . . . history history"
+    "header header header header header history"
+    "line line line line line history"
+    ". . right-text right-text right-text history"
+    "main main right right right history"
+    "button button button button button history"
+    "database . . . . history"
     "footer footer footer footer footer footer";
 }
 
-.item2 {
-  margin-top: 56px;
-}
-
-.item7 {
-  width: 55.3%;
-  max-width: 55.3;
-  justify-content: center;
-}
-
 .config-code {
-  margin-left: 10px;
+  margin-left: 20px;
 }
 
 #code {
-  max-width: 1122px;
-  min-width: 1122px;
-  width: 1122px;
-  margin-left: 10px;
-  background-color: lightgray;
+  resize: vertical;
+  overflow-x: hidden;
+  margin-left: 20px;
+  max-width: 100%;
+  min-width: 100%;
+  width: 100%;
+    box-sizing: border-box;
+  background-color: darkblue;
   border-style: solid;
   border-width: 3px;
   text-align: left;
@@ -154,23 +173,17 @@ body {
   text-align: inherit;
   height: 200px;
 }
-.config {
-  margin-left: 10px;
-  border-bottom: 3px solid black;
-  width: 1131px;
-  display: inline-block;
-}
 
 .config-title {
+  margin-left: 20px;
   font-size: 25px;
-  margin-left: 10px;
 }
 
 #title {
+  margin-left: 107.5px;
   max-width: 200px;
   max-height: 30px;
   margin-top: 25px;
-  margin-left: 108px;
   background-color: lightgray;
   border-style: solid;
   border-width: 3px;
@@ -180,15 +193,15 @@ body {
 }
 
 .config-created {
+  margin-left: 20px;
   font-size: 25px;
-  margin-left: 10px;
 }
 
 #created {
+  margin-left: 40px;
   max-width: 200px;
   max-height: 30px;
   margin-top: 25px;
-  margin-left: 40px;
   background-color: lightgray;
   border-style: solid;
   border-width: 3px;
@@ -198,8 +211,8 @@ body {
 }
 
 .config-category {
+  margin-left: 20px;
   font-size: 25px;
-  margin-left: 10px;
 }
 
 .configurations {
@@ -210,22 +223,36 @@ body {
 .category {
   display: flex;
   flex-direction: row;
-  margin-bottom: 10px;
 }
 
-#checkboxes {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  font-size: 20px;
+#checkbox-codes {
   margin-left: 10px;
 }
 
+#checkboxes {
+  margin-left: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  font-size: 20px;
+}
+.checkboxes-top {
+  display: flex;
+  flex-direction: row;
+}
+
+.checkboxes-bottom {
+  display: flex;
+  flex-direction: row;
+}
+
 #desc {
-  max-width: 632px;
-  min-width: 632px;
-  width: 632px;
-  margin-right: 120px;
+  resize: none;
+  margin-left: 20px;
+  max-width: 96.5%;
+  min-width: 96.5%;
+  width: 96.5%;
   background-color: lightgray;
   border-style: solid;
   border-width: 3px;
@@ -237,17 +264,13 @@ body {
   min-height: 178px;
 }
 
-.item5 {
-  margin-top: 20px;
-  margin-left: 10px;
-}
-
 #submit-public {
+  margin-left: 20px;
   font-family: Cambria;
   font-weight: bold;
   font-size: 20px;
   color: #010066;
-  border: 2px solid black;
+  border: 3px solid #010066;
   background-color: #ffc61e;
   border-radius: 0px;
   padding: 18px 22.6px;
@@ -269,11 +292,12 @@ body {
 }
 
 #submit-private {
+  margin-left: 20px;
   font-family: Cambria;
   font-weight: bold;
   font-size: 20px;
   color: #010066;
-  border: 2px solid black;
+  border: 3px solid #010066;
   background-color: #ffc61e;
   border-radius: 0px;
   padding: 18px 20px;
@@ -292,10 +316,6 @@ body {
 
 #submit-private:active {
   background-color: #010066;
-}
-
-.checkbox-bottom {
-  margin-bottom: 24px;
 }
 
 /* code.php */
@@ -338,6 +358,7 @@ body {
 
 .right-container-content {
   background-color: lightgrey;
+  border: 3px solid grey;
 }
 
 .flex-direction-row {
@@ -367,7 +388,7 @@ body {
 
 .line {
   border-bottom: 3px solid black;
-  width: 225px;
+  width: 100%;
   display: inline-block;
 }
 
@@ -456,14 +477,13 @@ body {
 footer {
   background-color: #252525;
   color: white;
-  width: 106%;
 }
 
 .footer-text {
-  margin-top: 1%;
   font-family: Cambria;
   font-weight: bold;
   margin-left: 0.6%;
+  padding-top: 10px;
 }
 
 #footer-copyright {
