@@ -24,8 +24,6 @@ include "../include/insert-post.php";
     <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.62.0/mode/php/php.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.62.0/mode/sql/sql.min.js"></script>
 
-
-
     <!-- Include Your Custom Stylesheet -->
     <style>
         <?php include '../style.css'; ?>
@@ -58,6 +56,11 @@ include "../include/insert-post.php";
                         "CSS": "css",
                         "JavaScript": "javascript",
                         "PHP": "php",
+                        "Python": "python",
+                        "Ruby": "ruby",
+                        "Java": "clike",
+                        "C++": "clike",
+                        "C": "clike",
                         "SQL": "sql"
                     };
 
@@ -75,7 +78,8 @@ include "../include/insert-post.php";
                         editor.setOption("mode", mode);
                     });
                 </script>
-                <h1 class="config">Configurations</h1>
+            </form>
+            <h1 class="config">Configurations</h1>
         </div>
         <div class="item2">
             <div class="configurations">
@@ -124,24 +128,26 @@ include "../include/insert-post.php";
                             <p>Category</p>
                         </div>
                     </div>
-                    <table>
-                        <?php
-                        // Retrieve data from the configuration table
-                        $sql = "SELECT * FROM configuration";
-                        $result = $pdo->query($sql);
+                    <div class="table-container">
+                        <table>
+                            <?php
+                            // Retrieve data from the configuration table
+                            $sql = "SELECT * FROM configuration";
+                            $result = $pdo->query($sql);
 
-                        if ($result->rowCount() > 0) {
-                            while ($row = $result->fetch()) {
-                                echo "<tr>";
-                                echo "<td><a class='margin-right' href='../page/code.php?id=" . $row['id'] . "'>" . $row["title"] . "</a></td>";
-                                echo "<td>" . $row["category"] . "</td>";
-                                echo "</tr>";
+                            if ($result->rowCount() > 0) {
+                                while ($row = $result->fetch()) {
+                                    echo "<tr>";
+                                    echo "<td><a class='margin-right' href='../page/code.php?id=" . $row['id'] . "'>" . $row["title"] . "</a></td>";
+                                    echo "<td>" . $row["category"] . "</td>";
+                                    echo "</tr>";
+                                }
+                            } else {
+                                echo "<tr><td colspan='2'>No results found</td></tr>";
                             }
-                        } else {
-                            echo "<tr><td colspan='2'>No results found</td></tr>";
-                        }
-                        ?>
-                    </table>
+                            ?>
+                        </table>
+                    </div>
                 </div>
             </div>
         </div>

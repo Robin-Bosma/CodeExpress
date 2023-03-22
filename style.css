@@ -90,11 +90,20 @@ body {
 
 /* index */
 
-
 .CodeMirror {
   max-width: 100%;
   resize: vertical;
 }
+
+.cm-s-darcula .cm-bracket {
+  color: yellow;
+}
+
+.cm-s-darcula .cm-variable {
+  color: blue;
+}
+
+
 
 .item {
   grid-area: nav;
@@ -440,6 +449,12 @@ body {
   display: flex;
   flex-direction: row;
   height: 50px;
+}
+
+.table-container {
+  height: 588px; /* Set the desired height */
+  overflow-y: auto; /* Add a scrollbar if needed */
+  overflow-x: hidden;
 }
 
 /* Footer */
