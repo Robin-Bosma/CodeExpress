@@ -50,12 +50,13 @@ function echoCode($code_array)
       <p class="overview-end">Date created: <?php echo $key->date ?></p>
         </div>
     <?php } ?>
-
+</div>
+    </div>
 
   <footer class="footer">
     <?php include "../include/footer.php" ?>
   </footer>
-</div>
+
 
 </body>
 
