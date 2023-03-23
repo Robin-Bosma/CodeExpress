@@ -68,7 +68,6 @@ include "../include/insert-post.php";
     }
     ?>
 
-    ?>
     <!-- Navbar -->
     <div class="item">
         <?php include "../include/navbar.php" ?>
