@@ -156,8 +156,6 @@ include "../include/insert-post.php";
             <input type="submit" id="submit-private" name="submit-private" value="Create Private post">
         </div>
         </form>
-        <tbody>
-        </tbody>
         </table>
         <!-- Footer -->
         <div class="item7">
