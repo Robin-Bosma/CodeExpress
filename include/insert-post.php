@@ -2,7 +2,7 @@
 
 include "connection.php";
 
-// Define an array to store the true/false values for each category
+// kiest of het true of false is 
 $category_values = array(
   'HTML' => isset($_POST["category"]["HTML"]),
   'CSS' => isset($_POST["category"]["CSS"]),
@@ -11,7 +11,7 @@ $category_values = array(
   'SQL' => isset($_POST["category"]["SQL"]),
 );
 
-// Check if the form has been submitted
+// checked of de post word gesubmit
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
   if (isset($_POST["submit-public"])) {
     // Get the form data
@@ -21,7 +21,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $category = implode(',', $_POST["category"]);
     $description = $_POST["description"];
 
-    // Insert the configuration data into the database
+    // insert de informatie 
     $code = $_POST["code"];
     $title = $_POST["title"];
     $html = $category_values["HTML"] ? '' : 'HTML';

@@ -31,11 +31,48 @@ include "../include/insert-post.php";
 </head>
 
 <body>
+    <!-- checkboxes -->
+    <?Php
+    // Define an array to store the true/false values for each category
+    $category_values = array(
+        'HTML' => false,
+        'CSS' => false,
+        'PHP' => false,
+        'JavaScript' => false,
+        'SQL' => false,
+    );
+
+    // Check if the form has been submitted
+    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+        // Loop through the category checkboxes and set the corresponding value to true if checked
+        if (!empty($_POST["category"])) {
+            foreach ($_POST["category"] as $category) {
+                $category_values[$category] = true;
+            }
+        }
+
+        // Insert the configuration data into the database
+        $code = $_POST["code"];
+        $title = $_POST["title"];
+        $html = $category_values["HTML"] ? 'true' : 'false';
+        $css = $category_values["CSS"] ? 'true' : 'false';
+        $php = $category_values["PHP"] ? 'true' : 'false';
+        $javascript = $category_values["JavaScript"] ? 'true' : 'false';
+        $sqlcode = $category_values["SQL"] ? 'true' : 'false';
+        $date = date("Y-m-d");
+        $description = $_POST["description"];
+
+        $sql = "INSERT INTO configuration (code, title, html, css, php, javascript, SQLcode, date, description)
+            VALUES ('$code', '$title', '$html', '$css', '$php', '$javascript', '$sqlcode', '$date', '$description')";
+        $pdo->exec($sql);
+    }
+    ?>
+
+    ?>
     <!-- Navbar -->
     <div class="item">
         <?php include "../include/navbar.php" ?>
     </div>
-
     <div class="grid-container">
         <div class="item1">
             <form method="post" action="../page/index.php">
@@ -44,42 +81,9 @@ include "../include/insert-post.php";
                 <!-- Add the Textarea Element for Code -->
                 <textarea cols="80" rows="10" id="code" type="text" name="code" mode="text/html"></textarea>
                 <!-- Initialize CodeMirror on the Textarea Element with Multiple Modes -->
-                <script>
-                    var editor = CodeMirror.fromTextArea(document.getElementById("code"), {
-                        lineNumbers: true,
-                        mode: "htmlmixed",
-                        theme: "darcula"
-                    });
-
-                    var modes = {
-                        "HTML": "htmlmixed",
-                        "CSS": "css",
-                        "JavaScript": "javascript",
-                        "PHP": "php",
-                        "Python": "python",
-                        "Ruby": "ruby",
-                        "Java": "clike",
-                        "C++": "clike",
-                        "C": "clike",
-                        "SQL": "sql"
-                    };
-
-                    var modeSelect = document.getElementById("mode-select");
-
-                    for (var mode in modes) {
-                        var option = document.createElement("option");
-                        option.setAttribute("value", modes[mode]);
-                        option.innerHTML = mode;
-                        modeSelect.appendChild(option);
-                    }
-
-                    modeSelect.addEventListener("change", function() {
-                        var mode = modeSelect.options[modeSelect.selectedIndex].value;
-                        editor.setOption("mode", mode);
-                    });
-                </script>
                 <h1 class="config">Configurations</h1>
         </div>
+        <!-- configuration -->
         <div class="item2">
             <div class="configurations">
                 <p class="config-title">Title:</p>
@@ -89,7 +93,6 @@ include "../include/insert-post.php";
                 <p class="config-created">Created by:</p>
                 <input type="text" id="created" name="creator">
             </div>
-
             <div class="category" required>
                 <p class="config-category">Category:</p>
                 <div id="checkboxes" required>
@@ -114,8 +117,7 @@ include "../include/insert-post.php";
             <h1 class="config-desc">Description:</h1>
         </div>
         <div class="item3">
-            <textarea cols="80" rows="10" id="desc" type="text" name="description">
-</textarea>
+            <textarea cols="80" rows="10" id="desc" type="text" name="description"></textarea>
         </div>
         <div class="item4">
             <div class="right-container">
@@ -163,5 +165,39 @@ include "../include/insert-post.php";
             <?php include "../include/footer.php" ?>
         </div>
 </body>
+<script>
+    var editor = CodeMirror.fromTextArea(document.getElementById("code"), {
+        lineNumbers: true,
+        mode: "htmlmixed",
+        theme: "darcula"
+    });
+
+    var modes = {
+        "HTML": "htmlmixed",
+        "CSS": "css",
+        "JavaScript": "javascript",
+        "PHP": "php",
+        "Python": "python",
+        "Ruby": "ruby",
+        "Java": "clike",
+        "C++": "clike",
+        "C": "clike",
+        "SQL": "sql"
+    };
+
+    var modeSelect = document.getElementById("mode-select");
+
+    for (var mode in modes) {
+        var option = document.createElement("option");
+        option.setAttribute("value", modes[mode]);
+        option.innerHTML = mode;
+        modeSelect.appendChild(option);
+    }
+
+    modeSelect.addEventListener("change", function() {
+        var mode = modeSelect.options[modeSelect.selectedIndex].value;
+        editor.setOption("mode", mode);
+    });
+</script>
 
 </html>
