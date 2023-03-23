@@ -219,7 +219,7 @@ if (isset($_GET['id'])) {
     // The function for copying code
     function copyToClipboard() {
         var codeDiv = document.getElementById("code");
-        var codeText = codeDiv.innerHTML;
+        var codeText = codeDiv.innerText;
         navigator.clipboard.writeText(codeText).then(function() {
             alert("Code copied to clipboard!");
         }, function() {
