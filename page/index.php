@@ -78,8 +78,7 @@ include "../include/insert-post.php";
                         editor.setOption("mode", mode);
                     });
                 </script>
-            </form>
-            <h1 class="config">Configurations</h1>
+                <h1 class="config">Configurations</h1>
         </div>
         <div class="item2">
             <div class="configurations">
@@ -152,9 +151,12 @@ include "../include/insert-post.php";
             </div>
         </div>
         <div class="item5">
-            <input type="submit" id="submit-public" name="submit-public" href="code.php" value="Create Public post"> <input type="submit" id="submit-private" name="submit-private" value="Create Private post">
+            <input type="submit" id="submit-public" name="submit-public" href="code.php" value="Create Public post">
+            <input type="submit" id="submit-private" name="submit-private" value="Create Private post">
         </div>
         </form>
+        <tbody>
+        </tbody>
         </table>
         <!-- Footer -->
         <div class="item7">
