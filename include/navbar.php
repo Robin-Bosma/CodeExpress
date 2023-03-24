@@ -14,9 +14,25 @@
   <ul class="navbar-all-code-links">
     <li><a href="../page/index.php">Home</a></li>
     <li>
+    <div>ㅤ</div>
+    </li>
+    <li>
       <div class="separator">|</div>
     </li>
+    <li>
+    <div>ㅤ</div>
+    </li>
     <li><a href="../page/overview.php">Overview</a></li>
+    <li>
+    <div>ㅤ</div>
+    </li>
+    <li>
+      <div class="separator">|</div>
+    </li>
+    <li>
+    <div>ㅤ</div>
+    </li>
+    <li><a href="mailto:infocodeexpress@gmail.com">Contact</a></li>
   </ul>
 
   <form action="../page/overview.php" method="get">

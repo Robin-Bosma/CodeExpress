@@ -12,21 +12,7 @@ if (isset($_GET['id'])) {
     $title = "CodeExpress";
 }
 
-// Check if the form was submitted
-if (isset($_POST['title'])) {
-    // Sanitize and validate the input
-    $title = htmlspecialchars($_POST['title']);
-    // Insert the new code into the database
-    $stmt = $pdo->prepare("INSERT INTO configuration (title, code, category, description, date) VALUES (?, ?, ?, ?, NOW())");
-    $stmt->execute([$title, $_POST['code'], $_POST['category'], $_POST['description']]);
-    // Get the ID of the last inserted row
-    $id = $pdo->lastInsertId();
-} else {
-    $id = ''; // If the form was not submitted, do not pre-fill the ID
-}
-
 ?>
-
 
 <!DOCTYPE html>
 <html lang="en">
@@ -43,6 +29,7 @@ if (isset($_POST['title'])) {
     <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.62.0/mode/htmlmixed/htmlmixed.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.62.0/mode/php/php.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.62.0/mode/sql/sql.min.js"></script>
+
     <link rel="icon" href="../img/logo.png" type="image/x-icon" />
     <style>
         <?php include '../style.css'; ?>
@@ -153,30 +140,44 @@ if (isset($_POST['title'])) {
                         <input class="code-button" type="submit" name="submit" value="Add Comment">
                     </div>
                     <?php
-// Connect to the SQL database
-$conn = mysqli_connect("localhost", "root", "", "codeexpress");
+                    // Connect to the SQL database
+                    $conn = mysqli_connect("localhost", "root", "", "codeexpress");
 
-// Check connection
-if (!$conn) {
-    die("Connection failed: " . mysqli_connect_error());
-}
+                    // Check connection
+                    if (!$conn) {
+                        die("Connection failed: " . mysqli_connect_error());
+                    }
 
-// Retrieve comments for this code snippet
-$sql = "SELECT * FROM comments WHERE code_id = ?";
-$stmt = $pdo->prepare($sql);
-$stmt->execute([$id]);
-$comments = $stmt->fetchAll(PDO::FETCH_OBJ);
+                    // Check if the form has been submitted
+                    if (isset($_POST['submit'])) {
+                        // Get the comment text
+                        $comment_text = $_POST['comment_text'];
+                        // Generate a random username or leave it blank
+                        $username = rand(1, 9999);
+                        // Get the problem ID from the URL parameter
+                        $problem_id = $_GET['id'];
 
-// Insert new comment
-if (isset($_POST['submit'])) {
-    $comment_text = htmlspecialchars($_POST['comment_text']);
-    $comment_date = date('Y-m-d H:i:s');
-    $user_id = $_SESSION['user_id'];
-    $stmt = $pdo->prepare("INSERT INTO comments (text, date, user_id, code_id) VALUES (?, ?, ?, ?)");
-    $stmt->execute([$comment_text, $comment_date, $user_id, $id]);
-    header("Refresh:0");
-}
-?>
+                        // Insert the comment into the SQL table
+                        $sql = "INSERT INTO comments (comment_text, username, date_created, problem_id) VALUES ('$comment_text', '$username', NOW(), $problem_id)";
+                        if (mysqli_query($conn, $sql)) {
+                        } else {
+                            echo "Error: " . $sql . "<br>" . mysqli_error($conn);
+                        }
+                    }
+
+                    // Retrieve the comments from the SQL table
+                    $problem_id = $_GET['id'];
+                    $sql = "SELECT * FROM comments WHERE problem_id = $problem_id";
+                    $result = mysqli_query($conn, $sql);
+
+                    // Loop through the comments and display each one
+                    while ($row = mysqli_fetch_assoc($result)) {
+                        echo "<p>Anonymous user " . $row['username'] . " said: " . $row['comment_text'] . " | on " . date("F j, Y, g:i a", strtotime($row['date_created'])) . "</p>";
+                    }
+
+                    // Close the SQL connection
+                    mysqli_close($conn);
+                    ?>
                 </form>
             </div>
         </div>
