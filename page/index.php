@@ -94,7 +94,7 @@ require_once "../include/insert-post.php";
             </div>
             <div class="configurations">
                 <p class="config-email">Email:</p>
-                <input type="email" id="email" name="email" placeholder="Needed for Pivate post"> 
+                <input type="email" id="email" name="email" placeholder="Needed for Private post"> 
             </div>
             <div class="category" required>
                 <p class="config-category">Category:</p>
