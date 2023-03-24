@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Gegenereerd op: 24 mrt 2023 om 08:44
+-- Gegenereerd op: 24 mrt 2023 om 09:28
 -- Serverversie: 10.4.24-MariaDB
 -- PHP-versie: 8.1.6
 
@@ -29,7 +29,7 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `comments` (
   `id` int(11) NOT NULL,
-  `comment_text` varchar(255) NOT NULL,
+  `comment_text` longtext NOT NULL,
   `username` varchar(255) DEFAULT NULL,
   `date_created` datetime NOT NULL,
   `problem_id` int(11) NOT NULL
@@ -40,10 +40,7 @@ CREATE TABLE `comments` (
 --
 
 INSERT INTO `comments` (`id`, `comment_text`, `username`, `date_created`, `problem_id`) VALUES
-(1, 'Werkt dit?', '1473', '2023-03-24 08:38:15', 1),
-(2, 'Duplicate', '1665', '2023-03-24 08:39:03', 1),
-(3, 'Duplicate', '9770', '2023-03-24 08:39:06', 1),
-(4, 'test 2', '669', '2023-03-24 08:39:36', 2);
+(12, 'Hello, world! I made it a long time ago', '7190', '2023-03-24 09:20:52', 1);
 
 --
 -- Indexen voor geëxporteerde tabellen
@@ -64,7 +61,7 @@ ALTER TABLE `comments`
 -- AUTO_INCREMENT voor een tabel `comments`
 --
 ALTER TABLE `comments`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- Beperkingen voor geëxporteerde tabellen

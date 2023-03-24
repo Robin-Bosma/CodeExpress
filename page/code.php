@@ -18,7 +18,7 @@ if (isset($_GET['id'])) {
 <html lang="en">
 
 <head>
-<link rel="stylesheet" href="https://codemirror.net/theme/dracula.css">
+    <link rel="stylesheet" href="https://codemirror.net/theme/dracula.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.62.0/codemirror.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.62.0/theme/darcula.min.css" />
 
@@ -92,11 +92,11 @@ if (isset($_GET['id'])) {
                 <button id="copy-btn" onclick="copyToClipboard()">Copy Code</button>
             </div>
             <form method="post" action="../page/index.php">
-            <h1 class="config-code">Code:</h1>
-            <textarea cols="80" rows="10" id="code" type="text" name="code" mode="text/html">
+                <h1 class="config-code">Code:</h1>
+                <textarea cols="80" rows="10" id="code" type="text" name="code" mode="text/html">
     <?php echo getCode(); ?>
 </textarea>
-            <script>
+                <script>
                     var editor = CodeMirror.fromTextArea(document.getElementById("code"), {
                         lineNumbers: true,
                         mode: "htmlmixed",
