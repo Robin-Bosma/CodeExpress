@@ -91,6 +91,8 @@ include "../include/insert-post.php";
             <div class="configurations">
                 <p class="config-created">Created by:</p>
                 <input type="text" id="created" name="creator">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required>
             </div>
             <div class="category" required>
                 <p class="config-category">Category:</p>
