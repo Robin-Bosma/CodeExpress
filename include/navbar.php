@@ -38,7 +38,7 @@
   <form action="../page/overview.php" method="get">
     <div class="search-bar">
       <input id="search-input" type="text" name="q" placeholder="What are you looking for?" value="<?php echo isset($_GET['q']) ? htmlspecialchars($_GET['q']) : '' ?>">
-      <button type="submit"><img src="../img/spyglass.png" alt="spyglass"></button>
+      <img src="../img/spyglass.png" alt="spyglass"></button>
     </div>
   </form>
 </nav>

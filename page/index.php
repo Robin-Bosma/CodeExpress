@@ -1,7 +1,7 @@
 <?php
 session_start();
 include "../include/connection.php";
-include "../include/insert-post.php";
+require_once "../include/insert-post.php";
 ?>
 
 <!DOCTYPE html>
@@ -53,11 +53,11 @@ include "../include/insert-post.php";
             </div>
             <div class="configurations">
                 <p class="config-created">Created by:</p>
-                <input type="text" id="created" name="creator" placeholder="Who made this code?">
+                <input type="text" id="created" name="creator" placeholder="Who made this code?" required>  
             </div>
             <div class="configurations">
                 <p class="config-email">Email:</p>
-                <input type="email" id="email" name="email" placeholder="Needed for Pivate post">
+                <input type="email" id="email" name="email" placeholder="Needed for Private post"> 
             </div>
             <div class="category" required>
                 <p class="config-category">Category:</p>
