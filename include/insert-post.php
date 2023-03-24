@@ -22,41 +22,20 @@
       $description = $_POST["description"];
       $email = $_POST["email"];
 
-// Define an array to store the true/false values for each category
-$category_values = array(
-  'HTML' => false,
-  'CSS' => false,
-  'PHP' => false,
-  'JavaScript' => false,
-  'SQL' => false,
-);
+      // Insert the configuration data into the database
+      $code = $_POST["code"];
+      $title = $_POST["title"];
+      $html = $category_values["HTML"] ? '' : 'HTML';
+      $css = $category_values["CSS"] ? '' : 'CSS';
+      $php = $category_values["PHP"] ? '' : 'PHP';
+      $javascript = $category_values["JavaScript"] ? '' : 'JavaScript';
+      $sqlcode = $category_values["SQL"] ? '' : 'SQL';
+      $date = date("Y-m-d");
+      $description = $_POST["description"];
+      $creator = $_POST["creator"];
+      $email = $_POST["email"];
 
-// Check if the form has been submitted
-{
-  // Loop through the category checkboxes and set the corresponding value to true if checked
-  if (!empty($_POST["category"])) {
-      foreach ($_POST["category"] as $category) {
-          $category_values[$category] = true;
-      }
-  }
-
-  // Insert the configuration data into the database
-  $code = $_POST["code"];
-  $title = $_POST["title"];
-  $html = $category_values["HTML"] ? 'true' : 'false';
-  $css = $category_values["CSS"] ? 'true' : 'false';
-  $php = $category_values["PHP"] ? 'true' : 'false';
-  $javascript = $category_values["JavaScript"] ? 'true' : 'false';
-  $sqlcode = $category_values["SQL"] ? 'true' : 'false';
-  $date = date("Y-m-d");
-  $description = $_POST["description"];
-
-  $sql = "INSERT INTO configuration (code, title, html, css, php, javascript, SQLcode, date, description)
-      VALUES ('$code', '$title', '$html', '$css', '$php', '$javascript', '$sqlcode', '$date', '$description')";
-  $pdo->exec($sql);
-}
-    
-
+      $date = date("Y-m-d H:i:s");
 
       // plaats de data in de table
       $sql = "INSERT INTO configuration (code, email, title, html, css, php, javascript, SQLcode, date, description, creator) 
