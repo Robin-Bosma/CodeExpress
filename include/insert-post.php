@@ -50,7 +50,8 @@
 
       // Execute the statement
       if ($stmt->execute()) {
-        echo "New record created successfully";
+        // Show a JavaScript alert with the success message
+        echo '<script>alert("New record created successfully");</script>';
       } else {
         $error = $stmt->errorInfo()[2];
         echo "Error: " . $error;
@@ -122,6 +123,7 @@
           echo "ERROR";
         }
 
+        echo "New record created successfully";
       } else {
         $error = $stmt2->errorInfo()[2];
         echo "Error: " . $error;
