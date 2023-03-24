@@ -29,6 +29,7 @@ if (isset($_GET['id'])) {
     <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.62.0/mode/htmlmixed/htmlmixed.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.62.0/mode/php/php.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.62.0/mode/sql/sql.min.js"></script>
+    <link rel="icon" href="../img/logo.png" type="image/x-icon" />
     <style>
         <?php include '../style.css'; ?>
     </style>

@@ -23,18 +23,12 @@ include "../include/connection.php";
         </nav>
 
         <div id="overview-content" class="content">
-            <form method="GET">
-                <label for="q">Search:</label>
-                <input type="text" id="q" name="q" value="<?php echo isset($_GET['q']) ? htmlspecialchars($_GET['q']) : '' ?>">
-                <button type="submit">Submit</button>
-            </form>
-
             <?php
             // Get the search query from the URL parameter
             $query = isset($_GET['q']) ? htmlspecialchars($_GET['q']) : '';
 
             // Query the database to find matching code snippets
-            $stmt = $pdo->prepare("SELECT * FROM configuration WHERE title LIKE :query");
+            $stmt = $pdo->prepare("SELECT * FROM configuration WHERE title LIKE :query OR code LIKE :query OR html LIKE :query OR css LIKE :query OR php LIKE :query OR javascript LIKE :query OR SQLcode LIKE :query OR description LIKE :query OR creator LIKE :query");
             $stmt->bindValue(':query', "%$query%");
             $stmt->execute();
             $code_array = $stmt->fetchAll(PDO::FETCH_OBJ);
@@ -70,11 +64,10 @@ include "../include/connection.php";
         </div>
     </div>
 
-    <footer class="footer">
+    <!-- Footer -->
+    <div class="footer">
         <?php include "../include/footer.php" ?>
-    </footer>
-
-
+    </div>
 </body>
 
 </html>
