@@ -38,9 +38,15 @@ include "../include/connection.php";
                 foreach ($code_array as $key) {
                     echo "<h1 class='overview-line'><a class='overview-link' href='code.php?id={$key->id}'>{$key->title}</a></h1>";
                     echo "<div id='overview-item'>";
+                    echo "<div id='overview-desc'>";
                     echo "<p>{$key->description}</p>";
+                    echo "</div>";
+                    echo "<div id='overview-creator'>";
                     echo "<p id='overview-end'> Created by: {$key->creator}</p>";
+                    echo "</div>";
+                    echo "<div id='overview-date'>";
                     echo "<p class='overview-end'>Date created: {$key->date}</p>";
+                    echo "</div>";
                     echo "</div>";
                 }
             } else if ($query !== '') {
@@ -52,12 +58,18 @@ include "../include/connection.php";
                 $code_array = $stmt->fetchAll(PDO::FETCH_OBJ);
 
                 foreach ($code_array as $key) {
-                    echo "<h1 class='overview-line'><a class='overview-link' href='code.php?id={$key->id}'>{$key->title}</a></h1>";
-                    echo "<div id='overview-item'>";
-                    echo "<p>{$key->description}</p>";
-                    echo "<p id='overview-end'> Created by: {$key->creator}</p>";
-                    echo "<p class='overview-end'>Date created: {$key->date}</p>";
-                    echo "</div>";
+                  echo "<h1 class='overview-line'><a class='overview-link' href='code.php?id={$key->id}'>{$key->title}</a></h1>";
+                  echo "<div id='overview-item'>";
+                  echo "<div id='overview-desc'>";
+                  echo "<p>{$key->description}</p>";
+                  echo "</div>";
+                  echo "<div id='overview-creator'>";
+                  echo "<p id='overview-end'> Created by: {$key->creator}</p>";
+                  echo "</div>";
+                  echo "<div id='overview-date'>";
+                  echo "<p class='overview-end'>Date created: {$key->date}</p>";
+                  echo "</div>";
+                  echo "</div>";
                 }
             }
             ?>

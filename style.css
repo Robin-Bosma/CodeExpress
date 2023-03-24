@@ -385,8 +385,18 @@ body {
 /* content overview */
 #overview-item { 
   background-color: darkgray;
-  border-top: black solid 5px;
-
+  border-top: solid 5px;
+  border-color: #ffc61e;
+}
+#overview-desc {
+  margin-left: 10px;
+}
+#overview-date {
+  margin-right: 10px;
+  padding-bottom: 1px;
+}
+#overview-creator {
+  padding-left: 40px;
 }
 .overview-link { 
   text-decoration: none;
@@ -407,7 +417,7 @@ body {
 #overview-end { 
   display: flex;
   justify-content: end;
-  margin-right: 68px;
+  margin-right: 10px;
 }
 
 /* code.php */
