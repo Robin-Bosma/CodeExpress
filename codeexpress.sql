@@ -3,9 +3,15 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Gegenereerd op: 22 mrt 2023 om 09:14
--- Serverversie: 10.4.24-MariaDB
--- PHP-versie: 8.1.6
+-- Generation Time: Mar 23, 2023 at 10:54 AM
+-- Server version: 10.4.24-MariaDB
+-- PHP Version: 8.1.6
+
+DROP DATABASE IF EXISTS codeexpress;
+
+CREATE DATABASE codeexpress;
+
+USE codeexpress;
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -24,41 +30,24 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Tabelstructuur voor tabel `comments`
+-- Table structure for table `comments`
 --
 
 CREATE TABLE `comments` (
-  `comment_id` int(11) NOT NULL,
-  `comment_text` varchar(255) NOT NULL,
-  `username` varchar(255) DEFAULT NULL,
-  `date_created` datetime NOT NULL
+  `id` int(11) NOT NULL,
+  `comment` text NOT NULL,
+  `date` date DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Gegevens worden geëxporteerd voor tabel `comments`
---
-
-INSERT INTO `comments` (`comment_id`, `comment_text`, `username`, `date_created`) VALUES
-(1, 'PHP exploded', '6110', '2023-03-22 08:41:32'),
-(2, 'JavaScript shutdown', '2273', '2023-03-22 08:41:47'),
-(3, 'HTML doesnt connect with CSS', '9147', '2023-03-22 08:42:30'),
-(4, 'Mijn naam is Roger en ik bambam game', '6847', '2023-03-22 08:53:53'),
-(5, 'Mijn naam is Roger en ik bambam game', '9157', '2023-03-22 08:57:48'),
-(6, 'test 1', '7506', '2023-03-22 08:58:11'),
-(7, 'test 1', '1768', '2023-03-22 08:58:24'),
-(8, 'test 1', '6405', '2023-03-22 08:58:29'),
-(9, 'test 1', '2583', '2023-03-22 08:59:07'),
-(10, 'test 1', '22', '2023-03-22 08:59:25');
 
 -- --------------------------------------------------------
 
 --
--- Tabelstructuur voor tabel `configuration`
+-- Table structure for table `configuration`
 --
 
 CREATE TABLE `configuration` (
   `id` int(11) NOT NULL,
-  `code` varchar(255) NOT NULL,
+  `code` longtext NOT NULL,
   `title` varchar(255) NOT NULL,
   `html` varchar(50) DEFAULT NULL,
   `css` varchar(50) DEFAULT NULL,
@@ -70,20 +59,10 @@ CREATE TABLE `configuration` (
   `creator` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
---
--- Gegevens worden geëxporteerd voor tabel `configuration`
---
-
-INSERT INTO `configuration` (`id`, `code`, `title`, `html`, `css`, `php`, `javascript`, `SQLcode`, `date`, `description`, `creator`) VALUES
-(1, 'Test', 'Test', 'false', 'false', 'false', 'false', 'false', '2023-03-21', 'Test', 'Test'),
-(2, 'Test', 'Test', 'false', 'false', 'false', 'false', 'false', '2023-03-21', 'Test', 'Test'),
-(5, 'Test123123', '123', 'HTML', 'CSS', 'PHP', 'JavaScript', 'SQL', '2023-03-21', '123123', '123'),
-(6, 'Test123123', '123', 'HTML', 'CSS', 'PHP', 'JavaScript', 'SQL', '2023-03-21', '123123', '123');
-
 -- --------------------------------------------------------
 
 --
--- Tabelstructuur voor tabel `private_posts`
+-- Table structure for table `private_posts`
 --
 
 CREATE TABLE `private_posts` (
@@ -101,36 +80,24 @@ CREATE TABLE `private_posts` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Indexen voor geëxporteerde tabellen
+-- Indexes for dumped tables
 --
 
 --
--- Indexen voor tabel `comments`
+-- Indexes for table `comments`
 --
 ALTER TABLE `comments`
-  ADD PRIMARY KEY (`comment_id`);
-
---
--- Indexen voor tabel `configuration`
---
-ALTER TABLE `configuration`
   ADD PRIMARY KEY (`id`);
 
 --
--- AUTO_INCREMENT voor geëxporteerde tabellen
+-- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT voor een tabel `comments`
+-- AUTO_INCREMENT for table `comments`
 --
 ALTER TABLE `comments`
-  MODIFY `comment_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=42;
-
---
--- AUTO_INCREMENT voor een tabel `configuration`
---
-ALTER TABLE `configuration`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
