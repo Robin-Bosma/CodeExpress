@@ -90,7 +90,7 @@ include "../include/insert-post.php";
             </div>
             <div class="configurations">
                 <p class="config-created">Created by:</p>
-                <input type="text" id="created" name="creator" placeholder="Who made this code?">  
+                <input type="text" id="created" name="creator" placeholder="Who made this code?" required>  
             </div>
             <div class="configurations">
                 <p class="config-email">Email:</p>
