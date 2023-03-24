@@ -1,32 +1,35 @@
 <?php
-include "connection.php";
+session_start();
+include "../include/connection.php";
 
-// Check if the search query parameter is set
 if (isset($_GET['q'])) {
-  // Get the search query from the URL parameter
-  $search_query = $_GET['q'];
-
-  // Sanitize the search query to prevent SQL injection attacks
-  $search_query = mysqli_real_escape_string($conn, $search_query);
-
-  // Query the database for code pages that match the search query in the title
-  $sql = "SELECT * FROM configuration WHERE title LIKE '%{$search_query}%'";
-
-  // Execute the query
-  $result = mysqli_query($conn, $sql);
-
-  // Display the search results
-  if (mysqli_num_rows($result) > 0) {
-    while ($row = mysqli_fetch_assoc($result)) {
-      echo "<a href='Overview.php?code_id={$row['id']}'>{$row['title']}</a><br>";
+    $query = $_GET['q'];
+    try {
+        $stmt = $pdo->prepare("SELECT * FROM configuration WHERE title LIKE ?");
+        $stmt->execute(["%$query%"]);
+        $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+    } catch (\PDOException $e) {
+        echo 'Error searching for code: ' . $e->getMessage();
     }
-  } else {
-    echo "No results found.";
-  }
-
-  // Close the database connection
-  mysqli_close($conn);
 } else {
-  echo "Please enter a search query.";
+    echo "Please provide a search term.";
 }
 ?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Search Results</title>
+</head>
+<body>
+    <?php if (isset($result) && count($result) > 0): ?>
+        <h1>Search Results:</h1>
+        <ul>
+            <?php foreach ($result as $row): ?>
+                <li><a href="../page/code.php?id=<?php echo $row['id']; ?>"><?php echo $row['title']; ?></a></li>
+            <?php endforeach; ?>
+        </ul>
+    <?php elseif (isset($result) && count($result) === 0): ?>
+        <p>No results found.</p>
+    <?php endif; ?>
+</body>
+</html>
