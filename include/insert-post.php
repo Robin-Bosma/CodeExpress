@@ -3,17 +3,22 @@
   include "connection.php";
 
   // Define an array to store the true/false values for each category
-  $category_values = array(
-    'HTML' => isset($_POST["category"]["HTML"]),
-    'CSS' => isset($_POST["category"]["CSS"]),
-    'PHP' => isset($_POST["category"]["PHP"]),
-    'JavaScript' => isset($_POST["category"]["JavaScript"]),
-    'SQL' => isset($_POST["category"]["SQL"]),
+    // Define an array to store the true/false values for each category
+    $category_values = array(
+      'HTML' => false,
+      'CSS' => false,
+      'PHP' => false,
+      'JavaScript' => false,
+      'SQL' => false,
   );
 
   // Check if the form has been submitted
   if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (isset($_POST["submit-public"])) {
+        if (!empty($_POST["category"])) {
+            foreach ($_POST["category"] as $category) {
+                $category_values[$category] = true;
+            }
       // Get the form data
       $code = $_POST["code"];
       $title = $_POST["title"];
@@ -25,11 +30,11 @@
       // Insert the configuration data into the database
       $code = $_POST["code"];
       $title = $_POST["title"];
-      $html = $category_values["HTML"] ? '' : 'HTML';
-      $css = $category_values["CSS"] ? '' : 'CSS';
-      $php = $category_values["PHP"] ? '' : 'PHP';
-      $javascript = $category_values["JavaScript"] ? '' : 'JavaScript';
-      $sqlcode = $category_values["SQL"] ? '' : 'SQL';
+      $html = $category_values["HTML"] ? 'true' : 'false';
+      $css = $category_values["CSS"] ? 'true' : 'false';
+      $php = $category_values["PHP"] ? 'true' : 'false';
+      $javascript = $category_values["JavaScript"] ? 'true' : 'false';
+      $sqlcode = $category_values["SQL"] ? 'true' : 'false';
       $date = date("Y-m-d");
       $description = $_POST["description"];
       $creator = $_POST["creator"];
@@ -38,8 +43,8 @@
       $date = date("Y-m-d H:i:s");
 
       // plaats de data in de table
-      $sql = "INSERT INTO configuration (code, email, title, html, css, php, javascript, SQLcode, date, description, creator) 
-      VALUES (:code, :email, :title, :html, :css, :php, :javascript, :SQLcode, :date, :description, :creator)";
+      $sql = "INSERT INTO configuration (code,title, html, css, php, javascript, SQLcode, date, description, creator, email) 
+      VALUES (:code,  :title, :html, :css, :php, :javascript, :SQLcode, :date, :description, :creator, :mail)";
       // Prepare the statement
       $stmt = $pdo->prepare($sql);
 
@@ -55,7 +60,6 @@
       $stmt->bindParam(":description", $description);
       $stmt->bindParam(":creator", $creator);
       $stmt->bindParam(":email", $email);
-
       // Execute the statement
       if ($stmt->execute()) {
         echo "New record created successfully";
@@ -115,3 +119,5 @@
       exit;
     }
   }
+  }
+  ?>
