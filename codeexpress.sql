@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 23, 2023 at 10:54 AM
+-- Generation Time: Mar 24, 2023 at 10:03 AM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 8.1.6
 
@@ -35,9 +35,21 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `comments` (
   `id` int(11) NOT NULL,
-  `comment` text NOT NULL,
-  `date` date DEFAULT NULL
+  `comment_text` varchar(255) NOT NULL,
+  `username` varchar(255) DEFAULT NULL,
+  `date_created` datetime NOT NULL,
+  `problem_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `comments`
+--
+
+INSERT INTO `comments` (`id`, `comment_text`, `username`, `date_created`, `problem_id`) VALUES
+(1, 'Werkt dit?', '1473', '2023-03-24 08:38:15', 1),
+(2, 'Duplicate', '1665', '2023-03-24 08:39:03', 1),
+(3, 'Duplicate', '9770', '2023-03-24 08:39:06', 1),
+(4, 'test 2', '669', '2023-03-24 08:39:36', 2);
 
 -- --------------------------------------------------------
 
@@ -58,6 +70,14 @@ CREATE TABLE `configuration` (
   `description` text DEFAULT NULL,
   `creator` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `configuration`
+--
+
+INSERT INTO `configuration` (`id`, `code`, `title`, `html`, `css`, `php`, `javascript`, `SQLcode`, `date`, `description`, `creator`) VALUES
+(1, 'spdashd', 'xsLKCn', 'HTML', 'CSS', 'PHP', 'JavaScript', 'SQL', '2023-03-24', 'aspdj', 'dap'),
+(2, 'spdashd', 'xsLKCn', 'false', 'true', 'false', 'false', 'false', '2023-03-24', 'aspdj', NULL);
 
 -- --------------------------------------------------------
 
@@ -87,6 +107,13 @@ CREATE TABLE `private_posts` (
 -- Indexes for table `comments`
 --
 ALTER TABLE `comments`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `problem_id` (`problem_id`);
+
+--
+-- Indexes for table `configuration`
+--
+ALTER TABLE `configuration`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -97,7 +124,13 @@ ALTER TABLE `comments`
 -- AUTO_INCREMENT for table `comments`
 --
 ALTER TABLE `comments`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
+--
+-- AUTO_INCREMENT for table `configuration`
+--
+ALTER TABLE `configuration`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

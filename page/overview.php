@@ -1,13 +1,13 @@
 <?php
 session_start();
-include "../include/connection.php"
+include "../include/connection.php";
 ?>
 
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-<title>Code Express</title>
+    <title>Code Express</title>
     <link rel="icon" href="../img/logo.png" type="image/x-icon" />
     <style>
         <?php include '../style.css'; ?>
@@ -16,48 +16,58 @@ include "../include/connection.php"
 
 <body>
 
-    <?php
-
-$stmt = $pdo->prepare("SELECT * FROM configuration");
-$stmt->execute();
-$code_array = $stmt->fetchAll(PDO::FETCH_OBJ);
-
-function echoCode($code_array)
-{
-    foreach ($code_array as $key) {
-        echo "<div><strong>Title:</strong> " . $key->title . "</div>";
-        echo "<div><strong>Description:</strong> " . $key->description . "</div>";
-        echo "<div><a href='code.php?id=$key->id'>Details</a></div>";
-        echo "<div><strong>creator:</strong> " . $key->creator . "</div>";
-        echo "<div><strong>date:</strong> " . $key->date . "</div>";
-    }
-}
-
-?>
     <!-- Navbar -->
     <div id="overview-container">
-  <nav class="item">
-    <?php include "../include/navbar.php" ?>
-  </nav>
+        <nav class="item">
+            <?php include "../include/navbar.php" ?>
+        </nav>
 
-  <div id="overview-content" class="content">
+        <div id="overview-content" class="content">
+            <?php
+            // Get the search query from the URL parameter
+            $query = isset($_GET['q']) ? htmlspecialchars($_GET['q']) : '';
 
-    <?php foreach ($code_array as $key) { ?>
-      <h1 class="overview-line"><a class="overview-link" href="code.php?id=<?php echo $key->id ?>"><?php echo $key->title ?></a></h1>
-      <div id="overview-item">
-      <p><?php echo $key->description ?></p>
-      <p id="overview-end"> Created by: <?php echo $key->creator ?></p>
-      <p class="overview-end">Date created: <?php echo $key->date ?></p>
+            // Query the database to find matching code snippets
+            $stmt = $pdo->prepare("SELECT * FROM configuration WHERE title LIKE :query OR code LIKE :query OR html LIKE :query OR css LIKE :query OR php LIKE :query OR javascript LIKE :query OR SQLcode LIKE :query OR description LIKE :query OR creator LIKE :query");
+            $stmt->bindValue(':query', "%$query%");
+            $stmt->execute();
+            $code_array = $stmt->fetchAll(PDO::FETCH_OBJ);
+
+            // Display the search results
+            if (count($code_array) > 0) {
+                foreach ($code_array as $key) {
+                    echo "<h1 class='overview-line'><a class='overview-link' href='code.php?id={$key->id}'>{$key->title}</a></h1>";
+                    echo "<div id='overview-item'>";
+                    echo "<p>{$key->description}</p>";
+                    echo "<p id='overview-end'> Created by: {$key->creator}</p>";
+                    echo "<p class='overview-end'>Date created: {$key->date}</p>";
+                    echo "</div>";
+                }
+            } else if ($query !== '') {
+                echo "No results found for '$query'.";
+            } else {
+                // Display all code snippets if no search query is provided
+                $stmt = $pdo->prepare("SELECT * FROM configuration");
+                $stmt->execute();
+                $code_array = $stmt->fetchAll(PDO::FETCH_OBJ);
+
+                foreach ($code_array as $key) {
+                    echo "<h1 class='overview-line'><a class='overview-link' href='code.php?id={$key->id}'>{$key->title}</a></h1>";
+                    echo "<div id='overview-item'>";
+                    echo "<p>{$key->description}</p>";
+                    echo "<p id='overview-end'> Created by: {$key->creator}</p>";
+                    echo "<p class='overview-end'>Date created: {$key->date}</p>";
+                    echo "</div>";
+                }
+            }
+            ?>
         </div>
-    <?php } ?>
-</div>
     </div>
 
-  <footer class="footer">
-    <?php include "../include/footer.php" ?>
-  </footer>
-
-
+    <!-- Footer -->
+    <div class="footer">
+        <?php include "../include/footer.php" ?>
+    </div>
 </body>
 
 </html>

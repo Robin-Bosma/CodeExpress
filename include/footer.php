@@ -12,7 +12,7 @@
     <Footer>
         <h1 class="footer-text">Code</h1>
         <div id="footer-codes">
-            <a id="footer-html" href="../page/index.php">Home</a> | <a id="footer-html" href="../page/overview.php">Overview</a>
+            <a id="footer-html" href="../page/index.php">Home</a> | <a id="footer-html" href="../page/overview.php">Overview</a> | <a id="footer-html" href="mailto:infocodeexpress@gmail.com">Contact</a>
         </div>
         <div id="train-container">
             <img id="train" src="../img/trainBG.png" alt="train">
