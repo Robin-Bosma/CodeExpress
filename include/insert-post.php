@@ -122,7 +122,6 @@
           echo "ERROR";
         }
 
-        echo "New record created successfully";
       } else {
         $error = $stmt2->errorInfo()[2];
         echo "Error: " . $error;
