@@ -14,7 +14,13 @@
   <ul class="navbar-all-code-links">
     <li><a href="../page/index.php">Home</a></li>
     <li>
+    <div>ㅤ</div>
+    </li>
+    <li>
       <div class="separator">|</div>
+    </li>
+    <li>
+    <div>ㅤ</div>
     </li>
     <li><a href="../page/overview.php">Overview</a></li>
   </ul>
