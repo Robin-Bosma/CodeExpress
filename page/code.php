@@ -152,9 +152,11 @@ if (isset($_GET['id'])) {
                         $comment_text = $_POST['comment_text'];
                         // Generate a random username or leave it blank
                         $username = rand(1, 9999);
+                        // Get the problem ID from the URL parameter
+                        $problem_id = $_GET['id'];
 
                         // Insert the comment into the SQL table
-                        $sql = "INSERT INTO comments (comment_text, username, date_created) VALUES ('$comment_text', '$username', NOW())";
+                        $sql = "INSERT INTO comments (comment_text, username, date_created, problem_id) VALUES ('$comment_text', '$username', NOW(), $problem_id)";
                         if (mysqli_query($conn, $sql)) {
                         } else {
                             echo "Error: " . $sql . "<br>" . mysqli_error($conn);
@@ -162,7 +164,8 @@ if (isset($_GET['id'])) {
                     }
 
                     // Retrieve the comments from the SQL table
-                    $sql = "SELECT * FROM comments";
+                    $problem_id = $_GET['id'];
+                    $sql = "SELECT * FROM comments WHERE problem_id = $problem_id";
                     $result = mysqli_query($conn, $sql);
 
                     // Loop through the comments and display each one
