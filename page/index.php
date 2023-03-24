@@ -86,13 +86,15 @@ include "../include/insert-post.php";
         <div class="item2">
             <div class="configurations">
                 <p class="config-title">Title:</p>
-                <input type="text" id="title" name="title" required>
+                <input type="text" id="title" name="title" placeholder="Title" required>
             </div>
             <div class="configurations">
                 <p class="config-created">Created by:</p>
-                <input type="text" id="created" name="creator">
-                <label for="email">Email</label>
-                <input type="email" id="email" name="email" required>   
+                <input type="text" id="created" name="creator" placeholder="Who made this code?">  
+            </div>
+            <div class="configurations">
+                <p class="config-email">Email:</p>
+                <input type="email" id="email" name="email" placeholder="Needed for Pivate post"> 
             </div>
             <div class="category" required>
                 <p class="config-category">Category:</p>
@@ -118,7 +120,7 @@ include "../include/insert-post.php";
             <h1 class="config-desc">Description:</h1>
         </div>
         <div class="item3">
-            <textarea cols="80" rows="10" id="desc" type="text" name="description"></textarea>
+            <textarea cols="80" rows="10" id="desc" type="text" name="description" placeholder="Give a small description about you code.. What is your code about? What does it do?"></textarea>
         </div>
         <div class="item4">
             <div class="right-container">

@@ -193,6 +193,8 @@ body {
 
 #title {
   margin-left: 107.5px;
+  font-family: Cambria;
+  font-weight: bold;
   max-width: 200px;
   max-height: 30px;
   margin-top: 25px;
@@ -211,6 +213,28 @@ body {
 
 #created {
   margin-left: 40px;
+  font-family: Cambria;
+  font-weight: bold;
+  max-width: 200px;
+  max-height: 30px;
+  margin-top: 25px;
+  background-color: lightgray;
+  border-style: solid;
+  border-width: 3px;
+  text-align: left;
+  text-align: start;
+  text-align: inherit;
+}
+
+.config-email {
+  margin-left: 20px;
+  font-size: 25px;
+}
+
+#email {
+  margin-left: 96px;
+  font-family: Cambria;
+  font-weight: bold;
   max-width: 200px;
   max-height: 30px;
   margin-top: 25px;
@@ -262,6 +286,8 @@ body {
 #desc {
   resize: none;
   margin-left: 20px;
+  font-family: Cambria;
+  font-weight: bold;
   max-width: 96.5%;
   min-width: 96.5%;
   width: 96.5%;
