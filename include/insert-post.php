@@ -1,61 +1,117 @@
-<?php
-include "connection.php";
+  <?php
 
-// kiest of het true of false is 
-$category_values = array(
-  'HTML' => isset($_POST["category"]["HTML"]),
-  'CSS' => isset($_POST["category"]["CSS"]),
-  'PHP' => isset($_POST["category"]["PHP"]),
-  'JavaScript' => isset($_POST["category"]["JavaScript"]),
-  'SQL' => isset($_POST["category"]["SQL"]),
-);
+  include "connection.php";
 
-// checked of de post word gesubmit
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-  if (isset($_POST["submit-public"])) {
-    // Get the form data
-    $code = $_POST["code"];
-    $title = $_POST["title"];
-    $creator = $_POST["creator"];
-    $category = implode(',', $_POST["category"]);
-    $description = $_POST["description"];
+  // Define an array to store the true/false values for each category
+  $category_values = array(
+    'HTML' => isset($_POST["category"]["HTML"]),
+    'CSS' => isset($_POST["category"]["CSS"]),
+    'PHP' => isset($_POST["category"]["PHP"]),
+    'JavaScript' => isset($_POST["category"]["JavaScript"]),
+    'SQL' => isset($_POST["category"]["SQL"]),
+  );
 
-    // Check if the post already exists
-    $sql = "SELECT * FROM configuration WHERE code = :code";
-    $stmt = $pdo->prepare($sql);
-    $stmt->execute(array(':code' => $code));
-    $row = $stmt->fetch(PDO::FETCH_ASSOC);
+  // Check if the form has been submitted
+  if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    if (isset($_POST["submit-public"])) {
+      // Get the form data
+      $code = $_POST["code"];
+      $title = $_POST["title"];
+      $creator = $_POST["creator"];
+      $category = implode(',', $_POST["category"]);
+      $description = $_POST["description"];
+      $email = $_POST["email"];
 
-    if ($row) {
-      // Post already exists, do not insert again
-      echo "This post already exists in the database.";
-    } else {
-      // insert de informatie
+      // Insert the configuration data into the database
+      $code = $_POST["code"];
+      $title = $_POST["title"];
+      $html = $category_values["HTML"] ? '' : 'HTML';
+      $css = $category_values["CSS"] ? '' : 'CSS';
+      $php = $category_values["PHP"] ? '' : 'PHP';
+      $javascript = $category_values["JavaScript"] ? '' : 'JavaScript';
+      $sqlcode = $category_values["SQL"] ? '' : 'SQL';
+      $date = date("Y-m-d");
+      $description = $_POST["description"];
+      $creator = $_POST["creator"];
+      $email = $_POST["email"];
+
+      $date = date("Y-m-d H:i:s");
+
+      // plaats de data in de table
+      $sql = "INSERT INTO configuration (code, email, title, html, css, php, javascript, SQLcode, date, description, creator) 
+      VALUES (:code, :email, :title, :html, :css, :php, :javascript, :SQLcode, :date, :description, :creator)";
+      // Prepare the statement
+      $stmt = $pdo->prepare($sql);
+
+      // Bind the parameters
+      $stmt->bindParam(":code", $code);
+      $stmt->bindParam(":title", $title);
+      $stmt->bindParam(":html", $html);
+      $stmt->bindParam(":css", $css);
+      $stmt->bindParam(":php", $php);
+      $stmt->bindParam(":javascript", $javascript);
+      $stmt->bindParam(":SQLcode", $sqlcode);
+      $stmt->bindParam(":date", $date);
+      $stmt->bindParam(":description", $description);
+      $stmt->bindParam(":creator", $creator);
+      $stmt->bindParam(":email", $email);
+
+      // Execute the statement
+      if ($stmt->execute()) {
+        echo "New record created successfully";
+      } else {
+        $error = $stmt->errorInfo()[2];
+        echo "Error: " . $error;
+      }
+    } else if (isset($_POST["submit-private"])) {
+      // Create a private post
+      // Generate a random URL
+      $url = bin2hex(random_bytes(8));
+
+      // Insert the post into the private_posts table
+
+      $code = $_POST["code"];
+      $title = $_POST["title"];
+      $creator = $_POST["creator"];
       $html = $category_values["HTML"] ? '' : 'HTML';
       $css = $category_values["CSS"] ? '' : 'CSS';
       $php = $category_values["PHP"] ? '' : 'PHP';
       $javascript = $category_values["JavaScript"] ? '' : 'JavaScript';
       $sqlcode = $category_values["SQL"] ? '' : 'SQL';
       $date = date("Y-m-d H:i:s");
+      $description = $_POST["description"];
+      $email = $_POST["email"];
 
-      $sql = "INSERT INTO configuration (code, title, html, css, php, javascript, sqlcode, date, description, creator) 
-              VALUES (:code, :title, :html, :css, :php, :javascript, :sqlcode, :date, :description, :creator)";
-      $stmt = $pdo->prepare($sql);
-      $stmt->execute(array(
-        ':code' => $code,
-        ':title' => $title,
-        ':html' => $html,
-        ':css' => $css,
-        ':php' => $php,
-        ':javascript' => $javascript,
-        ':sqlcode' => $sqlcode,
-        ':date' => $date,
-        ':description' => $description,
-        ':creator' => $creator
-      ));
+      // plaats de data in de table
+      $sql = "INSERT INTO private_posts (url, code, email, description, title, html, css, php, javascript, SQLcode, creator, date) VALUES (:url, :code, :email, :description, :title, :html, :css, :php, :javascript, :SQLcode, :creator, :date)";
 
-      echo "Post inserted successfully.";
+      // Prepare the statement
+      $stmt2 = $pdo->prepare($sql);
+
+      // Bind the parameters
+
+      $stmt2->bindParam(":url", $url);
+      $stmt2->bindParam(":code", $code);
+      $stmt2->bindParam(":title", $title);
+      $stmt2->bindParam(":html", $html);
+      $stmt2->bindParam(":css", $css);
+      $stmt2->bindParam(":php", $php);
+      $stmt2->bindParam(":javascript", $javascript);
+      $stmt2->bindParam(":SQLcode", $sqlcode);
+      $stmt2->bindParam(":date", $date);
+      $stmt2->bindParam(":description", $description);
+      $stmt2->bindParam(":creator", $creator);
+      $stmt2->bindParam(":email", $email);
+
+      // Execute the statement
+      if ($stmt2->execute()) {
+        echo "New record created successfully";
+      } else {
+        $error = $stmt2->errorInfo()[2];
+        echo "Error: " . $error;
+      }
+      // Redirect the user to the generated URL
+      header("Location: ../page/private-post.php?url=$url");
+      exit;
     }
   }
-}
-?>
