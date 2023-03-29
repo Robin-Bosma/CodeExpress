@@ -54,7 +54,6 @@ $counter = 0;
                     echo "</div>";
                     echo "<div id='overview-item-border'>";
                     echo "<div>ㅤ</div>";
-                    echo "<div>ㅤ</div>";
                     echo "</div>";
                     $counter++;
                     if ($counter % 3 == 0) {
