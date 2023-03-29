@@ -46,10 +46,10 @@ if (isset($_GET['id'])) {
         return $code->title;
     }
 
-    function getCategory()
+    function getTags()
     {
         global $code;
-        return $code->category;
+        return $code->tags;
     }
 
     function getDatum()
@@ -87,7 +87,7 @@ if (isset($_GET['id'])) {
         <div class="left-container">
             <h1 class="config"><?php echo getTitle(); ?></h1>
             <div class="header-box">
-                <h2 class="margin"><?php echo getCategory(); ?></h2>
+                <h2 class="margin"><?php echo getTags(); ?></h2>
                 <h2 class="margin"><?php echo getDatum(); ?></h2>
                 <button id="copy-btn" onclick="copyToClipboard()">Copy Code</button>
             </div>

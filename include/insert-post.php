@@ -77,7 +77,7 @@
 
         //
         // *** To Email ***
-        $to = "rogerxdark@gmail.com";
+        $to = "$email";
         //
         // *** Subject Email ***
         $subject = "URL for private post";

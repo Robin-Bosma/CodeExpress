@@ -44,7 +44,7 @@ include "../include/connection.php";
                     echo "<div id='overview-desc'>";
                     echo "<p>Description:<br>{$key->description}</p>";
                     echo "</div>";
-                    echo "<p>tags(s):<br>{$key->tags}</p>";
+                    echo "<p>tag(s):<br>{$key->tags}</p>";
                     echo "<div id='overview-date'>";
                     echo "<p class='overview-end'>Date created: {$key->date}</p>";
                     echo "</div>";
@@ -59,7 +59,7 @@ include "../include/connection.php";
                 $code_array = $stmt->fetchAll(PDO::FETCH_OBJ);
 
                 foreach ($code_array as $key) {
-                  echo "<h1 class='overview-line'><a class='overview-link' href='code.php?id={$key->id}'>{$key->title}</a></h1>";
+                    echo "<h1 class='overview-line'><a class='overview-link' href='code.php?id={$key->id}'>{$key->title}</a></h1>";
                     echo "<div id='overview-item'>";
                     echo "<div id='overview-creator'>";
                     echo "<p id='overview-end'> Created by: {$key->creator}</p>";
