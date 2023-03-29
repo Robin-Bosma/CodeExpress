@@ -73,7 +73,7 @@ require_once "../include/insert-post.php";
                     <div class="line">
                         <div class="flex-direction-row-height">
                             <p class="margin-righter">Title</p>
-                            <p>Category</p>
+                            <p>tags</p>
                         </div>
                     </div>
                     <div class="table-container">
@@ -87,7 +87,7 @@ require_once "../include/insert-post.php";
                                 while ($row = $result->fetch()) {
                                     echo "<tr>";
                                     echo "<td><a class='margin-right' href='../page/code.php?id=" . $row['id'] . "'>" . $row["title"] . "</a></td>";
-                                    echo "<td>" . $row["category"] . "</td>";
+                                    echo "<td>" . $row["tags"] . "</td>";
                                     echo "</tr>";
                                 }
                             } else {
