@@ -45,7 +45,7 @@ $counter = 0;
                     echo "<div id='overview-desc'>";
                     echo "<p>Description:<br>{$key->description}</p>";
                     echo "</div>";
-                    echo "<p>Category(s):<br>{$key->category}</p>";
+                    echo "<p>Tag(s):<br>{$key->category}</p>";
                     echo "<div id='overview-date'>";
                     echo "<p class='overview-end'>Date created: {$key->date}</p>";
                     echo "</div>";
@@ -54,7 +54,7 @@ $counter = 0;
                     if ($counter % 3 == 0) {
                         $images = array("image1.png", "image2.png", "image3.png", "image4.png", "image5.png", "image6.png", "image7.png", "image8.png", "image9.png", "image10.png");
                         $rand_image = array_rand($images);
-                        echo "<img src='../img/{$images[$rand_image]}' alt='Advertisement' class='Advertisement'>";
+                        echo "<a href='https://www.youtube.com/watch?v=dQw4w9WgXcQ'><img src='../img/{$images[$rand_image]}' alt='Advertisement' class='Advertisement'></a>";
                     }
                 }
             } else {
