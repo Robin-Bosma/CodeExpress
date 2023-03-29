@@ -101,17 +101,15 @@ require_once "../include/insert-post.php";
         </div>
         <div class="item5">
             <input type="submit" id="submit-public" name="submit-public" href="code.php" value="Create Public post">
-            <form>
                 <div class="private-post-form">
             <input type="submit" id="submit-private" name="submit-private" value="Create Private post">
             <div class="configurations">
                 <p class="config-email">Email:</p>
-                <input type="email" id="email" name="email" placeholder="Needed for Private post" required> 
+                <input type="email" id="email" name="email" placeholder="Needed to retrieve private post like!"> 
             </div>
-        </div></form>
-        </form>
         </div>
-        
+        </div>
+        </form>
         </table>
         <!-- Footer -->
         <div class="item7">
