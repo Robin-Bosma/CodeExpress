@@ -421,6 +421,9 @@ body {
 #overview-desc {
   margin-left: 10px;
 }
+#overview-tags {
+  margin-left: 10px;
+}
 #overview-date {
   margin-right: 10px;
   padding-bottom: 1px;
