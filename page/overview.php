@@ -1,6 +1,7 @@
 <?php
 session_start();
 include "../include/connection.php";
+$counter = 0;
 ?>
 
 <!DOCTYPE html>
@@ -28,7 +29,7 @@ include "../include/connection.php";
             $query = isset($_GET['q']) ? htmlspecialchars($_GET['q']) : '';
 
             // Query the database to find matching code snippets
-            $stmt = $pdo->prepare("SELECT * FROM configuration WHERE title LIKE :query OR code LIKE :query OR tags LIKE :query LIKE :query OR description LIKE :query OR creator LIKE :query");
+            $stmt = $pdo->prepare("SELECT * FROM configuration WHERE title LIKE :query OR code LIKE :query OR html LIKE :query OR css LIKE :query OR php LIKE :query OR javascript LIKE :query OR SQLcode LIKE :query OR description LIKE :query OR creator LIKE :query");
             $stmt->bindValue(':query', "%$query%");
             $stmt->execute();
             $code_array = $stmt->fetchAll(PDO::FETCH_OBJ);
@@ -44,42 +45,28 @@ include "../include/connection.php";
                     echo "<div id='overview-desc'>";
                     echo "<p>Description:<br>{$key->description}</p>";
                     echo "</div>";
-                    echo "<p>tag(s):<br>{$key->tags}</p>";
+                    echo "<p>Tag(s):<br>{$key->category}</p>";
                     echo "<div id='overview-date'>";
                     echo "<p class='overview-end'>Date created: {$key->date}</p>";
                     echo "</div>";
                     echo "</div>";
+                    $counter++;
+                    if ($counter % 3 == 0) {
+                        $images = array("image1.png", "image2.png", "image3.png", "image4.png", "image5.png", "image6.png", "image7.png", "image8.png", "image9.png", "image10.png");
+                        $rand_image = array_rand($images);
+                        echo "<a href='https://www.youtube.com/watch?v=dQw4w9WgXcQ'><img src='../img/{$images[$rand_image]}' alt='Advertisement' class='Advertisement'></a>";
+                    }
                 }
-            } else if ($query !== '') {
-                echo "No results found for '$query'.";
             } else {
-                // Display all code snippets if no search query is provided
-                $stmt = $pdo->prepare("SELECT * FROM configuration");
-                $stmt->execute();
-                $code_array = $stmt->fetchAll(PDO::FETCH_OBJ);
-
-                foreach ($code_array as $key) {
-                    echo "<h1 class='overview-line'><a class='overview-link' href='code.php?id={$key->id}'>{$key->title}</a></h1>";
-                    echo "<div id='overview-item'>";
-                    echo "<div id='overview-creator'>";
-                    echo "<p id='overview-end'> Created by: {$key->creator}</p>";
-                    echo "</div>";
-                    echo "<div id='overview-desc'>";
-                    echo "<p>Description:<br>{$key->description}</p>";
-                    echo "</div>";
-                    echo "<div id='overview-date'>";
-                    echo "<p class='overview-end'>Date created: {$key->date}</p>";
-                    echo "</div>";
-                    echo "</div>";
-                }
+                echo "<h1>No results found.</h1>";
             }
             ?>
         </div>
-    </div>
+        <!-- Footer -->
+        <div id="overview-footer">
+            <?php include "../include/footer.php" ?>
+        </div>
 
-    <!-- Footer -->
-    <div class="footer">
-        <?php include "../include/footer.php" ?>
     </div>
 </body>
 

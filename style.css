@@ -408,7 +408,7 @@ body {
   grid-area: overview-content;
 }
 
-#overview-container footer {
+#overview-container #overview-footer {
   grid-area: footer;
 }
 
