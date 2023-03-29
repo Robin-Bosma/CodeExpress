@@ -45,7 +45,7 @@ $counter = 0;
                     echo "<div id='overview-desc'>";
                     echo "<p>Description:<br>{$key->description}</p>";
                     echo "</div>";
-                    echo "<p>Tag(s):<br>{$key->category}</p>";
+                    echo "<p>Tag(s):<br>{$key->tags}</p>";
                     echo "<div id='overview-date'>";
                     echo "<p class='overview-end'>Date created: {$key->date}</p>";
                     echo "</div>";
