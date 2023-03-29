@@ -56,34 +56,15 @@ require_once "../include/insert-post.php";
                 <input type="text" id="created" name="creator" placeholder="Who made this code?" required>  
             </div>
             <div class="configurations">
-                <p class="config-email">Email:</p>
-                <input type="email" id="email" name="email" placeholder="Needed for Private post"> 
-            </div>
-            <div class="category" required>
-                <p class="config-category">Category:</p>
-                <div id="checkboxes" required>
-                    <div class="checkboxes-top" required>
-                        <input type="checkbox" id="checkbox-codes" name="category[]" value="HTML">
-                        <label for="HTML">HTML</label><br>
-                        <input type="checkbox" id="checkbox-codes" name="category[]" value="CSS">
-                        <label for="CSS">CSS</label><br>
-                        <input type="checkbox" id="checkbox-codes" name="category[]" value="PHP">
-                        <label for="PHP">PHP</label><br>
-                    </div>
-                    <div class="checkboxes-bottom">
-                        <input type="checkbox" id="checkbox-codes" name="category[]" value="JavaScript">
-                        <label for="JavaScript">JavaScript</label><br>
-                        <input type="checkbox" id="checkbox-codes" name="category[]" value="SQL">
-                        <label for="SQL">SQL</label><br>
-                    </div>
-                </div>
+                <p class="config-tags">Tags:</p>
+                <input type="tags" id="tags" name="tags" placeholder="For example: HTML, CSS" required>
             </div>
         </div>
         <div class="item3-text">
             <h1 class="config-desc">Description:</h1>
         </div>
         <div class="item3">
-            <textarea cols="80" rows="10" id="desc" type="text" name="description" placeholder="Give a small description about you code.. What is your code about? What does it do?"></textarea>
+            <textarea cols="80" rows="10" id="desc" type="text" name="description" placeholder="Give a small description about you code.. What Language does your code use? What is your code about?"></textarea>
         </div>
         <div class="item4">
             <div class="right-container">
@@ -120,9 +101,17 @@ require_once "../include/insert-post.php";
         </div>
         <div class="item5">
             <input type="submit" id="submit-public" name="submit-public" href="code.php" value="Create Public post">
+            <form>
+                <div class="private-post-form">
             <input type="submit" id="submit-private" name="submit-private" value="Create Private post">
-        </div>
+            <div class="configurations">
+                <p class="config-email">Email:</p>
+                <input type="email" id="email" name="email" placeholder="Needed for Private post" required> 
+            </div>
+        </div></form>
         </form>
+        </div>
+        
         </table>
         <!-- Footer -->
         <div class="item7">

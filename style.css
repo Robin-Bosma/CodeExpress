@@ -140,6 +140,8 @@ body {
 .item5 {
   grid-area: button;
   margin-top: 20px;
+  display: flex;
+  flex-direction: row;
 }
 .item6 {
   grid-area: database;
@@ -232,7 +234,7 @@ body {
 }
 
 #email {
-  margin-left: 96px;
+  margin-left: 10px;
   font-family: Cambria;
   font-weight: bold;
   max-width: 200px;
@@ -246,9 +248,23 @@ body {
   text-align: inherit;
 }
 
-.config-category {
+.config-tags {
   margin-left: 20px;
   font-size: 25px;
+}
+#tags {
+  margin-left: 110px;
+  font-family: Cambria;
+  font-weight: bold;
+  max-width: 200px;
+  max-height: 30px;
+  margin-top: 25px;
+  background-color: lightgray;
+  border-style: solid;
+  border-width: 3px;
+  text-align: left;
+  text-align: start;
+  text-align: inherit;
 }
 
 .configurations {
@@ -297,9 +313,9 @@ body {
   text-align: left;
   text-align: start;
   text-align: inherit;
-  height: 178px;
-  max-height: 178px;
-  min-height: 178px;
+  height: 212px;
+  max-height: 212px;
+  min-height: 212px;
 }
 
 #submit-public {
@@ -355,6 +371,13 @@ body {
 #submit-private:active {
   background-color: #010066;
 }
+
+.private-post-form {
+  display: flex;
+  flex-direction: row;
+}
+
+
 /* overview */
 
 #overview-container {
