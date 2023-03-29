@@ -136,7 +136,7 @@ if (isset($_GET['id'])) {
                 <h1 class="config">Comments</h1>
                 <form method="post">
                     <div class="flex-direction-column">
-                        <input class="code-input" type="text" id="comment_text" name="comment_text" placeholder="Write your comment here">
+                        <input class="code-input" type="text" id="comment_text" name="comment_text" placeholder="Write your comment here" required>
                         <input class="code-button" type="submit" name="submit" value="Add Comment">
                     </div>
                     <?php
