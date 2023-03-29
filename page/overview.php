@@ -52,11 +52,15 @@ $counter = 0;
                     echo "<p class='overview-end'>Date created: {$key->date}</p>";
                     echo "</div>";
                     echo "</div>";
+                    echo "<div id='overview-item-border'>";
+                    echo "<div>ㅤ</div>";
+                    echo "<div>ㅤ</div>";
+                    echo "</div>";
                     $counter++;
                     if ($counter % 3 == 0) {
                         $images = array("image1.png", "image2.png", "image3.png", "image4.png", "image5.png", "image6.png", "image7.png", "image8.png", "image9.png", "image10.png");
                         $rand_image = array_rand($images);
-                        echo "<a href='https://www.youtube.com/watch?v=dQw4w9WgXcQ'><img src='../img/{$images[$rand_image]}' alt='Advertisement' class='Advertisement'></a>";
+                        echo "<a href='https://www.youtube.com/watch?v=dQw4w9WgXcQ'><img src='../img//{$images[$rand_image]}' alt='Advertisement' class='Advertisement'></a>";
                     }
                 }
             } else {

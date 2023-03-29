@@ -418,6 +418,9 @@ body {
   border-top: solid 5px;
   border-color: #ffc61e;
 }
+#overview-item-border {
+  border-bottom: 3px solid #010066;
+}
 #overview-desc {
   margin-left: 10px;
 }
@@ -437,6 +440,7 @@ body {
   color: #010066;
   transition: ease-out 0.5s;
 }
+
 .overview-link:hover { 
   color: #ffc61e;
   background-color: #010066;
@@ -451,6 +455,13 @@ body {
 #overview-end { 
   display: flex;
   justify-content: start;
+}
+
+.Advertisement {
+  width: 990px;
+  margin-top: 10px;
+  height: auto;
+  border: 10px solid #ffc61e;
 }
 
 /* code.php */
