@@ -29,7 +29,7 @@ $counter = 0;
             $query = isset($_GET['q']) ? htmlspecialchars($_GET['q']) : '';
 
             // Query the database to find matching code snippets
-            $stmt = $pdo->prepare("SELECT * FROM configuration WHERE title LIKE :query OR code LIKE :query OR html LIKE :query OR css LIKE :query OR php LIKE :query OR javascript LIKE :query OR SQLcode LIKE :query OR description LIKE :query OR creator LIKE :query");
+            $stmt = $pdo->prepare("SELECT * FROM configuration WHERE title LIKE :query OR code LIKE :query OR tags LIKE :query LIKE :query OR description LIKE :query OR creator LIKE :query");
             $stmt->bindValue(':query', "%$query%");
             $stmt->execute();
             $code_array = $stmt->fetchAll(PDO::FETCH_OBJ);
