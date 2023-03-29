@@ -377,7 +377,13 @@ body {
   display: flex;
   flex-direction: row;
 }
+/* history */
 
+#his-overview-item {
+  background-color: darkgray;
+  border-top: solid 2px;
+  border-color: #ffc61e;
+}
 
 /* overview */
 

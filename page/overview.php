@@ -33,7 +33,7 @@ include "../include/connection.php";
             $stmt->execute();
             $code_array = $stmt->fetchAll(PDO::FETCH_OBJ);
 
-            // Display the search results
+            // Display the search results in history
             if (count($code_array) > 0) {
                 foreach ($code_array as $key) {
                     echo "<h1 class='overview-line'><a class='overview-link' href='code.php?id={$key->id}'>{$key->title}</a></h1>";

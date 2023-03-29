@@ -86,6 +86,7 @@ require_once "../include/insert-post.php";
                             if ($result->rowCount() > 0) {
                                 while ($row = $result->fetch()) {
                                     echo "<tr>";
+                                    echo "<div id='his-overview-item'> </div>"; 
                                     echo "<td><a class='margin-right' href='../page/code.php?id=" . $row['id'] . "'>" . $row["title"] . "</a></td>";
                                     echo "<td>" . $row["tags"] . "</td>";
                                     echo "</tr>";
