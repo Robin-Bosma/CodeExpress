@@ -56,11 +56,11 @@ if (!$post) {
             <div class="header-box">
                 <h2 class="margin"><?= $post["tags"] ?></h2>
                 <h2 class="margin"><?= $post["date"] ?></h2>
-                <button id="copy-btn" onclick="copyToClipboard()">Copy Code</button>
+                <button id="private-copy-btn" onclick="copyToClipboard()">Copy Code</button>
             </div>
 
             </p>
-            <h1>Code</h1>
+            <h1 class="private-code-margin">Code:</h1>
             <!-- Code display using CodeMirror -->
             <textarea cols="80" rows="10" id="code" type="text" name="code" mode="text/html">
     <?php echo htmlspecialchars($post["code"]) ?>
