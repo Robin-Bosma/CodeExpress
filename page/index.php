@@ -106,7 +106,7 @@ require_once "../include/insert-post.php";
             <input type="submit" id="submit-private" name="submit-private" value="Create Private post">
             <div class="configurations">
                 <p class="config-email">Email:</p>
-                <input type="email" id="email" name="email" placeholder="Needed to retrieve private post like!"> 
+                <input type="email" id="email" name="email" placeholder="Needed to retrieve private post link!"> 
             </div>
         </div>
         </div>
