@@ -100,7 +100,6 @@ if (isset($_GET['id'])) {
                     var editor = CodeMirror.fromTextArea(document.getElementById("code"), {
                         lineNumbers: true,
                         mode: "htmlmixed",
-                        theme: "darcula",
                         readOnly: true
                     });
 
