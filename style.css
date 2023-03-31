@@ -566,6 +566,7 @@ body {
 #his-end { 
   display: flex;
   justify-content: end;
+  color: #010066;
 }
 
 /* overview */
