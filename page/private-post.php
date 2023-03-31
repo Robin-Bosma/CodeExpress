@@ -102,16 +102,16 @@ if (!$post) {
                 });
             </script>
         </div>
-        <div class="private-right-container">
+        <div class="right-container">
             <h1>Post History</h1>
-            <div class="private-right-container-content">
+            <div class="code-right-container-content">
                 <div class="line">
                     <div class="flex-direction-row-height">
                         <p class="his-margin-righter">Title</p>
                         <p>Tags</p>
                     </div>
                 </div>
-                <div class="table-container">
+                <div class="code-table-container">
                     <table>
                         <?php
                         // Retrieve data from the configuration table
@@ -120,9 +120,11 @@ if (!$post) {
 
                         if ($result->rowCount() > 0) {
                             while ($row = $result->fetch()) {
-                                echo "<tr>";
-                                echo "<td><a class='margin-right' href='../page/code.php?id=" . $row['id'] . "'>" . $row["title"] . "</a></td>";
-                                echo "<td>" . $row["tags"] . "</td>";
+                                echo "<tr class='his-line'>";
+                                echo "<div id='his-overview-item'>";
+                                echo "<td id='his-line'><a class='margin-right' href='../page/code.php?id=" . $row['id'] . "'>" . $row["title"] . "</a></td>";
+                                echo "<td id='his-end'>" . $row["tags"] . "</td> ";
+                                echo "</div>";
                                 echo "</tr>";
                             }
                         } else {
