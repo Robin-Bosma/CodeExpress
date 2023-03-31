@@ -54,7 +54,7 @@ $counter = 0;
                     echo "</div>";
                     $counter++;
                     if ($counter % 5 == 0) {
-                        $images = array("image1.png", "image2.png", "image3.png", "image4.png", "image5.png", "image6.png", "image7.png", "image8.png", "image9.png", "image10.png");
+                        $images = array("image1.png", "image2.png", "image3.png", "image4.png");
                         $rand_image = array_rand($images);
                         echo "<a href='https://www.youtube.com/watch?v=dQw4w9WgXcQ'><img src='../img//{$images[$rand_image]}' alt='Advertisement' class='Advertisement'></a>";
                     }
