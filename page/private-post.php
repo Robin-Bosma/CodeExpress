@@ -10,32 +10,6 @@ $post = $stmt->fetch(PDO::FETCH_ASSOC);
 
 $url = $_GET["url"];
 
-function getCategory1($post)
-{
-    return $post["html"];
-}
-
-function getCategory2($post)
-{
-    return $post["css"];
-}
-
-function getCategory3($post)
-{
-    return $post["php"];
-}
-
-function getCategory4($post)
-{
-    return $post["javascript"];
-}
-
-function getCategory5($post)
-{
-    return $post["SQLcode"];
-}
-
-
 if (!isset($_GET["url"])) {
     header("Location: /index.php");
     exit;
@@ -127,52 +101,7 @@ if (!$post) {
             </script>
         </div>
     </div>
-    <div>
-        <h1 class="config">Comments</h1>
-        <form method="post">
-            <div class="flex-direction-column">
-                <input class="code-input" type="text" id="comment_text" name="comment_text" placeholder="Write your comment here">
-                <input class="code-button" type="submit" name="submit" value="Add Comment">
-            </div>
-            <?php
-            // Connect to the SQL database
-            $conn = mysqli_connect("localhost", "root", "", "codeexpress");
 
-            // Check connection
-            if (!$conn) {
-                die("Connection failed: " . mysqli_connect_error());
-            }
-
-            // Check if the form has been submitted
-            if (isset($_POST['submit'])) {
-                // Get the comment text
-                $comment_text = $_POST['comment_text'];
-                // Generate a random username or leave it blank
-                $username = rand(1, 9999);
-
-                // Insert the comment into the SQL table
-                $sql = "INSERT INTO comments (comment_text, username, date_created) VALUES ('$comment_text', '$username', NOW())";
-                if (mysqli_query($conn, $sql)) {
-                } else {
-                    echo "Error: " . $sql . "<br>" . mysqli_error($conn);
-                }
-            }
-
-            // Retrieve the comments from the SQL table
-            $sql = "SELECT * FROM comments";
-            $result = mysqli_query($conn, $sql);
-
-            // Loop through the comments and display each one
-            while ($row = mysqli_fetch_assoc($result)) {
-                echo "<p>Anonymous user " . $row['username'] . " said: " . $row['comment_text'] . " | on " . date("F j, Y, g:i a", strtotime($row['date_created'])) . "</p>";
-            }
-
-            // Close the SQL connection
-            mysqli_close($conn);
-            ?>
-        </form>
-    </div>
-    </div>
     <div class="right-container">
         <h1>Post History</h1>
         <div class="right-container-content">
@@ -193,7 +122,7 @@ if (!$post) {
                         while ($row = $result->fetch()) {
                             echo "<tr>";
                             echo "<td><a class='margin-right' href='../page/code.php?id=" . $row['id'] . "'>" . $row["title"] . "</a></td>";
-                            echo "<td>" . $row["category"] . "</td>";
+                            echo "<td>" . $row["tags"] . "</td>";
                             echo "</tr>";
                         }
                     } else {
