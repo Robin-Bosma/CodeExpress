@@ -49,7 +49,7 @@ require_once "../include/insert-post.php";
         <div class="item2">
             <div class="configurations">
                 <p class="config-title">Title:</p>
-                <input type="text" id="title" name="title" placeholder="Title" required>
+                <input type="text" id="title" name="title" placeholder="Title (max 15 characters)" maxlength="15" required>
             </div>
             <div class="configurations">
                 <p class="config-created">Created by:</p>
