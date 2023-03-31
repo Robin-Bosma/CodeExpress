@@ -72,8 +72,8 @@ require_once "../include/insert-post.php";
                 <div class="right-container-content">
                     <div class="line">
                         <div class="flex-direction-row-height">
-                            <p class="margin-righter">Title</p>
-                            <p>tags</p>
+                            <p class="his-margin-righter">Title</p>
+                            <p>Tags</p>
                         </div>
                     </div>
                     <div class="table-container">
@@ -85,11 +85,11 @@ require_once "../include/insert-post.php";
 
                             if ($result->rowCount() > 0) {
                                 while ($row = $result->fetch()) {
-                                    echo "<tr>";
-                                    echo "<div id='his-overview-item'> </div>"; 
-                                    echo "<td><a class='margin-right' href='../page/code.php?id=" . $row['id'] . "'>" . $row["title"] . "</a></td>";
-                                    echo "<td>" . $row["tags"] . "</td>";
-                                    echo "</tr>";
+                                    echo "<tr class='his-line'>";
+                                    echo "<div id='his-overview-item'>"; 
+                                    echo "<td id='his-line'><a class='margin-right' href='../page/code.php?id=" . $row['id'] . "'>" . $row["title"] . "</a></td>";
+                                    echo "<td id='his-end'>" . $row["tags"] . "</td> ";
+                                    echo "</div>";
                                 }
                             } else {
                                 echo "<tr><td colspan='2'>No results found</td></tr>";

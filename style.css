@@ -673,7 +673,7 @@ body {
   font-size: 16px;
   margin-top: 1px;
   cursor: pointer;
-  margin-left: 800px;
+  margin-left: 875px;
 }
 
 .code-container {
@@ -900,4 +900,22 @@ footer {
   flex-direction: column;
   width: 80%;
   margin: 5px;
+}
+
+#private-copy-btn {
+  background-color: #4caf50;
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin-top: 1px;
+  cursor: pointer;
+  margin-left: 800px;
+}
+
+.private-code-margin {
+  margin-left: 18px;
 }

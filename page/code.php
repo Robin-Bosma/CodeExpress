@@ -188,8 +188,8 @@ if (isset($_GET['id'])) {
             <div class="code-right-container-content">
                 <div class="line">
                     <div class="flex-direction-row-height">
-                        <p class="margin-righter">Title</p>
-                        <p>tags</p>
+                        <p class="his-margin-righter">Title</p>
+                        <p>Tags</p>
                     </div>
                 </div>
                 <div class="code-table-container">
