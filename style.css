@@ -9,6 +9,7 @@ body {
 .CodeMirror {
   background-color: #252525;
   color: white;
+  font-size: 14px;
 }
 
 .CodeMirror-gutters {

@@ -121,7 +121,6 @@ require_once "../include/insert-post.php";
     var editor = CodeMirror.fromTextArea(document.getElementById("code"), {
         lineNumbers: true,
         mode: "htmlmixed",
-        theme: "darcula",
     });
 
     var modes = {
