@@ -5,8 +5,8 @@ include "../include/connection.php";
 if (isset($_GET['q'])) {
     $query = $_GET['q'];
     try {
-        $stmt = $pdo->prepare("SELECT * FROM configuration WHERE title LIKE ?");
-        $stmt->execute(["%$query%"]);
+        $stmt = $pdo->prepare("SELECT * FROM configuration WHERE title LIKE ? OR tags LIKE ?");
+        $stmt->execute(["%$query%", "%$query%"]);
         $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
     } catch (\PDOException $e) {
         echo 'Error searching for code: ' . $e->getMessage();
