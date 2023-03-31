@@ -6,6 +6,182 @@ body {
   font-family: Cambria;
   font-weight: bold;
 }
+.CodeMirror {
+  background-color: #252525;
+  color: white;
+  font-size: 14px;
+}
+
+.CodeMirror-gutters {
+  background-color: #151515;
+  border-right: 1px solid #151515;
+}
+
+.CodeMirror-guttermarker {
+  color: white;
+}
+
+.CodeMirror-cursor {
+  border-left: 2px solid white;
+}
+
+.CodeMirror-selected {
+  background-color: #444;
+}
+
+.cm-comment {
+  color: #6A9955;
+}
+
+.cm-keyword {
+  color: #569cd6;
+  font-weight: bold;
+  line-height: 1em;
+}
+
+.cm-string,
+.cm-string-2 {
+  color: #ce9178;
+}
+
+.cm-variable,
+.cm-property {
+  color: #ddd6a3;
+}
+
+.cm-variable-2,
+.cm-def {
+  color: #9cdcfe;
+}
+
+.cm-variable-3,
+.cm-type {
+  color: #a9b7c6;
+}
+
+.cm-operator {
+  color: #d4d4d4;
+}
+
+.cm-number,
+.cm-atom {
+  color: #b5cea8;
+}
+
+.cm-link {
+  color: #287bde;
+}
+
+.cm-error {
+  color: #bc3f3c;
+}
+
+.cm-tag {
+  color: #569cd6;
+}
+
+.cm-attribute {
+  color: #9cdcfe;
+}
+
+.cm-qualifier {
+  color: #d7ba7d;
+}
+
+.cm-bracket {
+  color: #808080;
+}
+
+.cm-meta {
+  color: #569cd6;
+}
+
+/* Custom theme */
+.CodeMirror-custom {
+  background-color: #1e1e1e;
+  color: #e6e1dc;
+}
+
+.CodeMirror-custom .CodeMirror-gutters {
+  background-color: #111;
+  border-right: 1px solid #111;
+}
+
+.CodeMirror-custom .CodeMirror-guttermarker {
+  color: #e6e1dc;
+}
+
+.CodeMirror-custom .CodeMirror-cursor {
+  border-left: 2px solid #e6e1dc;
+}
+
+.CodeMirror-custom .CodeMirror-selected {
+  background-color: #3d3d3d;
+}
+
+.CodeMirror-custom .cm-keyword {
+  color: #569cd6;
+  font-weight: bold;
+  line-height: 1em;
+}
+
+.CodeMirror-custom .cm-string,
+.CodeMirror-custom .cm-string-2 {
+  color: #ce9178;
+}
+
+.CodeMirror-custom .cm-variable,
+.CodeMirror-custom .cm-property {
+  color: #dcdcaa;
+}
+
+.CodeMirror-custom .cm-variable-2,
+.CodeMirror-custom .cm-def {
+  color: #9cdcfe;
+}
+
+.CodeMirror-custom .cm-variable-3,
+.CodeMirror-custom .cm-type {
+  color: #a9b7c6;
+}
+
+.CodeMirror-custom .cm-operator {
+  color: #d4d4d4;
+}
+
+.CodeMirror-custom .cm-number,
+.CodeMirror-custom .cm-atom {
+  color: #b5cea8;
+}
+
+.CodeMirror-custom .cm-link {
+  color: #287bde;
+}
+
+.CodeMirror-custom .cm-error {
+  color: #bc3f3c;
+}
+
+.CodeMirror-custom .cm-tag {
+  color: #569cd6;
+}
+
+.CodeMirror-custom .cm-attribute {
+  color: #9cdcfe;
+}
+
+.CodeMirror-custom .cm-qualifier {
+  color: #d7ba7d;
+}
+
+.CodeMirror-custom .cm-bracket {
+  color: #808080;
+}
+
+.CodeMirror-custom .cm-meta {
+  color: #569cd6;
+}
+
 /* Navbar */
 .navbar {
   background-color: #ffc61e;
@@ -90,20 +266,6 @@ body {
 }
 
 /* index */
-
-.CodeMirror {
-  max-width: 100%;
-  resize: vertical;
-}
-
-.cm-s-darcula .cm-bracket {
-  color: yellow;
-}
-
-.cm-s-darcula .cm-variable {
-  color: blue;
-}
-
 
 
 .item {
