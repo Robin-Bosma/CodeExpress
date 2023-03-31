@@ -379,10 +379,31 @@ body {
 }
 /* history */
 
+.his-line {
+  border-bottom: 3px solid #010066;
+  width: 100%;
+  display: inline-block;
+}
 #his-overview-item {
   background-color: darkgray;
   border-top: solid 2px;
   border-color: #ffc61e;
+}
+
+.his-lines{ 
+  border-bottom: solid 2px;
+  border-color: black;
+  
+}
+.his-margin-right { 
+  border: #151515 2px;
+}
+.his-margin-righter {
+  margin-right: 78px;
+}
+#his-end { 
+  display: flex;
+  justify-content: end;
 }
 
 /* overview */
@@ -549,14 +570,20 @@ body {
   flex-direction: row;
 }
 
-.margin-righter {
-  margin-right: 78px;
-}
 
 .margin-right {
   margin-right: 63px;
+  text-decoration: none;
+  color: #010066;
 }
-
+.margin-right:hover {
+  margin-right: 63px;
+  background-color: #ffc61e;
+  color: #010066;
+  transition: ease-in 0.5s;
+  padding-right: 1rem;
+  padding-left: 1rem;
+}
 .flex-direction-row-height {
   display: flex;
   flex-direction: row;
