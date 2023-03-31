@@ -183,35 +183,33 @@ if (isset($_GET['id'])) {
             </div>
         </div>
         <div class="right-container">
-                <h1>Post History</h1>
-                <div class="right-container-content">
-                    <div class="line">
-                        <div class="flex-direction-row-height">
-                            <p class="his-margin-righter">Title</p>
-                            <p>tags</p>
-                        </div>
+            <h1>Post History</h1>
+            <div class="right-container-content">
+                <div class="line">
+                    <div class="flex-direction-row-height">
+                        <p class="margin-righter">Title</p>
+                        <p>tags</p>
                     </div>
-                    <div class="table-container">
-                        <table>
-                            <?php   
-                            // Retrieve data from the configuration table
-                            $sql = "SELECT * FROM configuration";
-                            $result = $pdo->query($sql);
+                </div>
+                <div class="table-container">
+                    <table>
+                        <?php
+                        // Retrieve data from the configuration table
+                        $sql = "SELECT * FROM configuration";
+                        $result = $pdo->query($sql);
 
-                            if ($result->rowCount() > 0) {
-                                while ($row = $result->fetch()) {
-                                    echo "<tr class='his-line'>";
-                                    echo "<div id='his-overview-item'>"; 
-                                    echo "<td id='his-line'><a class='margin-right' href='../page/code.php?id=" . $row['id'] . "'>" . $row["title"] . "</a></td>";
-                                    echo "<td>" . $row["tags"] . "</td> ";
-                                    echo "</div>";
-                                    echo "</tr>";
-                                }
-                            } else {
-                                echo "<tr><td colspan='2'>No results found</td></tr>";
+                        if ($result->rowCount() > 0) {
+                            while ($row = $result->fetch()) {
+                                echo "<tr>";
+                                echo "<td><a class='margin-right' href='../page/code.php?id=" . $row['id'] . "'>" . $row["title"] . "</a></td>";
+                                echo "<td>" . $row["tags"] . "</td>";
+                                echo "</tr>";
                             }
-                            ?>
-                        </table>
+                        } else {
+                            echo "<tr><td colspan='2'>No results found</td></tr>";
+                        }
+                        ?>
+                    </table>
                 </div>
             </div>
         </div>
