@@ -10,7 +10,7 @@
 
 
 We hebben de volgende talen gebruikt voor het bouwen van deze website:
-HTML, CSS, JS, PHP, PDO & SQL
+HTML, CSS, JavaScript, PHP & SQL
 
 <br/>
 
