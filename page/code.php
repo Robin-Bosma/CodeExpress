@@ -158,7 +158,7 @@ if (isset($_GET['id'])) {
                         $problem_id = $_GET['id'];
 
                         // Insert the comment into the SQL table
-                        $stmt = mysqli_prepare ($conn, "INSERT INTO comments (comment_text, username, date_created, problem_id) VALUES (?, ?, NOW(), ?)");
+                        $stmt = mysqli_prepare($conn, "INSERT INTO comments (comment_text, username, date_created, problem_id) VALUES (?, ?, NOW(), ?)");
                         mysqli_stmt_bind_param($stmt, "ssi", $comment_text, $username, $problem_id);
                         if (mysqli_stmt_execute($stmt)) {
                         } else {
