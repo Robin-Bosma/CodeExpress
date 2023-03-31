@@ -83,7 +83,7 @@
         $subject = "URL for private post";
         //
         // *** Content Email ***
-        $content = "Here is your url for your private post http://localhost/project-2/page/private-post.php?url=$url";
+        $content = "Here is your url for your private post https://169849.ao-alkmaar.nl/project-2-verdieping-scrum-codeexpress/page/private-post.php?url=$url";
         //
         //*** Head Email ***
         $headers = "From: infocodeexpress@gmail.com\r\n";
