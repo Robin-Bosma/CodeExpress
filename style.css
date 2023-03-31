@@ -488,6 +488,18 @@ body {
 
 /* code.php */
 
+.code-table-container {
+  height: 588px;
+  width: 200px;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.code-right-container-content {
+  background-color: lightgrey;
+  border: 3px solid grey;
+}
+
 #copy-btn {
   background-color: #4caf50;
   border: none;
@@ -512,7 +524,7 @@ body {
   justify-content: left;
   flex-direction: column;
   width: 80%;
-  margin: 5px;
+  margin-right: 50px;
 }
 
 .right-container {
@@ -568,8 +580,12 @@ body {
 .header-box {
   display: flex;
   flex-direction: row;
+  margin-left: 14px;
 }
 
+.code-comment-margin {
+  margin-left: 18px;
+}
 
 .margin-right {
   margin-right: 63px;

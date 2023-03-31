@@ -134,64 +134,66 @@ if (isset($_GET['id'])) {
             </form>
             <div>
                 <h1 class="config">Comments</h1>
-                <form method="post">
-                    <div class="flex-direction-column">
-                        <input class="code-input" type="text" id="comment_text" name="comment_text" placeholder="Write your comment here" required>
-                        <input class="code-button" type="submit" name="submit" value="Add Comment">
-                    </div>
-                    <?php
-                    // Connect to the SQL database
-                    $conn = mysqli_connect("localhost", "root", "", "codeexpress");
+                <div class="code-comment-margin">
+                    <form method="post">
+                        <div class="flex-direction-column">
+                            <input class="code-input" type="text" id="comment_text" name="comment_text" placeholder="Write your comment here" required>
+                            <input class="code-button" type="submit" name="submit" value="Add Comment">
+                        </div>
+                        <?php
+                        // Connect to the SQL database
+                        $conn = mysqli_connect("localhost", "root", "", "codeexpress");
 
-                    // Check connection
-                    if (!$conn) {
-                        die("Connection failed: " . mysqli_connect_error());
-                    }
-
-                    // Check if the form has been submitted
-                    if (isset($_POST['submit'])) {
-                        // Get the comment text
-                        $comment_text = $_POST['comment_text'];
-                        // Generate a random username or leave it blank
-                        $username = rand(1, 9999);
-                        // Get the problem ID from the URL parameter
-                        $problem_id = $_GET['id'];
-
-                        // Insert the comment into the SQL table
-                        $stmt = mysqli_prepare($conn, "INSERT INTO comments (comment_text, username, date_created, problem_id) VALUES (?, ?, NOW(), ?)");
-                        mysqli_stmt_bind_param($stmt, "ssi", $comment_text, $username, $problem_id);
-                        if (mysqli_stmt_execute($stmt)) {
-                        } else {
-                            echo "Error: " . $stmt . "<br>" . mysqli_error($conn);
+                        // Check connection
+                        if (!$conn) {
+                            die("Connection failed: " . mysqli_connect_error());
                         }
-                    }
 
-                    // Retrieve the comments from the SQL table
-                    $problem_id = $_GET['id'];
-                    $sql = "SELECT * FROM comments WHERE problem_id = $problem_id";
-                    $result = mysqli_query($conn, $sql);
+                        // Check if the form has been submitted
+                        if (isset($_POST['submit'])) {
+                            // Get the comment text
+                            $comment_text = $_POST['comment_text'];
+                            // Generate a random username or leave it blank
+                            $username = rand(1, 9999);
+                            // Get the problem ID from the URL parameter
+                            $problem_id = $_GET['id'];
 
-                    // Loop through the comments and display each one
-                    while ($row = mysqli_fetch_assoc($result)) {
-                        echo "<p>Anonymous user " . $row['username'] . " said: " . $row['comment_text'] . " | on " . date("F j, Y, g:i a", strtotime($row['date_created'])) . "</p>";
-                    }
+                            // Insert the comment into the SQL table
+                            $stmt = mysqli_prepare($conn, "INSERT INTO comments (comment_text, username, date_created, problem_id) VALUES (?, ?, NOW(), ?)");
+                            mysqli_stmt_bind_param($stmt, "ssi", $comment_text, $username, $problem_id);
+                            if (mysqli_stmt_execute($stmt)) {
+                            } else {
+                                echo "Error: " . $stmt . "<br>" . mysqli_error($conn);
+                            }
+                        }
 
-                    // Close the SQL connection
-                    mysqli_close($conn);
-                    ?>
-                </form>
+                        // Retrieve the comments from the SQL table
+                        $problem_id = $_GET['id'];
+                        $sql = "SELECT * FROM comments WHERE problem_id = $problem_id";
+                        $result = mysqli_query($conn, $sql);
+
+                        // Loop through the comments and display each one
+                        while ($row = mysqli_fetch_assoc($result)) {
+                            echo "<p>Anonymous user " . $row['username'] . " said: " . $row['comment_text'] . " | on " . date("F j, Y, g:i a", strtotime($row['date_created'])) . "</p>";
+                        }
+
+                        // Close the SQL connection
+                        mysqli_close($conn);
+                        ?>
+                    </form>
+                </div>
             </div>
         </div>
         <div class="right-container">
             <h1>Post History</h1>
-            <div class="right-container-content">
+            <div class="code-right-container-content">
                 <div class="line">
                     <div class="flex-direction-row-height">
                         <p class="his-margin-righter">Title</p>
                         <p>tags</p>
                     </div>
                 </div>
-                <div class="table-container">
+                <div class="code-table-container">
                     <table>
                         <?php
                         // Retrieve data from the configuration table
@@ -203,7 +205,7 @@ if (isset($_GET['id'])) {
                                 echo "<tr class='his-line'>";
                                 echo "<div id='his-overview-item'>";
                                 echo "<td id='his-line'><a class='margin-right' href='../page/code.php?id=" . $row['id'] . "'>" . $row["title"] . "</a></td>";
-                                echo "<td>" . $row["tags"] . "</td> ";
+                                echo "<td id='his-end'>" . $row["tags"] . "</td> ";
                                 echo "</div>";
                                 echo "</tr>";
                             }
