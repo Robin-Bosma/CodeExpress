@@ -26,7 +26,7 @@ HTML, CSS, JS, PHP, PDO & SQL
 <img
   src="img/train.png"
   align="right"
-  width="820" />
+  width="720" />
 
 <!-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -->
 
