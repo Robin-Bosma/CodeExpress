@@ -51,13 +51,15 @@ if (!$post) {
     <!-- Navbar -->
     <?php include "../include/navbar.php" ?>
     <div class="code-container">
-        <div class="left-container">
-            <h1><?= $post["title"] ?></h1>
-            <p>Created by: <?= $post["creator"] ?></p>
-            <p>Categories:
+        <div class="private-left-container">
+            <h1 class="config"><?= $post["title"] ?></h1>
+            <div class="header-box">
+                <h2 class="margin"><?= $post["tags"] ?></h2>
+                <h2 class="margin"><?= $post["date"] ?></h2>
+                <button id="copy-btn" onclick="copyToClipboard()">Copy Code</button>
+            </div>
 
             </p>
-            <p>Description: <?= $post["description"] ?></p>
             <h1>Code</h1>
             <!-- Code display using CodeMirror -->
             <textarea cols="80" rows="10" id="code" type="text" name="code" mode="text/html">
@@ -100,43 +102,57 @@ if (!$post) {
                 });
             </script>
         </div>
-    </div>
-
-    <div class="right-container">
-        <h1>Post History</h1>
-        <div class="right-container-content">
-            <div class="line">
-                <div class="flex-direction-row-height">
-                    <p class="margin-righter">Title</p>
-                    <p>Category</p>
+        <div class="private-right-container">
+            <h1>Post History</h1>
+            <div class="private-right-container-content">
+                <div class="line">
+                    <div class="flex-direction-row-height">
+                        <p class="his-margin-righter">Title</p>
+                        <p>Tags</p>
+                    </div>
                 </div>
-            </div>
-            <div class="table-container">
-                <table>
-                    <?php
-                    // Retrieve data from the configuration table
-                    $sql = "SELECT * FROM configuration";
-                    $result = $pdo->query($sql);
+                <div class="table-container">
+                    <table>
+                        <?php
+                        // Retrieve data from the configuration table
+                        $sql = "SELECT * FROM configuration";
+                        $result = $pdo->query($sql);
 
-                    if ($result->rowCount() > 0) {
-                        while ($row = $result->fetch()) {
-                            echo "<tr>";
-                            echo "<td><a class='margin-right' href='../page/code.php?id=" . $row['id'] . "'>" . $row["title"] . "</a></td>";
-                            echo "<td>" . $row["tags"] . "</td>";
-                            echo "</tr>";
+                        if ($result->rowCount() > 0) {
+                            while ($row = $result->fetch()) {
+                                echo "<tr>";
+                                echo "<td><a class='margin-right' href='../page/code.php?id=" . $row['id'] . "'>" . $row["title"] . "</a></td>";
+                                echo "<td>" . $row["tags"] . "</td>";
+                                echo "</tr>";
+                            }
+                        } else {
+                            echo "<tr><td colspan='2'>No results found</td></tr>";
                         }
-                    } else {
-                        echo "<tr><td colspan='2'>No results found</td></tr>";
-                    }
-                    ?>
-                </table>
+                        ?>
+                    </table>
+                </div>
             </div>
         </div>
     </div>
+
+
 
     <!-- Footer -->
     <?php include "../include/footer.php" ?>
 
 </body>
+
+<script>
+    // The function for copying code
+    function copyToClipboard() {
+        var codeDiv = document.getElementById("code");
+        var codeText = codeDiv.innerText;
+        navigator.clipboard.writeText(codeText).then(function() {
+            alert("Code copied to clipboard!");
+        }, function() {
+            alert("Failed to copy code to clipboard.");
+        });
+    }
+</script>
 
 </html>
