@@ -28,12 +28,6 @@ The website had three main pages, namely index.php, code.php, and overview.php. 
 <br>
 Despite encountering a few hurdles along the way, the four friends were determined to complete the project within the given timeframe. They worked tirelessly, day and night, to ensure that the website was functional and user-friendly.<br>
 <br>
-Finally, after two weeks of hard work, the website was completed. The four friends were thrilled with their creation, and they couldn't wait to share it with the world. They launched the website and started promoting it on social media.<br>
-<br>
-Within a few weeks, CodeExpress gained popularity, and it became a hit among developers and coders. The four friends were ecstatic about the success of their project, and they continued to work on improving the website to make it even better.<br>
-<br>
-And so, the story of Robin, Michel, Roger, and Joris came to an end, but their legacy lived on through CodeExpress, a website that brought coders together and made their lives easier.<br>
-<br>
 We hebben de volgende talen gebruikt voor het bouwen van deze website:<br>
 HTML, CSS, JavaScript, PHP & SQL
 
