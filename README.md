@@ -1,7 +1,7 @@
 <!-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -->
 
 <img
-  src="img/logo.png"
+  src="img/CodeExpress-logoBG.png"
   align="right"
   width="250" />
 
@@ -24,7 +24,7 @@ HTML, CSS, JS, PHP, PDO & SQL
 <br/>
 
 <img
-  src="img/Home/train.png"
+  src="img/train.png"
   align="right"
   width="520" />
 
