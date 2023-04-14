@@ -22,6 +22,9 @@ It provides a secure platform for sharing code and is designed to be user-friend
 - [Joris](https://github.com/139388-Joris-Taam), [Michel](https://github.com/Michel-3),
 [Robin](https://github.com/RobinBosma) & [Roger](https://github.com/Rogerdark)
 
+## 🤝🏻 Task Managing
+- [Github](https://github.com/orgs/horizoncollege/projects/39)
+
 <br/>
 
 <img
@@ -54,7 +57,7 @@ In summary, Code Express is a user-friendly platform for sharing and accessing c
 
 <!-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -->
 
-## 🛠 Retrospective
+## 📈 Retrospective
 
 Project CodeExpress
 
@@ -68,10 +71,6 @@ Project CodeExpress
 
 ### Stoppen
 
-<!-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -->
-
-## 🤝🏻 Task Managing
-- [Github](https://github.com/orgs/horizoncollege/projects/39)
 
 
 
