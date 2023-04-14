@@ -16,18 +16,17 @@ It provides a secure platform for sharing code and is designed to be user-friend
 <br/>
 
 <!-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -->
+<img
+  src="img/train.png"
+  align="right"
+  width="720" />
+
+<br/>
 
 ## 👥 Scrum Team:
 
 - [Joris](https://github.com/139388-Joris-Taam), [Michel](https://github.com/Michel-3),
 [Robin](https://github.com/RobinBosma) & [Roger](https://github.com/Rogerdark)
-
-<br/>
-
-<img
-  src="img/train.png"
-  align="right"
-  width="720" />
 
 <!-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -->
 
