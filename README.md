@@ -31,6 +31,20 @@ It provides a secure platform for sharing code and is designed to be user-friend
 
 <!-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -->
 
+## 🔓 Website Functionality
+
+Code Express is a web application that makes it easy to share and access code snippets. The platform consists of two primary pages: index.php and overview.php.
+
+When you open index.php, you'll find a form that allows you to upload your code. You can add a title and description, choose tags to help others find your code, and select whether your post should be private or public. Once you've uploaded your code, it will be available for others to view or copy.
+
+The overview.php page displays all the public code snippets that have been uploaded to Code Express. Here, you can browse through the various code snippets and find ones that are relevant to your needs. You can also use the search bar to look for specific code snippets by title, description, or tag.
+
+The navbar and footer are available on both pages and provide easy access to other parts of the site. The navbar includes links to the index.php and overview.php pages, as well as a contact page where you can get in touch with the Code Express team at infocodeexpress@gmail.com. The footer includes links to the different pages and a nice train.
+
+In summary, Code Express is a user-friendly platform for sharing and accessing code snippets. With its simple interface, search functionality, and helpful navigation links, Code Express makes it easy to find and share the code you need.
+
+<!-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -->
+
 ## 📃 Links
 
 - [Github](https://github.com/horizoncollege/project-2-verdieping-scrum-codeexpress)<br>
