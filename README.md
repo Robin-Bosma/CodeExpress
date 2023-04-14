@@ -7,10 +7,11 @@
 
 # CodeExpress
 
-CodeExpress is a website a group of 4 people made. In this website you can share code with eachother<br>
-
-We used the following programming languages:<br>
-HTML, CSS, JavaScript, PHP & SQL
+CodeExpress is a website where users can share code with each other.<br>
+It was created by a group of 4 people using HTML, CSS, JavaScript, PHP, and SQL.<br>
+<br>
+The website allows users to easily view and search through shared code and leave comments and feedback.<br>
+It provides a secure platform for sharing code and is designed to be user-friendly and intuitive.
 
 <br/>
 
