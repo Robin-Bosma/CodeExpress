@@ -51,6 +51,9 @@ In summary, Code Express is a user-friendly platform for sharing and accessing c
 <!-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -->
 
 ## 🤝🏻 Task Managing
+
+Scrum board:
+
 - [Github](https://github.com/orgs/horizoncollege/projects/39)
 
 <br/>
