@@ -76,14 +76,13 @@ Scrum Project CodeExpress<br>
 Voor ons 2e scrum project kregen wij als opdracht voorgeschreven om een website te maken waar je code kan delen met elkaar. Het voornaamste wat wij moesten leren binnen dit project was de scrummethode in ons scrumbord, dus dan spreken we over user stories die gebruik maken van de DoD (Definition of Done) regel en allemaal een juiste acceptatiecriteria hebben.
 Vervolgens moesten wij binnen het project ook de S.M.A.R.T methode gebruiken, tamelijk goed ging. Door de goede communicatie binnen het hele team wisten we vaak duidelijk hoe we dit moesten toepassen. Al ging het om de meetbaarheid en tijdsgebondenheid van iedere user story kon dat nog wel iets beter, maar de specifieke, acceptabele en realistische kant van de smart methode hadden goed onder de knie.
 Aan het einde van ons project hielden wij een retrospective om terug te vallen op de dingen die we hebben gedaan. Hierin hadden wij het over waar we door mee moesten gaan, wat meer moest gebeuren, wat minder moest gebeuren, waar we mee mochten starten en waar we mee mochten stoppen. Om ons zo verder te evolueren in scrum en er als maar beter in te worden als individu en team.
-
+<br> 
 
 ### Doorgaan
 Het gedeelte wat goed ging en waar we dus mee mogen doorgaan is:
 -	Daily stand-ups
 -	Scrumbord up-to-date houden
 -	Bij user stories gebruik maken van Checkboxes, Acceptatiecriteria en DOD 
-
 <br>
 
 ### Meer
@@ -91,19 +90,16 @@ Wat we meer mogen doen de volgende keer is:
 -	S.M.A.R.T methode meer toepassen
 -	Splitsen van user stories
 -	Beter door communiceren over taakverdeling en duidelijkheid wie wat doet en hoe het moet worden gerealiseerd
-
 <br>
 
 ### Minder
 Wat we minder mogen doen de volgende keer is:
 -	 Minder miscommunicatie
-
 <br>
 
 ### Starten
 Waar we mee mogen starten bij het volgende project is:
 -	Branches aanmaken of merge conflicts meer tegen te gaan
-
 <br> 
 
 ### Stoppen
