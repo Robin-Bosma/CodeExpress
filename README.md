@@ -104,7 +104,7 @@ Wat we minder mogen doen de volgende keer is:
 Waar we mee mogen starten bij het volgende project is:
 -	Branches aanmaken of merge conflicts meer tegen te gaan
 
-<br>
+<br> 
 
 ### Stoppen
 Waar we mee mogen stoppen bij het volgende project is:
