@@ -22,9 +22,6 @@ It provides a secure platform for sharing code and is designed to be user-friend
 - [Joris](https://github.com/139388-Joris-Taam), [Michel](https://github.com/Michel-3),
 [Robin](https://github.com/RobinBosma) & [Roger](https://github.com/Rogerdark)
 
-## 🤝🏻 Task Managing
-- [Github](https://github.com/orgs/horizoncollege/projects/39)
-
 <br/>
 
 <img
@@ -45,6 +42,11 @@ The overview.php page displays all the public code snippets that have been uploa
 The navbar and footer are available on both pages and provide easy access to other parts of the site. The navbar includes links to the index.php and overview.php pages, as well as a contact page where you can get in touch with the Code Express team at infocodeexpress@gmail.com. The footer includes links to the different pages and a nice train.
 
 In summary, Code Express is a user-friendly platform for sharing and accessing code snippets. With its simple interface, search functionality, and helpful navigation links, Code Express makes it easy to find and share the code you need.
+
+<!-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -->
+
+## 🤝🏻 Task Managing
+- [Github](https://github.com/orgs/horizoncollege/projects/39)
 
 <!-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -->
 
