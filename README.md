@@ -63,7 +63,7 @@ Scrum board:
 ## 📃 Links
 
 - [Github](https://github.com/horizoncollege/project-2-verdieping-scrum-codeexpress)<br>
-- [Online Pagina](https://169849.ao-alkmaar.nl/project-2-verdieping-scrum-codeexpress/page/index.php)
+- [Online Website](https://169849.ao-alkmaar.nl/project-2-verdieping-scrum-codeexpress/page/index.php)
 
 <br/>
 
