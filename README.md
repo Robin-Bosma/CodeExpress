@@ -43,8 +43,9 @@ In summary, Code Express is a user-friendly platform for sharing and accessing c
 <img
   src="img/train.png"
   align="right"
-  width="800" />
+  width="750" />
 
+  <br/>
   <br/>
 
 <!-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -->
