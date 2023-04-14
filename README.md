@@ -84,19 +84,27 @@ Het gedeelte wat goed ging en waar we dus mee mogen doorgaan is:
 -	Scrumbord up-to-date houden
 -	Bij user stories gebruik maken van Checkboxes, Acceptatiecriteria en DOD 
 
+<br>
+
 ### Meer
 Wat we meer mogen doen de volgende keer is:
 -	S.M.A.R.T methode meer toepassen
 -	Splitsen van user stories
 -	Beter door communiceren over taakverdeling en duidelijkheid wie wat doet en hoe het moet worden gerealiseerd
 
+<br>
+
 ### Minder
 Wat we minder mogen doen de volgende keer is:
 -	 Minder miscommunicatie
 
+<br>
+
 ### Starten
 Waar we mee mogen starten bij het volgende project is:
 -	Branches aanmaken of merge conflicts meer tegen te gaan
+
+<br>
 
 ### Stoppen
 Waar we mee mogen stoppen bij het volgende project is:
