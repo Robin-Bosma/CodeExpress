@@ -36,12 +36,13 @@ The navbar and footer are available on both pages and provide easy access to oth
 
 In summary, Code Express is a user-friendly platform for sharing and accessing code snippets. With its simple interface, search functionality, and helpful navigation links, Code Express makes it easy to find and share the code you need.
 
-<br/>
-
 <img
   src="img/train.png"
   align="right"
   width="720" />
+
+  <br/>
+<br/>
 
 <!-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -->
 
